@@ -51,9 +51,10 @@ namespace Game.DialogueSystem
 
 
         #region Component Functions
-        public void Run(string text, TMP_Text textLabel)
+        public Coroutine Run(string text, TMP_Text textLabel)
         {
             typingCoroutine = StartCoroutine(TypeText(text, textLabel));
+            return typingCoroutine;
         }
 
         public void Stop()

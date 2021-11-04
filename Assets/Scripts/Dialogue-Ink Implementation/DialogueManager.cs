@@ -66,11 +66,6 @@ namespace Game.DialogueSystem
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                _isOpen = false;
-                gameObject.SetActive(false);
-            }
         }
         #endregion
 
@@ -96,6 +91,35 @@ namespace Game.DialogueSystem
 
                 _isOpen = true;
             }
+            else
+            {
+                HideDialogue();
+            }
+        }
+
+        public IEnumerator<Coroutine> ShowChoice()
+        {
+            if (_currentStory.canContinue)
+            {
+                string textToShow = _currentStory.Continue();
+                Choice[] currentChoices = _currentStory.currentChoices.ToArray();
+                gameObject.SetActive(true);
+
+                HandleChoices(currentChoices);
+
+                _isOpen = true;
+
+                if (_useTypeWriterEffect)
+                {
+                    _typeWriterEffect.Stop();
+                    yield return _typeWriterEffect.Run(textToShow, _dialogueText);
+                }
+                else
+                {
+                    _dialogueText.text = textToShow;
+                }
+            }
+            ShowNextDialogue();
         }
 
         private void HandleChoices(Choice[] choices)
@@ -120,13 +144,15 @@ namespace Game.DialogueSystem
         public void ChooseChoice(int index)
         {
             _currentStory.ChooseChoiceIndex(index);
-            ShowNextDialogue();
+            StartCoroutine(ShowChoice());
         }
 
         public void HideDialogue()
         {
             gameObject.SetActive(false);
             _isOpen = false;
+            _currentStory = null;
+            _currentStoryAsset = null;
         }
         #endregion
     }
