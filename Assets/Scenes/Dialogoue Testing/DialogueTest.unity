@@ -851,7 +851,7 @@ MonoBehaviour:
     _numberOfHearts: 10
     _maxFragments: 1
   cameraShake: {fileID: 811664966}
-  camShakeIntensity: 1
+  camShakeIntensity: 2
   camShakeFrequency: 3
   camShakeTime: 0.2
   moveSpeed: 10
