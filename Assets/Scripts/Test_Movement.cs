@@ -8,13 +8,14 @@ public class Test_Movement : MonoBehaviour
 
     Vector2 movement;
 
-    private void Start() {
+    private void Start()
+    {
         player = GetComponent<Player>();
     }
     private void Update()
     {
-        if (player.DialogueUI.IsOpen) return;
-        
+        if (player.DialogueUI != null && player.DialogueUI.IsOpen) return;
+
         //gathaering the inputs for player
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
@@ -27,5 +28,5 @@ public class Test_Movement : MonoBehaviour
         rb.velocity = new Vector2(movement.x * player.MoveSpeed, rb.velocity.y);
     }
 
-    
+
 }
