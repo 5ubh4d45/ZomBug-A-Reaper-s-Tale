@@ -7,6 +7,14 @@ using Game.HealthSystem;
 //this class will contain all the functionalities
 public class Player : HealthObject<HeartHealthSystem>
 {
+
+    [Header("CameraShake")]
+    [SerializeField] private CameraShake cameraShake;
+    [SerializeField] private float camShakeIntensity = 1f;
+    [SerializeField] private float camShakeFrequency = 3f;
+    [SerializeField] private float camShakeTime = 0.2f;
+
+    [Space]
     [SerializeField] private float moveSpeed = 10;
     [SerializeField] private DialogueUI dialogueUI;
 
@@ -33,6 +41,9 @@ public class Player : HealthObject<HeartHealthSystem>
         if (collision2D.gameObject.CompareTag("NPC"))
         {
             _healthSystem.Damage(1);
+
+            //adds cam shake when damage taken
+            cameraShake.ShakeCamera(camShakeIntensity, camShakeFrequency, camShakeTime);
         }
     }
 
@@ -41,6 +52,7 @@ public class Player : HealthObject<HeartHealthSystem>
         if (collider2D.gameObject.CompareTag("Health Point"))
         {
             _healthSystem.Heal(1);
+
         }
     }
 }
