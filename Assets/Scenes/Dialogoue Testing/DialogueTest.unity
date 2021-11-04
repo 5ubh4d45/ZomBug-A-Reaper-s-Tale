@@ -669,7 +669,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1654818877
-  m_SortingLayer: 3
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   m_Color: {r: 0.9811321, g: 0.0786757, b: 0.0786757, a: 1}
@@ -996,6 +996,7 @@ GameObject:
   - component: {fileID: 1204464213}
   - component: {fileID: 1204464214}
   - component: {fileID: 1204464215}
+  - component: {fileID: 1204464216}
   m_Layer: 0
   m_Name: NPC
   m_TagString: Untagged
@@ -1214,6 +1215,29 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1204464216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204464207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/SFX_zombie_voice
+  PlayEvent: 9
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &1307242967
 GameObject:
   m_ObjectHideFlags: 0
@@ -1335,8 +1359,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1979466570}
   - component: {fileID: 1979466569}
-  - component: {fileID: 1979466568}
   - component: {fileID: 1979466571}
+  - component: {fileID: 1979466568}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1344,14 +1368,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1979466568
-AudioListener:
+--- !u!114 &1979466568
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1979466567}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
+  ListenerNumber: -1
 --- !u!20 &1979466569
 Camera:
   m_ObjectHideFlags: 0
