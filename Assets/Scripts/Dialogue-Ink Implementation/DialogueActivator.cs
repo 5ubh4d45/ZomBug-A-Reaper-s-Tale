@@ -2,6 +2,9 @@ using UnityEngine;
 
 namespace Game.DialogueSystem
 {
+    /// <summary>
+    /// Attach this class to Objects that are supposed to trigger a ink File.
+    /// </summary>
     [RequireComponent(typeof(Collider2D))]
     public class DialogueActivator : MonoBehaviour, IInteractable
     {

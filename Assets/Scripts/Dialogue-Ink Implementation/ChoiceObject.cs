@@ -4,6 +4,9 @@ using UnityEngine.EventSystems;
 
 namespace Game.DialogueSystem
 {
+    /// <summary>
+    /// This Is the object used to setup a choice.
+    /// </summary>
     public class ChoiceObject : MonoBehaviour, IPointerDownHandler
     {
         #region Variables
@@ -26,6 +29,9 @@ namespace Game.DialogueSystem
 
 
         #region Component Functions
+        /// <summary>
+        /// Initialise the Choice object.
+        /// </summary>
         public void Initialise(string text, int index)
         {
             _label = transform.GetComponentInChildren<TextMeshProUGUI>(true);

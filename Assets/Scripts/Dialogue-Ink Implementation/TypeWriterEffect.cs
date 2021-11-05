@@ -5,6 +5,9 @@ using UnityEngine;
 
 namespace Game.DialogueSystem
 {
+    /// <summary>
+    /// This is utility class used for adding typeWriter effect to the dialogs.
+    /// </summary>
     public class TypeWriterEffect : MonoBehaviour
     {
         #region Variables
@@ -20,6 +23,9 @@ namespace Game.DialogueSystem
 
 
         #region Getters And Setters
+        /// <summary>
+        /// Is the tupeWriter currently writing something.
+        /// </summary>
         public bool IsRunning { get; private set; }
 
         /// <summary>
@@ -51,12 +57,18 @@ namespace Game.DialogueSystem
 
 
         #region Component Functions
+        /// <summary>
+        /// Runs a Coroutine that prints the passed text to the text label.
+        /// </summary>
         public Coroutine Run(string text, TMP_Text textLabel)
         {
             typingCoroutine = StartCoroutine(TypeText(text, textLabel));
             return typingCoroutine;
         }
 
+        /// <summary>
+        /// stop the currently running typing task (if any).
+        /// </summary>
         public void Stop()
         {
             if (typingCoroutine == null) return;
@@ -110,6 +122,9 @@ namespace Game.DialogueSystem
         }
         #endregion
 
+        /// <summary>
+        /// Struct representing a list of char with the amount of time you are suposed to wait.
+        /// </summary>
         public readonly struct Punctuation
         {
 

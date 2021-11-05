@@ -6,6 +6,9 @@ using UnityEngine;
 
 namespace Game.DialogueSystem
 {
+    /// <summary>
+    /// This is the Base singleton class used for showing/hiding and managing dialogs
+    /// </summary>
     [RequireComponent(typeof(TypeWriterEffect))]
     public class DialogueManager : MonoBehaviour
     {
@@ -34,11 +37,15 @@ namespace Game.DialogueSystem
         [SerializeField] private bool _useTypeWriterEffect;
         private Story _currentStory;
         private TextAsset _currentStoryAsset;
+        private TypeWriterEffect _typeWriterEffect;
         private bool _isOpen;
         #endregion
 
 
         #region Getters And Setters
+        /// <summary>
+        /// The current Text asset thst's used to get the story object.
+        /// </summary>
         public TextAsset CurrentStoryAsset
         {
             get => _currentStoryAsset;
@@ -49,9 +56,11 @@ namespace Game.DialogueSystem
                 else if (value == null) Debug.LogWarning("Json File Wasn't Set");
             }
         }
-        public bool IsOpen => _isOpen;
 
-        private TypeWriterEffect _typeWriterEffect;
+        /// <summary>
+        /// Is some dialog is being shown.
+        /// </summary>
+        public bool IsOpen => _isOpen;
         #endregion
 
 
@@ -62,14 +71,13 @@ namespace Game.DialogueSystem
 
             gameObject.SetActive(false);
         }
-
-        private void Update()
-        {
-        }
         #endregion
 
 
         #region Component Functions
+        /// <summary>
+        /// Show Next dialog of the current registered story. (if any)
+        /// </summary>
         public void ShowNextDialogue()
         {
             if (_currentStory.canContinue)
@@ -96,7 +104,7 @@ namespace Game.DialogueSystem
             }
         }
 
-        public IEnumerator ShowChoice()
+        private IEnumerator ShowChoice()
         {
             if (_currentStory.canContinue)
             {
@@ -141,12 +149,18 @@ namespace Game.DialogueSystem
             }
         }
 
+        /// <summary>
+        /// Choose a choice from the currently registered choices. (through the passed index)
+        /// </summary>
         public void ChooseChoice(int index)
         {
             _currentStory.ChooseChoiceIndex(index);
             StartCoroutine(ShowChoice());
         }
 
+        /// <summary>
+        /// Hide the dialog box.
+        /// </summary>
         public void HideDialogue()
         {
             gameObject.SetActive(false);
