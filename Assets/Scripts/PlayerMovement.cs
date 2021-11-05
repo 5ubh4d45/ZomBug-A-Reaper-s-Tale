@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Game.DialogueSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -38,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
 
-        if (DialogueManager.Instance.IsOpen) return;
+        if (player.DialogueUI.IsOpen) return;
         MovePlayer();
     }
 
