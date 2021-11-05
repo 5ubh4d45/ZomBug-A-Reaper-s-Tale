@@ -16,10 +16,8 @@ public class Player : HealthObject<HeartHealthSystem>
 
     [Space]
     [SerializeField] private float moveSpeed = 10;
-    [SerializeField] private DialogueUI dialogueUI;
 
     public float MoveSpeed => moveSpeed;
-    public DialogueUI DialogueUI => dialogueUI;
     public IInteractable Interactable { get; set; }
 
 
