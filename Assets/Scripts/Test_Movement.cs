@@ -1,3 +1,4 @@
+using Game.DialogueSystem;
 using UnityEngine;
 
 
@@ -14,7 +15,7 @@ public class Test_Movement : MonoBehaviour
     }
     private void Update()
     {
-        if (player.DialogueUI != null && player.DialogueUI.IsOpen) return;
+        if (DialogueManager.Instance != null && DialogueManager.Instance.IsOpen) return;
 
         //gathaering the inputs for player
         float moveX = Input.GetAxisRaw("Horizontal");
