@@ -1,9 +1,8 @@
-using System;
 using System.Collections.Generic;
+using System.Collections;
 using Ink.Runtime;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace Game.DialogueSystem
 {
@@ -97,7 +96,7 @@ namespace Game.DialogueSystem
             }
         }
 
-        public IEnumerator<Coroutine> ShowChoice()
+        public IEnumerator ShowChoice()
         {
             if (_currentStory.canContinue)
             {
@@ -118,6 +117,7 @@ namespace Game.DialogueSystem
                 {
                     _dialogueText.text = textToShow;
                 }
+                yield return new WaitForSeconds(0.4f);
             }
             ShowNextDialogue();
         }
