@@ -5,7 +5,9 @@ using Pathfinding;
 
 public class EnemyPathFollower : MonoBehaviour
 {  
-    
+    [SerializeField] private EnemyPathFinder enemyPathFinder;
+    [SerializeField] private Transform playerTarget;
+    [SerializeField] private Rigidbody2D rb;
 
 
     // Start is called before the first frame update
@@ -17,6 +19,6 @@ public class EnemyPathFollower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        enemyPathFinder.FollowTarget(true,playerTarget);
     }
 }
