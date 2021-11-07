@@ -27,14 +27,19 @@ namespace EnemyBehavior
         
         [Space] [Header("Behaviour Variables")]
         public bool canFollow = true;
-
-        [SerializeField] private float minFreeRoamRange = 10f;
-        [SerializeField] private float maxFreeRoamRange = 10f;
+        public bool canForgetTarget = true;
+        
+        [Space] [Header("Range Variables")]
+        [SerializeField] private float minFreeRoamRange = 1f;
+        [SerializeField] private float maxFreeRoamRange = 2f;
+        [SerializeField] private float detectionRange = 20f;
         [SerializeField] private float idleWaitTime = 3f;
         [SerializeField] private float stopDistance = 1f;
         
         private Vector3 _startingPosition;
         private Vector3 _freeRoamPosition;
+        private bool _onLineOfSight;
+        private float _distanceFromTarget;
         private bool _reachedEndOfPath;
         private float _currentIdleTime = 0f;
         
@@ -42,7 +47,9 @@ namespace EnemyBehavior
 
         // Start is called before the first frame update
         void Start()
-        {   
+        {
+            #region Setting up variables
+            
             if (enemyPathFinder == null){
                 enemyPathFinder = GetComponent<EnemyPathFinder>();
             }
@@ -56,15 +63,14 @@ namespace EnemyBehavior
             // _startingPosition = transform.position; // uncomment if full random free roam required
             
             //setting up private variables
-            _startingPosition = new Vector3(0,0,0);
+            _startingPosition = transform.localPosition; //new Vector3(0,0,0);
             _freeRoamPosition = GetRoamingPosition();
-           
-            
-            
-            
+
             //setting up idle state
             _state = EnemyState.Idle;
             
+            #endregion
+
 
         }
 
@@ -72,6 +78,11 @@ namespace EnemyBehavior
         void FixedUpdate()
         {
             // enemyPathFinder.FollowTarget(true, playerTarget.position);
+            
+            //detecting the target distance constantly
+            _distanceFromTarget = Vector3.Distance(playerTarget.position, rb.position);
+            IsOnTarget(playerTarget.position);
+            
 
             //enemy state machine
             switch (_state)
@@ -94,12 +105,12 @@ namespace EnemyBehavior
                     
                     
                     break;
-                
+
                 case EnemyState.FreeRoam:
-                    
+
                     //gets roaming position then moves towards it
                     enemyPathFinder.FollowTarget(true, _freeRoamPosition);
-                    
+
                     //checks if we reached our roam position
                     _reachedEndOfPath = enemyPathFinder.ReachedEndofPath;
 
@@ -107,13 +118,34 @@ namespace EnemyBehavior
                     {
                         //sets a new free roam position
                         _freeRoamPosition = GetRoamingPosition();
-                        
+
                         //sets a state to idle
                         _state = EnemyState.Idle;
                     }
+                    else if(_distanceFromTarget < detectionRange && _onLineOfSight)
+                    {
+                        _state = EnemyState.ChasingTarget;
+                    }
+
                     break;
-                
-                case  EnemyState.ChasingTarget:
+
+                case EnemyState.ChasingTarget:
+                    
+                    bool onRange = _distanceFromTarget < detectionRange;
+                    
+                    //if player out of range & can forget the back to free roam
+                    if (!onRange && canForgetTarget)
+                    {
+                        _state = EnemyState.Idle;
+                    }
+                    
+                    //checks if also on line of sight
+                    if(onRange && !_onLineOfSight)
+                    {
+                        _state = EnemyState.Idle;
+                    }
+                    enemyPathFinder.FollowTarget(true, playerTarget.position);
+
                     break;
                 
                 case  EnemyState.AttackingTarget:
@@ -137,7 +169,26 @@ namespace EnemyBehavior
             
         }
 
-        
+        private bool IsOnTarget(Vector3 targetPosition)
+        {
+            Vector2 direction = (Vector2) (targetPosition - transform.position);
+                    
+            //checks if target is onLineSight 
+            RaycastHit2D hit = Physics2D.Raycast(rb.position, direction, detectionRange);
+            if (hit)
+            {
+                _onLineOfSight = hit.collider.CompareTag("Player");
+                
+            }
+
+            return _onLineOfSight;
+        }
+
+        private void OnDrawGizmosSelected()
+        {
+            Gizmos.color = Color.green;
+            Gizmos.DrawWireSphere(rb.position, detectionRange);
+        }
     }
     
 }

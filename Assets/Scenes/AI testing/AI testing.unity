@@ -1019,7 +1019,7 @@ MonoBehaviour:
   repeatRate: 0.5
   speed: 5
   stopDistance: 1
-  nextWaypointDistance: 0.5
+  nextWaypointDistance: 0.3
 --- !u!50 &717478173
 Rigidbody2D:
   serializedVersion: 4
@@ -1049,7 +1049,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 717478170}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -27.69, y: -0.22, z: 0}
+  m_LocalPosition: {x: -1.26, y: 1.26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1086027448}
@@ -1122,6 +1122,12 @@ MonoBehaviour:
   playerTarget: {fileID: 8423433269600479973}
   rb: {fileID: 717478173}
   canFollow: 1
+  canForgetTarget: 1
+  minFreeRoamRange: 1
+  maxFreeRoamRange: 3
+  detectionRange: 10
+  idleWaitTime: 1
+  stopDistance: 1
 --- !u!1 &736701211
 GameObject:
   m_ObjectHideFlags: 0
@@ -1939,7 +1945,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAMArIeyMXuBSbAIAABcFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVE1z2jAQ/SuMzoWRSTCht9YhpId8TGgnF1+EtMYahOSR5ADJ8N+7km3sUi7I7+3H26e1v4jUrgLujV1ZKZ6MAPJ9RMKZfBv15CMc2dbotfyELuZdCl+GIBZj3piXBvEkpDmzB28l/6G3KgRTBGstC2P3S7GFzDjvEC6YcoCUNT5ka4S+RuSIf+NFSDnhaToPp088LejojEcO2oMdhNLJfEYpTRZtxs2Ext/0tk1MJvO7u+RmOpsux3Qei9SaK7avQISJ+lqzZDLrqqQxUOO0bQyNHDdKSdeKJf5URTMyVrkaR8UAIRkOHxXSSdBUgtyWPowyTH8pCge+9cay07206GJTl/w0jbV75naNug+m6tApvY2ymppP/9HjJNKFNfvHrm1CQwtfSr57YyfOnB9YP4Tve+VJ9OjA1I5tFLyXoJ/NyppaCyS9rUNq7WB63z9eJstK4Lseb6RegXXVm97ddHfPYYZzHP6YKbnfRCNvG2CtTDQ8rgdYvJxfKDguj2tLIBpU/HHwm22HW9YSD9I6j1Q7pQ7yNqa2IZQso2dhmtpnxmqIcCu6As2UP71iGX99g1fcoO0V88DC+9Q2b7nuNblKiXAfT+kV9WoOl8typTk8gStfaq+khl50IJ7Rp8xo3SzY0JMubV3bgvFB2raW4t/VIpBACml6t0jTKUtFMeYMkRQWXMwFpXxG4u5JjXMy9doIbe3BW9N9cY171n1mRivLqrjswrLDSn7uzVCg1IVZcwugX5oSF+VgsQu+mWIpJDq0Bu+ljhdOvnKiDN+ByC898zjq8ugty/sqOankh/EByUkWPyw5OZPzX1BLAwQUAAAICADAKyHsjDWJwmwAAAB4AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDRM9IzNNVRUEovSizIKAaKGII4pZkpIHa0UqphqlmqmZmFpZmZUaJZSppuciJQxCzVMjnFPMXAINlUKRaovqSyINUvMTcVoicgsSQjLTMvJTMvXc+9KDPFHWS0UmwtAFBLAQItABQAAAgIAMArIeyMXuBSbAIAABcFAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAMArIeyMNYnCbAAAAHgAAAAJACQAAAAAAAAAAAAAALkCAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAcAMAAAAA
+    dataString: UEsDBBQAAAgIAMArIeyUNjrrZgIAACAFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVE1z2jAQ/SuMzk3GUOKU3lqHkB6SMKWdXHxRpDXWIEsefQRIhv/elSxjh/pi+e3Xe7srfxChbAvMabMygj9qDuT7hIQz+TIZjA9woFutNuIdep8XwV0dnGj0+U2d0IhPQ5jVDTgj2A+1lcE5Q9ArUWnTLPkWCm2dRbii0gKajHYhWiH0MSEHfF0tQsgRT7PbcHrH0yKbnPDIQDkwI9fs+na+CM88hXxNAZ2/V0zSpgUeyA9h+Sx554vrm+ioUFjyya5vQiUtpbCJF3HHNuouaGs9qkIHLijqjGSC7BrEtnaB8zj4uaosuNQEQ493wmC7uqzkp+562FC767i9UelDnXweSXU5H/8zX02juTK6eejLTrNQwtWC7X7TI6PWjXo8hu8+8/ZqT+WOvkp4qUE96ZXRXnE0OuNDqLcwuxs+z8qKGthuwDuqF6Bvh5b3I+0HGjScovhDIUXzGhs/74CN1LHdcQ/A4Gh+IeG4JTalQDSw+GvhD92O1ykZ7oWxDk1JpQr0XrU3wZUsY8+CGu8KbRREOJFuQVHpjmtM4y4neGEblb2w3NNwcVLxZOvvw0VIhAf/LLswrfX+PCxb6/0j2PrZOykUDKSD4Qn7VGilugUb96QP23hTUTYK23rBP68WgSnkkOffFnk+ozmvrhhFJIcF47c8y9gNibsnFOqkct0RTe3BqakhucI96/8nk5WhbVx2buh+Jd4bPSYoVKU3zACo5y7FmTkYrIL3ki+5wA5twDmh4sDJR0mkZjvg5blmGaUuD87QcshSkla8aReQkhTxD1KSAJ+XeW3gTcA+FO+TncjpH1BLAwQUAAAICADAKyHsGp4+02wAAAB4AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDRM9IzNNdRUEovSizIKAaKGII4pZkpIHa0UqphqlmqmZmFpZmZUaJZSppuciJQxCzVMjnFPMXAINlUKRaovqSyINUvMTcVoicgsSQjLTMvJTMvXc+9KDPFHWS0UmwtAFBLAQItABQAAAgIAMArIeyUNjrrZgIAACAFAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAMArIewanj7TbAAAAHgAAAAJACQAAAAAAAAAAAAAALMCAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAagMAAAAA
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -2119,7 +2125,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1303867342}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.35, y: -5.76, z: 0}
+  m_LocalPosition: {x: -8.97, y: -5.76, z: 0}
   m_LocalScale: {x: 2.265625, y: 1.7875, z: 1}
   m_Children: []
   m_Father: {fileID: 752525984}
@@ -3468,7 +3474,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2133899629}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.35, y: -5.76, z: 0}
+  m_LocalPosition: {x: -9.12, y: -5.76, z: 0}
   m_LocalScale: {x: 2.265625, y: 1.7875, z: 1}
   m_Children: []
   m_Father: {fileID: 1129692597}
