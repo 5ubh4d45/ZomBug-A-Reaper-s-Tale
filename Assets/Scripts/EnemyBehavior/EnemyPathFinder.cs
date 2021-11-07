@@ -13,14 +13,17 @@ namespace EnemyBehavior
         [Header("PathFinding Attributes")]
         [SerializeField] private float repeatRate = 0.5f;
         [SerializeField] private float speed = 10f;
-        [SerializeField ]private float stopDistance = 1f;
+        [SerializeField] private float stopDistance = 1f;
         [SerializeField] private float nextWaypointDistance = 2f;
     
         private Path _path;
         private int _currentWaypoint = 0;
         private bool _reachedEndOfPath;
         private float _lastRepath = 0;
-
+        
+        //setting up required getters
+        public float StopDistance => stopDistance;
+        public bool ReachedEndofPath => _reachedEndOfPath;
 
         // Start is called before the first frame update
         private void Start()
@@ -46,7 +49,11 @@ namespace EnemyBehavior
             }
         }
 
-        public void FollowTarget(bool canFollow, Transform targetPosition){
+        public void OnDisable(){
+            seeker.pathCallback -= OnPathComplete;
+        }
+        
+        public void FollowTarget(bool canFollow, Vector3 targetPosition){
 
             if (!canFollow){
                 return;
@@ -55,11 +62,10 @@ namespace EnemyBehavior
 
                 _lastRepath = Time.time;
 
-                seeker.StartPath(rb.position, targetPosition.position, OnPathComplete);
+                seeker.StartPath(rb.position, targetPosition, OnPathComplete);
             }
 
             if ( _path == null){
-
                 return;
             }
 
@@ -78,7 +84,7 @@ namespace EnemyBehavior
                         _currentWaypoint++;
 
                     } else{
-                
+                        
                         _reachedEndOfPath = true;
                         break;
                     }
@@ -89,28 +95,27 @@ namespace EnemyBehavior
             }
 
             float speedFactor = _reachedEndOfPath ? Mathf.Sqrt(distanceToWaypoint/nextWaypointDistance) : 1f;
-
+            
+            //gets movement direction
             Vector3 dir = (_path.vectorPath[_currentWaypoint] - transform.position).normalized;
-
+            
+            //gets velocity
             Vector3 velocity = dir * (speed * speedFactor);
-
-            float distancefromTarget = Vector2.Distance(rb.position, targetPosition.position);
-
-            if (distancefromTarget >= stopDistance){
-
-                rb.position += (Vector2)velocity * Time.deltaTime;
-            }
-
-
+            
+            //moves the body
+            rb.position += (Vector2)velocity * Time.deltaTime;
+            
         }
-
-        public void OnDisable(){
-            seeker.pathCallback -= OnPathComplete;
-        }
+        
+        //gets a random direcetion
+        public Vector3 GetRandomDir() => new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
+        
+        
 
         private void OnDrawGizmosSelected() {
+            
             Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(rb.position, stopDistance);
+            
             Gizmos.DrawWireSphere(rb.position, nextWaypointDistance);
         }
     }

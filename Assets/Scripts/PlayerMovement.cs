@@ -18,8 +18,8 @@ public class PlayerMovement : MonoBehaviour
     private bool isFacingRight;
     public bool IsfacingRight => isFacingRight;
 
-    private Vector2 movement;
-    private Vector2 mousePos;
+    private Vector2 _movementDir;
+    private Vector2 _mousePos;
 
 
 
@@ -50,20 +50,20 @@ public class PlayerMovement : MonoBehaviour
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
 
-        movement = new Vector2(moveX, moveY).normalized;
+        _movementDir = new Vector2(moveX, moveY).normalized;
 
         //Gathering mousepointer position
-        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        _mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
     }
 
     private void MovePlayer()
     {
 
         //chnaging positions according to input
-        rb.MovePosition(rb.position + movement * player.MoveSpeed * Time.fixedDeltaTime);
+        rb.MovePosition(rb.position + _movementDir * player.MoveSpeed * Time.fixedDeltaTime);
 
         //Finding Angle of rotation from player to mouse
-        Vector2 lookDir = mousePos - rb.position;
+        Vector2 lookDir = _mousePos - rb.position;
 
         // checks if player is left or right of the mouse position
         if (lookDir.x > 0)

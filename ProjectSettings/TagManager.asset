@@ -6,6 +6,7 @@ TagManager:
   tags:
   - NPC
   - Health Point
+  - Enemy
   layers:
   - Default
   - TransparentFX
