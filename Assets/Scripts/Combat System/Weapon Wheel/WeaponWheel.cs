@@ -107,7 +107,9 @@ namespace Game.Combat
 
 
         #region Component Functions
-
+        /// <summary>
+        /// Recreates the weapon wheel by destroying the old one and creating a new one.
+        /// </summary>
         private void UpdateWheel(Weapon _)
         {
             foreach (Transform child in _weaponWheelParent.transform)
@@ -204,8 +206,14 @@ namespace Game.Combat
 
         private float NormalizeAngle(float a) => (a + 360f) % 360f;
 
+        /// <summary>
+        /// open the weapon wheel
+        /// </summary>
         public void Open() => _weaponWheelParent.SetActive(true);
 
+        /// <summary>
+        /// close the weapon wheel
+        /// </summary>
         public void Close() => _weaponWheelParent.SetActive(false);
         #endregion
     }

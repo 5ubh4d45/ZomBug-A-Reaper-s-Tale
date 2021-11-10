@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace Game.Combat
 {
+    /// <summary>
+    /// This is a simple ammo system for weapons
+    /// </summary>
     [System.Serializable]
     public class AmmoSystem
     {
@@ -12,8 +15,19 @@ namespace Game.Combat
         [SerializeField] private int _unloadedAmmo;
         [SerializeField] private float _reloadTime;
 
+        /// <summary>
+        /// This Event is reaised when Some amount of ammo is spent or used
+        /// </summary>
         public Event<int> OnAmmoUsed;
+
+        /// <summary>
+        /// This Event is reaised when Some amount of ammo is recieved and added to the unloaded ammo count
+        /// </summary>
         public Event<int> OnAmmoRecieved;
+
+        /// <summary>
+        /// This Event is reaised affter the weapon is reloaded
+        /// </summary>
         public Empty OnReload;
         #endregion
 
@@ -47,6 +61,9 @@ namespace Game.Combat
 
 
         #region Class Functions
+        /// <summary>
+        /// Uses an X Amount of ammo. where x is the passed parameter useCount.
+        /// </summary>
         public void UseAmmo(int useCount)
         {
             if (_loadedAmmo < useCount) return;
@@ -54,19 +71,25 @@ namespace Game.Combat
             OnAmmoUsed?.Invoke(useCount);
         }
 
+        /// <summary>
+        /// This function adds an X amount of ammo to the unloaded ammo count. where x is the passed parameter recieveAmount.
+        /// </summary>
         public void AmmoRecieved(int recieveAmount)
         {
             _unloadedAmmo += recieveAmount;
             OnAmmoRecieved?.Invoke(recieveAmount);
         }
 
+        /// <summary>
+        /// reloads the gun after waiting for the given reload time.
+        /// </summary>
         public void Reload()
         {
             MonoBehaviour mb = GameObject.FindObjectOfType<MonoBehaviour>();
             mb.StartCoroutine(WaitForReload());
         }
 
-        public IEnumerator WaitForReload()
+        private IEnumerator WaitForReload()
         {
             IsReloading = true;
 
