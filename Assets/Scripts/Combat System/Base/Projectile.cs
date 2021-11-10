@@ -29,7 +29,7 @@ namespace Game.Combat
         private void OnCollisionEnter2D(Collision2D collision)
         {
             HealthObject healthObject = collision.gameObject.GetComponent<HealthObject>();
-            if (healthObject != null)
+            if (healthObject != null && _attackLayer.value == (1 << collision.gameObject.layer))
             {
                 healthObject.HealthSystem().Damage(_damage);
             }

@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 13881762}
   - component: {fileID: 13881764}
   - component: {fileID: 13881763}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Dialog Activator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1542,6 +1542,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2103889174, guid: 84ded33638fba13839db62c5b7be2be1, type: 3}
+      propertyPath: _attackLayer.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
     - target: {fileID: 3636302625692378576, guid: 84ded33638fba13839db62c5b7be2be1, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2272,7 +2276,7 @@ MonoBehaviour:
   _healthBar: {fileID: 342354270}
   _healthSystem:
     _current: 50
-    _maximum: 0
+    _maximum: 50
 --- !u!114 &1204464216
 MonoBehaviour:
   m_ObjectHideFlags: 0
