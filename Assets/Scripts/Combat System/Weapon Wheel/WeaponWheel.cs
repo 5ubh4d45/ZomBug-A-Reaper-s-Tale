@@ -166,7 +166,6 @@ namespace Game.Combat
         private void UpdateActiveElement()
         {
             float mouseAngle = NormalizeAngle(Vector3.SignedAngle(Vector3.up, Input.mousePosition - transform.position, Vector3.forward) + StepLength);
-            Debug.Log(mouseAngle);
             _activeElementindex = (int)(mouseAngle / StepLength);
 
             float sqrDistance = Mathf.Pow(_weaponWheelParent.transform.position.x - Input.mousePosition.x, 2) + Mathf.Pow(_weaponWheelParent.transform.position.y - Input.mousePosition.y, 2);
