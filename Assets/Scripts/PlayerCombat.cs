@@ -43,7 +43,7 @@ public class PlayerCombat : MonoBehaviour
 
         for (int i = 1; i <= _maxWeapons; i++)
         {
-            if (Input.GetKeyDown((KeyCode)(i + 48)))
+            if (Input.GetKeyDown((KeyCode)(i + 48)) || Input.GetKeyDown((KeyCode)i + 256))
             {
                 SwitchWeapon(i - 1);
             }
