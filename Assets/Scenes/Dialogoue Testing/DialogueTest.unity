@@ -2272,7 +2272,7 @@ MonoBehaviour:
   _healthBar: {fileID: 342354270}
   _healthSystem:
     _current: 50
-    _maximum: 50
+    _maximum: 0
 --- !u!114 &1204464216
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -26,9 +26,9 @@ namespace Game.Combat
             transform.position += (Vector3)_direction * _speed * Time.deltaTime;
         }
 
-        private void OnTriggerEnter2D(Collider2D collider)
+        private void OnCollisionEnter2D(Collision2D collision)
         {
-            HealthObject healthObject = collider.gameObject.GetComponent<HealthObject>();
+            HealthObject healthObject = collision.gameObject.GetComponent<HealthObject>();
             if (healthObject != null)
             {
                 healthObject.HealthSystem().Damage(_damage);
