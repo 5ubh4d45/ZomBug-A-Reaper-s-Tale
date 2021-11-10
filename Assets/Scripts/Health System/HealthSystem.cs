@@ -33,7 +33,4 @@ namespace Game.HealthSystem
         #region Constructors
         #endregion
     }
-
-    public delegate void Event<T>(T arg1);
-    public delegate void Empty();
 }

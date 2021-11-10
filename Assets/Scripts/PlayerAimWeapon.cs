@@ -4,18 +4,24 @@ using UnityEngine;
 
 public class PlayerAimWeapon : MonoBehaviour
 {
-    [SerializeField] private Transform aimTransform;
-    [SerializeField] private Camera cam;
+    public Transform aimTransform;
+    private Camera cam;
 
     private void Start()
     {
-        if (aimTransform == null){
+        if (aimTransform == null)
+        {
             aimTransform = GetComponent<Transform>();
         }
         cam = Camera.main;
     }
 
     void Update()
+    {
+        UpdateTargetRotation();
+    }
+
+    public void UpdateTargetRotation()
     {
         //gets mouse pos and convert to world then sets the weapon angle towards mouse
         Vector3 moussePos = cam.ScreenToWorldPoint(Input.mousePosition);

@@ -7,15 +7,14 @@ namespace Game.HealthSystem
     /// This class should only be used for referencing health objects and 
     /// not for inheriting a health object, for that you should inherit the HealthObject<T> Class
     /// </summary>
-    public class HealthObject : MonoBehaviour
+    public abstract class HealthObject : MonoBehaviour
     {
         #region Variables
-        protected private HealthSystem _healthSystem;
         #endregion
 
 
         #region Getters And Setters
-
+        public abstract HealthSystem HealthSystem();
         #endregion
 
 
@@ -47,12 +46,12 @@ namespace Game.HealthSystem
     {
         #region Variables
         [SerializeField] protected private HealthBar<T> _healthBar;
-        [SerializeField] protected private new T _healthSystem;
+        [SerializeField] protected private T _healthSystem;
         #endregion
 
 
         #region Getters And Setters
-
+        public override HealthSystem HealthSystem() => _healthSystem;
         #endregion
 
 

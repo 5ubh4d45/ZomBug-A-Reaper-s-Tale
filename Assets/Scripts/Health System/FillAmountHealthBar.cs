@@ -35,7 +35,7 @@ namespace Game.HealthSystem
         [MenuItem("GameObject/Fill Amount Health Bar")]
         public static void CreateBar()
         {
-            GameObject bar = Instantiate(Resources.Load<GameObject>("Fill Amount Health Bar"));
+            GameObject bar = Instantiate(Resources.Load<GameObject>("Health System/Fill Amount Health Bar"));
             bar.name = "HealthBar";
             bar.transform.SetParent(Selection.activeTransform);
         }

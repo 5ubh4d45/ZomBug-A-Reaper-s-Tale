@@ -17,10 +17,17 @@ public class Player : HealthObject<HeartHealthSystem>
     [Space]
     [SerializeField] private float moveSpeed = 10;
 
+    private PlayerCombat _playerCombat;
+
     public float MoveSpeed => moveSpeed;
     public IInteractable Interactable { get; set; }
+    public PlayerCombat PlayerCombat => _playerCombat;
 
 
+    private void Start()
+    {
+        _playerCombat = GetComponent<PlayerCombat>();
+    }
 
     private void Update()
     {
