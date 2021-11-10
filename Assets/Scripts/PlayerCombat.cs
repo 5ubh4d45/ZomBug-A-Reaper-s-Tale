@@ -103,6 +103,7 @@ public class PlayerCombat : MonoBehaviour
         if (_currentWeapon == null) return;
 
         Weapon lastWeapon = _currentWeapon;
+        _currentWeapon.IsPickedUp = false;
         int index = _weapons.IndexOf(_currentWeapon);
         _weapons.RemoveAt(index);
 

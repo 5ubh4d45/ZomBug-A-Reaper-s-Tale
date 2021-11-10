@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -11,6 +12,9 @@ namespace Game.Combat
         [SerializeField] protected private LayerMask _attackLayer;
         [SerializeField] protected private Sprite _displayImage;
         [SerializeField] protected private Color _displayImageTint;
+        [SerializeField] protected private GameObject _displayGo;
+
+        private List<Player> _players;
         #endregion
 
 
@@ -40,12 +44,25 @@ namespace Game.Combat
         #region Unity Calls
         public virtual void Update()
         {
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 1).ToArray();
+            if (_players == null) _players = new List<Player>();
+
+            foreach (var player in _players)
+            {
+                if (player.Interactable is Weapon weapon && weapon == this)
+                {
+                    player.Interactable = null;
+                }
+            }
+
+            _players = new List<Player>();
+
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 1.5f).ToArray();
             foreach (var collider in colliders)
             {
                 if (collider.TryGetComponent<Player>(out Player player) && !IsPickedUp)
                 {
                     player.Interactable = this;
+                    _players.Add(player);
                 }
             }
         }

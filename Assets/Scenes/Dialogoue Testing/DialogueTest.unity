@@ -3037,6 +3037,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1624437308 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 650619617497752791, guid: 8508ea9c737838d478e1209ee4379b2e, type: 3}
+  m_PrefabInstance: {fileID: 7770427423045166020}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cbcffb12f76de141992c7dbce072a2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1714970637
 GameObject:
   m_ObjectHideFlags: 0
@@ -3392,7 +3403,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _buttonObject: {fileID: -4114240597928651900, guid: 47bf5f031792b373082eff9774c6e41a, type: 3}
   _weaponWheelParent: {fileID: 1282613173}
-  _playerCombat: {fileID: 1956490308}
+  _playerCombat: {fileID: 1624437308}
   _gapWidth: 2
   _colors:
     m_NormalColor: {r: 0, g: 0, b: 0, a: 0.7647059}
@@ -3404,17 +3415,6 @@ MonoBehaviour:
     m_FadeDuration: 0
   _minimumHieght: 0.197
   _maximumHieght: 0.443
---- !u!114 &1956490308 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 132803868, guid: 8508ea9c737838d478e1209ee4379b2e, type: 3}
-  m_PrefabInstance: {fileID: 7770427423045166020}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cbcffb12f76de141992c7dbce072a2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1979466567
 GameObject:
   m_ObjectHideFlags: 0
@@ -3880,6 +3880,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 196992459}
     - target: {fileID: 1956490302, guid: 8508ea9c737838d478e1209ee4379b2e, type: 3}
+      propertyPath: _unloadedAmmoText
+      value: 
+      objectReference: {fileID: 1203288331}
+    - target: {fileID: 2001348943719114813, guid: 8508ea9c737838d478e1209ee4379b2e, type: 3}
+      propertyPath: _ammoCounter
+      value: 
+      objectReference: {fileID: 337112392}
+    - target: {fileID: 2001348943719114813, guid: 8508ea9c737838d478e1209ee4379b2e, type: 3}
+      propertyPath: _loadedAmmoText
+      value: 
+      objectReference: {fileID: 196992459}
+    - target: {fileID: 2001348943719114813, guid: 8508ea9c737838d478e1209ee4379b2e, type: 3}
       propertyPath: _unloadedAmmoText
       value: 
       objectReference: {fileID: 1203288331}
