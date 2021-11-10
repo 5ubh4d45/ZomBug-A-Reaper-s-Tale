@@ -24,12 +24,14 @@ public class PlayerUI : MonoBehaviour
         _playerCombat = GetComponent<PlayerCombat>();
         _playerCombat.OnWeaponPicked += WeaponPicked;
         _playerCombat.OnWeaponDropped += WeaponDropped;
+        _playerCombat.OnWeaponSwitched += WeaponSwitched;
     }
 
     private void OnDestroy()
     {
         _playerCombat.OnWeaponPicked -= WeaponPicked;
         _playerCombat.OnWeaponDropped -= WeaponDropped;
+        _playerCombat.OnWeaponSwitched -= WeaponSwitched;
     }
     #endregion
 
@@ -75,6 +77,20 @@ public class PlayerUI : MonoBehaviour
             weapon.AmmoSystem.OnReload -= UpdateCombatUI;
         }
         _ammoCounter.SetActive(false);
+    }
+
+    private void WeaponSwitched(Weapon weapon)
+    {
+        if (weapon as RangedWeapon != null)
+        {
+            RangedWeapon rangedWeapon = weapon as RangedWeapon;
+            UpdateCombatUI();
+        }
+        else if (_playerCombat.CurrentWeapon as MeleeWeapon != null)
+        {
+            _loadedAmmoText.text = "\u221E";
+            _unloadedAmmoText.text = "\u221E";
+        }
     }
     #endregion
 }
