@@ -6,6 +6,7 @@ TagManager:
   tags:
   - NPC
   - Health Point
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -13,9 +14,8 @@ TagManager:
   - 
   - Water
   - UI
-  - Obstacle
-  - Player
-  - Enemy
+  - Obstacles
+  - 
   - 
   - 
   - 
