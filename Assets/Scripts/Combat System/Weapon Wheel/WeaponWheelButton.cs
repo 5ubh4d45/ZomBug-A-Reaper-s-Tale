@@ -3,6 +3,9 @@ using UnityEngine.UI;
 
 namespace Game.Combat
 {
+    /// <summary>
+    /// This is a button of the weapon wheel
+    /// </summary>
     public class WeaponWheelButton : MonoBehaviour
     {
         #region Variables

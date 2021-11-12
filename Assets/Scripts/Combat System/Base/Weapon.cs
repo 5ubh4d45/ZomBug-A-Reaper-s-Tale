@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace Game.Combat
 {
+    /// <summary>
+    /// The base class for all weapons that are part of the combat system
+    /// </summary>
     public abstract class Weapon : MonoBehaviour, IInteractable
     {
         #region Variables

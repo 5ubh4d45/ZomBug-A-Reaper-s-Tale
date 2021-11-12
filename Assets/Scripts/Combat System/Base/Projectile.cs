@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace Game.Combat
 {
+    /// <summary>
+    /// This script is attached to objects that are supposed to be projectiles emmitted from ranged weapons
+    /// </summary>
     public class Projectile : MonoBehaviour
     {
         #region Variables
