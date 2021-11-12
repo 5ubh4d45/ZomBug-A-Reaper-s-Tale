@@ -79,7 +79,7 @@ MonoBehaviour:
   _startTimeBtwShots: 0.5
   _attackLayer:
     serializedVersion: 2
-    m_Bits: 192
+    m_Bits: 128
   _displayImage: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   _displayImageTint: {r: 0.3443396, g: 1, b: 0.4439984, a: 1}
   _displayGo: {fileID: 8723122757385965223}

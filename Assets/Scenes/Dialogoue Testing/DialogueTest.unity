@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 13881762}
   - component: {fileID: 13881764}
   - component: {fileID: 13881763}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Dialog Activator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -906,7 +906,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 342354268}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 978441169ae920124a696c2fa0b21adc, type: 3}
+  m_Script: {fileID: 11500000, guid: 00fb10ac7c1c731be8dd4a16ec9ae11e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _tintGradient:
@@ -1173,24 +1173,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 516478267}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf1dbdbed9bf40618a49e64cf4a061b2, type: 3}
+  m_Script: {fileID: 11500000, guid: a29b670ada24859b6a97a838632fbafd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _heartSprites:
   - {fileID: 21300000, guid: 2ebcbe8b46b1711779104f9bccf8aa92, type: 3}
   - {fileID: 21300000, guid: 0c5e8ffc06b0df6019a4c1f115275b26, type: 3}
   _heartColor: {r: 1, g: 0.16509432, b: 0.16509432, a: 1}
---- !u!114 &581932082 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5558998834682036689, guid: 8508ea9c737838d478e1209ee4379b2e, type: 3}
-  m_PrefabInstance: {fileID: 7770427423045166020}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c0396b1944a0334c85d498fa95aaaa0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &586729539
 GameObject:
   m_ObjectHideFlags: 0
@@ -1592,40 +1581,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84ded33638fba13839db62c5b7be2be1, type: 3}
---- !u!1 &865939376 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7770427422822708010, guid: 8508ea9c737838d478e1209ee4379b2e, type: 3}
+--- !u!114 &865939379 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2317687338475166190, guid: 8508ea9c737838d478e1209ee4379b2e, type: 3}
   m_PrefabInstance: {fileID: 7770427423045166020}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &865939377
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 865939376}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f078aa383ae56175b83edb459b7f3e17, type: 3}
+  m_Script: {fileID: 11500000, guid: 33ab3fa239d00408bb53388a6a84d5c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _loadedAmmoText: {fileID: 196992459}
-  _unloadedAmmoText: {fileID: 1203288331}
-  _ammoCounter: {fileID: 337112392}
---- !u!114 &865939378
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 865939376}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cbcffb12f76de141992c7dbce072a2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _weaponAim: {fileID: 581932082}
-  _maxWeapons: 3
 --- !u!1 &929041181
 GameObject:
   m_ObjectHideFlags: 0
@@ -3437,7 +3403,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _buttonObject: {fileID: -4114240597928651900, guid: 47bf5f031792b373082eff9774c6e41a, type: 3}
   _weaponWheelParent: {fileID: 1282613173}
-  _playerCombat: {fileID: 865939378}
+  _playerCombat: {fileID: 865939379}
   _gapWidth: 2
   _colors:
     m_NormalColor: {r: 0, g: 0, b: 0, a: 0.7647059}
@@ -3917,6 +3883,26 @@ PrefabInstance:
       propertyPath: _unloadedAmmoText
       value: 
       objectReference: {fileID: 1203288331}
+    - target: {fileID: 3785802226533909639, guid: 8508ea9c737838d478e1209ee4379b2e, type: 3}
+      propertyPath: _ammoCounter
+      value: 
+      objectReference: {fileID: 337112392}
+    - target: {fileID: 3785802226533909639, guid: 8508ea9c737838d478e1209ee4379b2e, type: 3}
+      propertyPath: _loadedAmmoText
+      value: 
+      objectReference: {fileID: 196992459}
+    - target: {fileID: 3785802226533909639, guid: 8508ea9c737838d478e1209ee4379b2e, type: 3}
+      propertyPath: _unloadedAmmoText
+      value: 
+      objectReference: {fileID: 1203288331}
+    - target: {fileID: 7225067727362570988, guid: 8508ea9c737838d478e1209ee4379b2e, type: 3}
+      propertyPath: _healthBar
+      value: 
+      objectReference: {fileID: 516478269}
+    - target: {fileID: 7225067727362570988, guid: 8508ea9c737838d478e1209ee4379b2e, type: 3}
+      propertyPath: cameraShake
+      value: 
+      objectReference: {fileID: 811664966}
     - target: {fileID: 7770427422822708010, guid: 8508ea9c737838d478e1209ee4379b2e, type: 3}
       propertyPath: m_Name
       value: Player

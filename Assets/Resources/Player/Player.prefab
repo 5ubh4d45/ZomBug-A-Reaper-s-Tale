@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7377846266062267232}
-  - component: {fileID: 5558998834682036689}
+  - component: {fileID: 6937651124051036906}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Untagged
@@ -31,7 +31,7 @@ Transform:
   m_Father: {fileID: 7770427422822708023}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5558998834682036689
+--- !u!114 &6937651124051036906
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40,7 +40,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 9458155522724511}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c0396b1944a0334c85d498fa95aaaa0, type: 3}
+  m_Script: {fileID: 11500000, guid: 756e02ec5530302b3abd63e9f5ae823e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   aimTransform: {fileID: 7377846266062267232}
@@ -56,8 +56,10 @@ GameObject:
   - component: {fileID: 7770427422822708022}
   - component: {fileID: 7770427422822708021}
   - component: {fileID: 7770427422822708020}
-  - component: {fileID: 7770427422822708016}
-  - component: {fileID: 7770427422822708017}
+  - component: {fileID: 7225067727362570988}
+  - component: {fileID: 2317687338475166190}
+  - component: {fileID: 1042885579658857233}
+  - component: {fileID: 3785802226533909639}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -178,7 +180,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &7770427422822708016
+--- !u!114 &7225067727362570988
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -187,7 +189,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7770427422822708010}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1adb71ddec0cf841a78a88b54f55bb1, type: 3}
+  m_Script: {fileID: 11500000, guid: e17f7c8c56b840851afd2ea3b7998a93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _healthBar: {fileID: 0}
@@ -195,11 +197,11 @@ MonoBehaviour:
     _numberOfHearts: 10
     _maxFragments: 1
   cameraShake: {fileID: 0}
-  camShakeIntensity: 2
+  camShakeIntensity: 1
   camShakeFrequency: 3
   camShakeTime: 0.2
   moveSpeed: 10
---- !u!114 &7770427422822708017
+--- !u!114 &2317687338475166190
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -208,8 +210,37 @@ MonoBehaviour:
   m_GameObject: {fileID: 7770427422822708010}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de39a7fbff8e8ef4faced642b35aae90, type: 3}
+  m_Script: {fileID: 11500000, guid: 33ab3fa239d00408bb53388a6a84d5c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _weaponAim: {fileID: 6937651124051036906}
+  _maxWeapons: 3
+--- !u!114 &1042885579658857233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7770427422822708010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3948cbb347e46b39b129fa88b0570c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 7770427422822708020}
   cam: {fileID: 0}
+--- !u!114 &3785802226533909639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7770427422822708010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da57f759eb6cd39898ece8ac035ca5c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _loadedAmmoText: {fileID: 0}
+  _unloadedAmmoText: {fileID: 0}
+  _ammoCounter: {fileID: 0}
