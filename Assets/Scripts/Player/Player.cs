@@ -19,18 +19,21 @@ public class Player : HealthObject<HeartHealthSystem>
 
     private PlayerCombat _playerCombat;
     private PlayerAnimator _playerAnimator;
+    private PlayerMovement _playerMovement;
 
     public float MoveSpeed => moveSpeed;
     public IInteractable Interactable { get; set; }
     public PlayerCombat PlayerCombat => _playerCombat;
     public PlayerAnimator PlayerAnimator => _playerAnimator;
-    
+    public PlayerMovement PlayerMovement => _playerMovement;
+
 
 
     private void Start()
     {
         _playerCombat = GetComponent<PlayerCombat>();
         _playerAnimator = GetComponent<PlayerAnimator>();
+        _playerMovement = GetComponent<PlayerMovement>();
     }
 
     private void Update()
