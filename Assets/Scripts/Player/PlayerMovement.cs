@@ -71,11 +71,13 @@ public class PlayerMovement : MonoBehaviour
         {
 
             isFacingRight = true;
+            player.PlayerAnimator.playerAnimator.Play("IdleFrontRight");
         }
         else
         {
 
             isFacingRight = false;
+            player.PlayerAnimator.playerAnimator.Play("IdleFrontLeft");
         }
 
     }
