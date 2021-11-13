@@ -25,11 +25,15 @@ public class PlayerAnimator : MonoBehaviour
         {
             //BackRight
             case true when player.PlayerMovement.IsFacingUp:
-                anim.Play("IdleBackRight");
+                // changed the backPose to front 
+                // anim.Play("IdleBackRight");
+                anim.Play("IdleFrontRight");
                 break;
             //BackLeft
             case false when player.PlayerMovement.IsFacingUp:
-                anim.Play("IdleBackLeft");
+                // changed the backPose to front 
+                // anim.Play("IdleBackLeft");
+                anim.Play("IdleFrontLeft");
                 break;
         }
 
