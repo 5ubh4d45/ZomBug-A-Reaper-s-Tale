@@ -32,6 +32,7 @@ namespace EnemyBehavior
         public bool canFollow = true;
         public bool canForgetTarget = true;
         [SerializeField] private EnemyType enemyType;
+        [SerializeField] private bool showRangeCircle = false;
         
         [Space] [Header("Range Variables")]
         [SerializeField] private float minFreeRoamRange = 1f;
@@ -220,7 +221,11 @@ namespace EnemyBehavior
             Vector2 direction = targetPosition - transform.position;
                     
             //checks if target is onLineSight 
-            RaycastHit2D hit = Physics2D.Raycast(rb.position, direction, detectionRange);
+            // RaycastHit2D hit = Physics2D.Raycast(rb.position, direction, detectionRange);
+            
+            // instead of a single ray, it'll use a cylindrical ray for better detection
+            RaycastHit2D hit = Physics2D.CircleCast(rb.position, 1f, direction, detectionRange);
+
             if (hit)
             {
                 _onLineOfSight = hit.collider.CompareTag("Player");
@@ -232,6 +237,7 @@ namespace EnemyBehavior
 
         private void OnDrawGizmosSelected()
         {
+            if (!showRangeCircle) return;
             Gizmos.color = Color.green;
             Gizmos.DrawWireSphere(rb.position, detectionRange);
             Gizmos.DrawWireSphere(rb.position, attackRange);

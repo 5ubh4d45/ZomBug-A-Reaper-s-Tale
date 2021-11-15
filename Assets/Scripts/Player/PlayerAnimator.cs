@@ -88,4 +88,16 @@ public class PlayerAnimator : MonoBehaviour
                 break;
         }
     }
+
+    public void PlayMeleeAttack()
+    {
+        
+    }
+
+    public void PlayRangedAttack()
+    {
+        
+    }
+    
+    
 }

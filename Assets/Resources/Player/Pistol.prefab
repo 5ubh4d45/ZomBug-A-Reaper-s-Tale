@@ -55,7 +55,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6067553532025377839}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -2.205386, y: -1.069653, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6799556335876882542}
@@ -80,8 +80,9 @@ MonoBehaviour:
   _attackLayer:
     serializedVersion: 2
     m_Bits: 128
-  _displayImage: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  _displayImageTint: {r: 0.3443396, g: 1, b: 0.4439984, a: 1}
+  _attackTag: Enemy
+  _displayImage: {fileID: 21300000, guid: 07b37900891208748be39923626edf5d, type: 3}
+  _displayImageTint: {r: 0.8584906, g: 0.4731161, b: 0.11743506, a: 1}
   _displayGo: {fileID: 8723122757385965223}
   IsPickedUp: 0
   _ammoSystem:
@@ -115,13 +116,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8723122757385965223}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 1.08, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3636302625692378576}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!212 &3101429206068934452
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -161,9 +162,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 6
-  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-  m_Color: {r: 0.4897534, g: 0.9528302, b: 0.29214135, a: 1}
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 07b37900891208748be39923626edf5d, type: 3}
+  m_Color: {r: 1, g: 0.28318566, b: 0.0047169924, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
