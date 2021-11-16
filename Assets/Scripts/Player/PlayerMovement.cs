@@ -27,7 +27,6 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         player = GetComponent<Player>();
-        cam = Camera.main;
     }
 
 
@@ -54,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
         _movementDir = new Vector2(moveX, moveY).normalized;
 
         //Gathering mousepointer position
-        _mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        _mousePos = cam != null ? cam.ScreenToWorldPoint(Input.mousePosition) : Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
 
     private void MovePlayer()

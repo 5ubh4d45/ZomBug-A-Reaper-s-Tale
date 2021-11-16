@@ -25,6 +25,7 @@ namespace Game.Pointer
         #region Variables
         [SerializeField] private Sprite[] _defaultCursors;
         [SerializeField] private int _defaultFps;
+        [SerializeField] private float _cursorSpeed = 40f;
 
         private float _frameTimer;
         private int _currentFrame;
@@ -48,7 +49,7 @@ namespace Game.Pointer
             _renderer = GetComponent<SpriteRenderer>();
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             Cursor.visible = false;
             _frameTimer -= Time.deltaTime;
@@ -58,9 +59,9 @@ namespace Game.Pointer
                 _currentFrame = (_currentFrame + 1) % _frameCount;
                 _renderer.sprite = _cursorTextures[_currentFrame];
             }
-
-            Vector2 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            transform.position = cursorPos;
+            Vector3 cursorPos = Camera.main != null ? Camera.main.ScreenToWorldPoint(Input.mousePosition) : Vector3.zero;
+            cursorPos = new Vector3(cursorPos.x, cursorPos.y, 5);
+            transform.position = Vector3.Lerp(transform.position, cursorPos, _cursorSpeed);
         }
         #endregion
 
