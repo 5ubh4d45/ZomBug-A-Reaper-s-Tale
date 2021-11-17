@@ -40,12 +40,16 @@ namespace Game.Scenes
         private SceneCollection _lastCollection;
         private SceneCollection _currentCollection;
         private List<AsyncOperation> _operations;
+        private bool _isLoading;
+
+        public Empty OnLoadCompelete;
         #endregion
 
 
         #region Getters And Setters
         public SceneCollection[] SceneCollections => _sceneCollections;
         public SceneCollection CurrentCollection => _currentCollection;
+        public bool IsLoading => _isLoading;
         #endregion
 
 
@@ -109,6 +113,7 @@ namespace Game.Scenes
 
         public IEnumerator UpdateSceneLoadProgress()
         {
+            _isLoading = true;
             foreach (var operation in _operations)
             {
                 while (!operation.isDone)
@@ -127,6 +132,8 @@ namespace Game.Scenes
             }
 
             _loadingScreen.SetActive(false);
+            _isLoading = false;
+            OnLoadCompelete?.Invoke();
         }
 
         public void UnloadCurrentLoadedCollection(bool updateProgress = true)

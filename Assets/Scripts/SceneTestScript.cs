@@ -1,3 +1,5 @@
+using System;
+using Game.Core;
 using Game.Scenes;
 using UnityEngine;
 
@@ -24,6 +26,13 @@ namespace Game.Tests
         public void LoadGame()
         {
             SceneCollectionHandler.Instance.LoadSceneCollection(_gameCollection);
+            SceneCollectionHandler.Instance.OnLoadCompelete += WaitForLoad;
+        }
+
+        private void WaitForLoad()
+        {
+            GameManager.Instance.ChangeGameState(GameState.GAME);
+            SceneCollectionHandler.Instance.OnLoadCompelete -= WaitForLoad;
         }
         #endregion
     }
