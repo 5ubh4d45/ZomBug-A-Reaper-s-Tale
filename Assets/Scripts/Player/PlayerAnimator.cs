@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Game.HealthSystem;
 using UnityEngine;
 
 public class PlayerAnimator : MonoBehaviour
@@ -21,19 +22,25 @@ public class PlayerAnimator : MonoBehaviour
     {
         if (player.PlayerMovement.IsMoving) return;
         
+        anim.SetBool("IsMoving", false);
+        
         switch (player.PlayerMovement.IsFacingRight)
         {
             //BackRight
             case true when player.PlayerMovement.IsFacingUp:
                 // changed the backPose to front 
                 // anim.Play("IdleBackRight");
-                anim.Play("IdleFrontRight");
+                // anim.Play("IdleFrontRight");
+                
+                anim.SetBool("FacingRight", true);
                 break;
             //BackLeft
             case false when player.PlayerMovement.IsFacingUp:
                 // changed the backPose to front 
                 // anim.Play("IdleBackLeft");
-                anim.Play("IdleFrontLeft");
+                // anim.Play("IdleFrontLeft");
+                
+                anim.SetBool("FacingRight", false);
                 break;
         }
 
@@ -41,32 +48,43 @@ public class PlayerAnimator : MonoBehaviour
         {
             //frontRight
             case true when player.PlayerMovement.IsFacingDown:
-                anim.Play("IdleFrontRight");
+                // anim.Play("IdleFrontRight");
+                
+                anim.SetBool("FacingRight", true);
                 break;
             //frontLeft
             case false when player.PlayerMovement.IsFacingDown:
-                anim.Play("IdleFrontLeft");
+                // anim.Play("IdleFrontLeft");
+                
+                anim.SetBool("FacingRight", false);
                 break;
         }
     }
 
     public void PlayMoving()
-    {
+    {   
+        anim.SetBool("IsMoving", true);
         switch (player.PlayerMovement.IsMovingRight)
         {
             //moving right
             case true:
-                anim.Play("WalkRight");
+                // anim.Play("ScytheWalkRight");
+                
+                anim.SetBool("MovingRight", true);
                 break;
             
             // not moving right but moving up facing right direction but not moving left
             case false when player.PlayerMovement.IsFacingRight && player.PlayerMovement.IsMovingUp && !player.PlayerMovement.IsMovingLeft:
-                anim.Play("WalkRight");
+                // anim.Play("ScytheWalkRight");
+                
+                anim.SetBool("MovingRight", true);
                 break;
             
             // not moving right but moving down facing right direction but not moving left
             case false when player.PlayerMovement.IsFacingRight && player.PlayerMovement.IsMovingDown && !player.PlayerMovement.IsMovingLeft:
-                anim.Play("WalkRight");
+                // anim.Play("ScytheWalkRight");
+                
+                anim.SetBool("MovingRight", true);
                 break;
         }
         
@@ -74,24 +92,53 @@ public class PlayerAnimator : MonoBehaviour
         {
             //moving left
             case true:
-                anim.Play("WalkLeft");
+                // anim.Play("ScytheWalkLeft");
+                
+                anim.SetBool("MovingRight", false);
                 break;
 
             // not moving left but moving up facing left direction but not moving right
             case false when player.PlayerMovement.IsFacingLeft && player.PlayerMovement.IsMovingUp && !player.PlayerMovement.IsMovingRight:
-                anim.Play("WalkLeft");
+                // anim.Play("ScytheWalkLeft");
+                
+                anim.SetBool("MovingRight", false);
                 break;
             
             // not moving left but moving down facing left direction but not moving right
             case false when player.PlayerMovement.IsFacingLeft && player.PlayerMovement.IsMovingDown && !player.PlayerMovement.IsMovingRight:
-                anim.Play("WalkLeft");
+                // anim.Play("ScytheWalkLeft");
+                
+                anim.SetBool("MovingRight", false);
                 break;
         }
     }
 
-    public void PlayMeleeAttack()
+    public void PlayMeleeAttack1()
     {
-        
+
+        if (player.PlayerMovement.IsFacingRight)
+        {   
+            anim.SetTrigger("Melee1R");
+        }
+
+        if (player.PlayerMovement.IsFacingLeft)
+        {   
+            anim.SetTrigger("Melee1L");
+        }
+
+    }
+
+    public void PlayMeleeAttack2()
+    {
+        if (player.PlayerMovement.IsFacingRight)
+        {   
+            anim.SetTrigger("Melee2R");
+        }
+
+        if (player.PlayerMovement.IsFacingLeft)
+        {   
+            anim.SetTrigger("Melee2L");
+        }
     }
 
     public void PlayRangedAttack()
@@ -99,5 +146,5 @@ public class PlayerAnimator : MonoBehaviour
         
     }
     
-    
+
 }

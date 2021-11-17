@@ -25,7 +25,7 @@ namespace Game.Combat
         #region Unity Calls
         private void Update()
         {
-            transform.position += (Vector3)_direction * _speed * Time.deltaTime;
+            transform.position += (Vector3)_direction * (_speed * Time.deltaTime);
         }
 
         private void OnCollisionEnter2D(Collision2D collision)
@@ -34,7 +34,7 @@ namespace Game.Combat
             
             // if (healthObject != null && (_attackLayer.value & (1 << collision.gameObject.layer)) > 0)
             
-            //replaced layermask with compareTags
+            //replaced layermask with compareTags 
             if (healthObject != null && collision.gameObject.CompareTag(_attackTag))
             {
                 healthObject.HealthSystem().Damage(_damage);

@@ -50,7 +50,7 @@ public class Player : HealthObject<HeartHealthSystem>
     }
     private void OnCollisionEnter2D(Collision2D collision2D)
     {
-        if (collision2D.gameObject.CompareTag("NPC"))
+        if (collision2D.gameObject.CompareTag("Enemy"))
         {
             _healthSystem.Damage(1);
 

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Game.Combat;
@@ -7,6 +8,8 @@ public class PlayerCombat : MonoBehaviour
 {
     [SerializeField] private PlayerAimWeapon _weaponAim;
     [SerializeField] private int _maxWeapons;
+    [SerializeField] private Player player;
+    [SerializeField] private Scythe2 _scythe2;
 
     private Weapon _currentWeapon;
     private List<Weapon> _weapons;
@@ -29,6 +32,11 @@ public class PlayerCombat : MonoBehaviour
         if (_currentWeapon != null) PickupWeapon(_currentWeapon);
     }
 
+    private void Start()
+    {
+        player = GetComponent<Player>();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -39,6 +47,16 @@ public class PlayerCombat : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C))
         {
             DropWeapon();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            MeleeAttack1();
+        }
+
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            MeleeAttack2();
         }
 
         for (int i = 1; i <= _maxWeapons; i++)
@@ -136,4 +154,28 @@ public class PlayerCombat : MonoBehaviour
 
         OnWeaponSwitched?.Invoke(weapon);
     }
+
+    private void MeleeAttack1()
+    {
+        //setting up the different dmg outputs for different attacks
+        _scythe2.Damage = _scythe2.Melee1Damage;
+        
+        player.PlayerAnimator.PlayMeleeAttack1();
+
+        IEnumerator stopMovement = player.PlayerMovement.StopMovement(1f);
+        StartCoroutine(stopMovement);
+    }
+
+    private void MeleeAttack2()
+    {  
+        
+        //setting up the different dmg outputs for different attacks
+        _scythe2.Damage = _scythe2.Melee2Damage;
+        
+        player.PlayerAnimator.PlayMeleeAttack2();
+
+        IEnumerator stopMovement = player.PlayerMovement.StopMovement(1f);
+        StartCoroutine(stopMovement);
+    }
+
 }

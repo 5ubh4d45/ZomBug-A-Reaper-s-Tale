@@ -27,6 +27,8 @@ public class PlayerMovement : MonoBehaviour
     private bool _isMovingUp;
     private bool _isMovingDown;
 
+    private bool _canMove = true;
+
     public bool IsMoving => _isMoving;
     public bool IsFacingRight => _isFacingRight;
     public bool IsFacingLeft => _isFacingLeft;
@@ -36,6 +38,8 @@ public class PlayerMovement : MonoBehaviour
     public bool IsMovingLeft => _isMovingLeft;
     public bool IsMovingUp => _isMovingUp;
     public bool IsMovingDown => _isMovingDown;
+    
+    public Vector2 LookDirection => _lookDir;
     #endregion
     
     private Vector2 _movementDir;
@@ -66,6 +70,7 @@ public class PlayerMovement : MonoBehaviour
         PlayMovementAnims();
         
         if (DialogueManager.Instance.IsOpen || WeaponWheel.Instance.IsOpened) return;
+        
         MovePlayer();
         
     }
@@ -86,19 +91,20 @@ public class PlayerMovement : MonoBehaviour
 
     private void MovePlayer()
     {
-        
+        if (!_canMove) return;
         //changing positions according to input
         rb.MovePosition(rb.position + _movementDir * _player.MoveSpeed * Time.fixedDeltaTime);
 
-        //Finding Angle of rotation from player to mouse
-        _lookDir = _mousePos - rb.position;
-        
 
     }
 
     private void CheckDirections()
     {
         Vector2 currentPos = rb.position;
+        
+        //Finding Angle of rotation from player to mouse
+        _lookDir = _mousePos - currentPos;
+        
         // checks if player is left/right or up/down of the mouse position
         _isFacingRight = _lookDir.x > 0;
         _isFacingLeft = _lookDir.x < 0;
@@ -115,6 +121,7 @@ public class PlayerMovement : MonoBehaviour
         _isMoving = _lastPos != currentPos;
 
         _lastPos = currentPos;
+        
 
     }
 
@@ -129,6 +136,13 @@ public class PlayerMovement : MonoBehaviour
                 _player.PlayerAnimator.PlayMoving();
                 break;
         }
+    }
+    
+    public IEnumerator StopMovement(float secsToStop)
+    {
+        _canMove = false;
+        yield return new WaitForSeconds(secsToStop);
+        _canMove = true;
     }
 
 }

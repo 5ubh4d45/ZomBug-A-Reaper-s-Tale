@@ -27,6 +27,7 @@ namespace EnemyBehavior
         [SerializeField] private EnemyPathFinder enemyPathFinder;
         [SerializeField] private Transform playerTarget;
         [SerializeField] private Rigidbody2D rb;
+        [SerializeField] private EnemyCombat enemyCombat;
         
         [Space] [Header("Behaviour Variables")]
         public bool canFollow = true;
@@ -182,6 +183,8 @@ namespace EnemyBehavior
                             {
                                 enemyPathFinder.FollowTarget(false, playerTarget.position);
                                 //attack logic and animations here
+                                
+                                enemyCombat.RangedAttack(transform.position, playerTarget.position);
                                 
                             }
                             else
