@@ -14,7 +14,7 @@ namespace Game.HealthSystem
 
 
         #region Getters And Setters
-        public abstract HealthSystem HealthSystem();
+        public abstract HealthSystem HealthSystem { get; }
         #endregion
 
 
@@ -51,7 +51,7 @@ namespace Game.HealthSystem
 
 
         #region Getters And Setters
-        public override HealthSystem HealthSystem() => _healthSystem;
+        public override HealthSystem HealthSystem => _healthSystem;
         #endregion
 
 

@@ -3,24 +3,39 @@ using System.Collections.Generic;
 using Game.HealthSystem;
 using FMODUnity;
 using UnityEngine;
+using System;
 
-
-
-public class MusicController : MonoBehaviour
+namespace Game.Core
 {
-    
-    private StudioEventEmitter _emitter;
-    // Start is called before the first frame update
-    void Start()
+    public class MusicController : MonoBehaviour
     {
-        //Get the emitter on this game object
-        _emitter = GetComponent<StudioEventEmitter>();
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        //Update FMOD Event Emitter with current HealthPercent
-        _emitter.SetParameter("player_health", IntHealthSystem.HealthPercentage);
+        private StudioEventEmitter _emitter;
+        // Start is called before the first frame update
+        void Awake()
+        {
+            //Get the emitter on this game object
+            _emitter = GetComponent<StudioEventEmitter>();
+
+            GameManager.Instance.OnGameStateChanged += UpdateMusic;
+        }
+
+        private void UpdateMusic()
+        {
+            if (GameManager.Instance.GameState == GameState.GAME)
+            {
+                _emitter.Event = "event:/MUSIC_level1";
+                _emitter.Play();
+            }
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            if (GameManager.Instance.GameState == GameState.GAME)
+            {
+                _emitter.SetParameter("player_health", Player.Instance.HealthSystem.HealthPercent);
+            }
+        }
     }
 }

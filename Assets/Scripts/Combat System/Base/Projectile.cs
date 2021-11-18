@@ -34,7 +34,7 @@ namespace Game.Combat
             HealthObject healthObject = collision.gameObject.GetComponent<HealthObject>();
             if (healthObject != null && (_attackLayer.value & (1 << collision.gameObject.layer)) > 0)
             {
-                healthObject.HealthSystem().Damage(_damage);
+                healthObject.HealthSystem.Damage(_damage);
             }
             Destroy(gameObject);
         }

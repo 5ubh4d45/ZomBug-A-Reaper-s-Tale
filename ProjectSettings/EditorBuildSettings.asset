@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dialogoue Testing/DialogueTest.unity
     guid: ae3c6aef677c8414b9ed54fc7808c056
+  - enabled: 1
+    path: Assets/Scenes/Music testing/Music Testing.unity
+    guid: 53494fc9c9be0de4ea342e1ba56ba983
   m_configObjects: {}

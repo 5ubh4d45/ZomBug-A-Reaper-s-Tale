@@ -7,6 +7,9 @@ using Game.HealthSystem;
 //this class will contain all the functionalities
 public class Player : HealthObject<HeartHealthSystem>
 {
+    private static Player _instance;
+    public static Player Instance => _instance;
+
 
     [Header("CameraShake")]
     [SerializeField] private CameraShake cameraShake;
@@ -23,9 +26,9 @@ public class Player : HealthObject<HeartHealthSystem>
     public IInteractable Interactable { get; set; }
     public PlayerCombat PlayerCombat => _playerCombat;
 
-
     private void Start()
     {
+        _instance = this;
         _playerCombat = GetComponent<PlayerCombat>();
     }
 
