@@ -35,6 +35,9 @@ namespace Game.HealthSystem
             }
         }
         public List<Heart> Hearts => _hearts;
+
+        public override float HealthPercent => Health / (float)MaxHealth * 100;
+        public override float Health01 => Health / (float)MaxHealth;
         #endregion
 
 
@@ -68,6 +71,7 @@ namespace Game.HealthSystem
                 }
             }
             OnDamaged?.Invoke(damage);
+            Debug.Log("Percent: " + HealthPercent + "; Health01: " + Health01 + "; Health: " + Health);
         }
 
         public override void Heal(float healAmount)

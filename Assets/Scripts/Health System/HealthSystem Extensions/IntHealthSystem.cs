@@ -17,8 +17,9 @@ namespace Game.HealthSystem
         public float Current => _current;
         public float Minimum => _minimum;
         public float Maximum => _maximum;
-        public float HealthPercent { get => ((_current - _minimum) / (_maximum - _minimum)) * 100; }
-        public float Health01 { get => ((_current - _minimum) / (_maximum - _minimum)); }
+
+        public override float Health01 => ((_current - _minimum) / (_maximum - _minimum));
+        public override float HealthPercent => ((_current - _minimum) / (_maximum - _minimum)) * 100;
         #endregion
 
 
