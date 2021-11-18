@@ -15,6 +15,12 @@ namespace FMODUnity
         public bool TriggerOnce = false;
         public bool Preload = false;
         public ParamRef[] Params = new ParamRef[0];
+
+        public void SetParameter(string v, object healthPercentage)
+        {
+            throw new NotImplementedException();
+        }
+
         public bool OverrideAttenuation = false;
         public float OverrideMinDistance = -1.0f;
         public float OverrideMaxDistance = -1.0f;
