@@ -20,6 +20,11 @@ namespace Game.Core
             GameManager.Instance.OnGameStateChanged += UpdateMusic;
         }
 
+        private void OnDestroy()
+        {
+            GameManager.Instance.OnGameStateChanged -= UpdateMusic;
+        }
+
         private void UpdateMusic()
         {
             if (GameManager.Instance.GameState == GameState.GAME)
