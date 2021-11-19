@@ -10,6 +10,7 @@ namespace Game.Combat
         [SerializeField] private float _speed;
         [SerializeField] private float _aliveTime;
         [SerializeField] private float impactForce;
+        
         private float _damage;
         private Vector2 _direction;
         private LayerMask _attackLayer;
@@ -41,6 +42,7 @@ namespace Game.Combat
                 
                 //adding a force to impact
                 collision.gameObject.GetComponentInParent<Rigidbody2D>().AddForce(_direction * impactForce, ForceMode2D.Impulse);
+                
             }
             Destroy(gameObject);
         }

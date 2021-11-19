@@ -28,6 +28,7 @@ namespace EnemyBehavior
         [SerializeField] private Transform playerTarget;
         [SerializeField] private Rigidbody2D rb;
         [SerializeField] private EnemyCombat enemyCombat;
+        [SerializeField] private EnemyAnimator enemyAnimator;
         
         [Space] [Header("Behaviour Variables")]
         public bool canFollow = true;
@@ -41,6 +42,7 @@ namespace EnemyBehavior
         [SerializeField] private float detectionRange = 20f;
         [SerializeField] private float idleWaitTime = 3f;
         [SerializeField] private float attackRange = 1f;
+        [SerializeField] private float meleeRange = 0.2f;
         
         #endregion
 
@@ -52,7 +54,14 @@ namespace EnemyBehavior
         private float _distanceFromTarget;
         private bool _reachedEndOfPath;
         private float _currentIdleTime = 0f;
+        private bool _isFacingRight;
         
+        #endregion
+
+        #region Getters
+
+        public bool IsFacingRight => _isFacingRight;
+
         #endregion
         
 
@@ -69,6 +78,16 @@ namespace EnemyBehavior
             }
             if (playerTarget == null){
                 playerTarget = GameObject.FindGameObjectWithTag("Player").transform;
+            }
+
+            if (enemyAnimator == null)
+            {
+                enemyAnimator = GetComponent<EnemyAnimator>();
+            }
+
+            if (enemyCombat == null)
+            {
+                enemyCombat = GetComponent<EnemyCombat>();
             }
             
             
@@ -93,6 +112,9 @@ namespace EnemyBehavior
             _distanceFromTarget = Vector3.Distance(position, rb.position);
             IsOnTarget(position);
             
+            //checks if target on right
+            _isFacingRight = enemyPathFinder.LookDir.x >= 0;
+            
 
             //enemy state machine
             switch (_state)
@@ -100,6 +122,7 @@ namespace EnemyBehavior
                 case EnemyState.Idle:
                     
                     //idle animations here
+                    enemyAnimator.PlayIdle();
                     
                     if (_currentIdleTime >= idleWaitTime)
                     {  
@@ -122,6 +145,7 @@ namespace EnemyBehavior
 
                     //gets roaming position then moves towards it
                     //running animations here
+                    enemyAnimator.PlayWalk();
                     
                     enemyPathFinder.FollowTarget(true, _freeRoamPosition);
 
@@ -162,6 +186,7 @@ namespace EnemyBehavior
                     }
                     
                     //running animations here
+                    enemyAnimator.PlayWalk();
                     enemyPathFinder.FollowTarget(true, playerTarget.position);
 
                     break;
@@ -171,31 +196,44 @@ namespace EnemyBehavior
                     switch (enemyType)
                     {
                         case EnemyType.IsMelee: //if its melee it'll follow constantly
-                            
-                            enemyPathFinder.FollowTarget(true, playerTarget.position);
-                            //attack logic and animations here
-                            
+
+                            bool withinMeleeRange = _distanceFromTarget <= meleeRange;
+                            if (withinMeleeRange)
+                            {
+                                //attack logic and animations here
+                                enemyCombat.MeleeAttack();
+                                
+                                enemyPathFinder.FollowTarget(false, playerTarget.position);
+                                
+                            }
+                            else
+                            {
+                                enemyPathFinder.FollowTarget(true, playerTarget.position);
+                            }
+
                             break;
                         case EnemyType.IsRanged: //if ranged it'll stop and shoot
 
                             bool withinAttackRange = _distanceFromTarget <= attackRange;
                             if (withinAttackRange)
                             {
-                                enemyPathFinder.FollowTarget(false, playerTarget.position);
                                 //attack logic and animations here
-                                
                                 enemyCombat.RangedAttack(transform.position, playerTarget.position);
+                                
+                                enemyPathFinder.FollowTarget(false, playerTarget.position);
                                 
                             }
                             else
                             {
                                 enemyPathFinder.FollowTarget(true, playerTarget.position);
                                 //run animations here
+                                enemyAnimator.PlayWalk();
                             }
                             break;
                         default:
                             enemyPathFinder.FollowTarget(true, playerTarget.position);
                             //run animations here
+                            enemyAnimator.PlayWalk();
                             break;
                     }
                     
@@ -244,6 +282,7 @@ namespace EnemyBehavior
             Gizmos.color = Color.green;
             Gizmos.DrawWireSphere(rb.position, detectionRange);
             Gizmos.DrawWireSphere(rb.position, attackRange);
+            Gizmos.DrawWireSphere(rb.position, meleeRange);
         }
     }
     

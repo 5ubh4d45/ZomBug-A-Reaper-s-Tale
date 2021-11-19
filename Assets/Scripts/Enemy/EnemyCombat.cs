@@ -1,40 +1,68 @@
 using System.Collections;
 using System.Collections.Generic;
 using Game.Combat;
+using Pathfinding.Ionic.Zlib;
 using UnityEngine;
 
 public class EnemyCombat : MonoBehaviour
 {   
     [SerializeField] private GameObject enemyProjectile;
-    
-    private Enemy _enemy;
+    [SerializeField] private EnemyAnimator enemyAnimator;
+
+    [SerializeField] private Transform firePoint;
     [SerializeField] private float fireRate;
     [SerializeField] private float attackDamage;
-    // private float _meleeAttackSpeed;
-    // private float _canMeleeAttack = 0f;
+
+    [SerializeField] private float meleeRate;
+    [SerializeField] private float meleeDamage;
+
+    
+    private Enemy _enemy;
     private float _nextFireTime = 0f;
+    private float _nextMeleeTime = 0f;
     private string _attackTag = "Player";
     
    
     void Start()
     {
         _enemy = GetComponent<Enemy>();
+        if (enemyAnimator == null)
+        {
+            enemyAnimator = GetComponent<EnemyAnimator>();
+        }
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        fireRate -= Time.deltaTime;
+        _nextMeleeTime += Time.deltaTime;
+        _nextFireTime += Time.deltaTime;
     }
 
     public void RangedAttack(Vector3 bulletPosition, Vector3 targetPosition)
     {
-        if (fireRate > 0)
-        {
-            GameObject bullet = Instantiate(enemyProjectile);
+        if (_nextFireTime >= fireRate)
+        {   
+            enemyAnimator.PlayRangedAttack();
+            GameObject bullet = Instantiate(enemyProjectile, firePoint.position, Quaternion.identity);
             
             bullet.GetComponent<Projectile>().Initialise(attackDamage, targetPosition, _attackTag);
-            fireRate = _nextFireTime;
+            _nextFireTime = 0f;
+        }
+    }
+
+    public void MeleeAttack()
+    {
+        if (_nextMeleeTime >= meleeRate)
+        {
+            enemyAnimator.PlayMeleeAttack();
+            
+            Debug.Log("Played Enemy Melee Attack");
+            
+            _nextMeleeTime = 0f;
+            
+
         }
     }
 
