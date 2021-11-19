@@ -9,6 +9,9 @@ using UnityEditor;
 
 namespace Game.Combat
 {
+    /// <summary>
+    /// This class represents a Weapon wheel for switching between weapons.
+    /// </summary>
     public class WeaponWheel : MonoBehaviour
     {
         #region Singleton
@@ -110,7 +113,7 @@ namespace Game.Combat
         /// <summary>
         /// Recreates the weapon wheel by destroying the old one and creating a new one.
         /// </summary>
-        private void UpdateWheel(Weapon _)
+        public void UpdateWheel(Weapon _)
         {
             foreach (Transform child in _weaponWheelParent.transform)
             {

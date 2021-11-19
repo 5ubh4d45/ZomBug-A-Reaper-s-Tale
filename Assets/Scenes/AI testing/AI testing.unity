@@ -3079,16 +3079,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1326554265}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.45, y: -3.41, z: 0}
-  m_LocalScale: {x: 0.45, y: 0.4, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1442251584
-PrefabInstance:
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1699710155}
+  - component: {fileID: 1699710154}
+  - component: {fileID: 1699710153}
+  - component: {fileID: 1699710152}
+  - component: {fileID: 1699710151}
+  - component: {fileID: 1699710150}
+  - component: {fileID: 1699710149}
+  - component: {fileID: 1699710156}
+  m_Layer: 0
+  m_Name: NPC
+  m_TagString: NPC
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1699710149
+MonoBehaviour:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
@@ -3290,7 +3299,34 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7770427422822708023, guid: 8508ea9c737838d478e1209ee4379b2e, type: 3}
   m_PrefabInstance: {fileID: 1496542666}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1506082636
+  m_GameObject: {fileID: 1699710148}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.95, y: -3.32, z: 0}
+  m_LocalScale: {x: 0.9564, y: 1.6975, z: 1}
+  m_Children:
+  - {fileID: 1299260997}
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1699710156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699710148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21fe0c7a9a2708f93862da7916b8e274, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cursorTextures:
+  - {fileID: 21300000, guid: 73830178c00c716e2a3e4855229cb258, type: 3}
+  - {fileID: 21300000, guid: 0388cf383ef23bbd48e5859a410f1e27, type: 3}
+  _fps: 5
+  _triggerEvent: 4
+  _setDefaultEvent: 5
+--- !u!1 &1730498908
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

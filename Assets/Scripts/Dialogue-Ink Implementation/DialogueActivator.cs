@@ -35,7 +35,7 @@ namespace Game.DialogueSystem
             {
 
                 //now if its the current interactable, when exiting and resets the interactble
-                if (player.Interactable is DialogueActivator dialogueActivator && dialogueActivator == this)
+                if (player.Interactable is DialogueActivator dialogueActivator && dialogueActivator == this && DialogueManager.Instance.CurrentStoryAsset != _storyAsset)
                 {
 
                     player.Interactable = null;
@@ -48,7 +48,7 @@ namespace Game.DialogueSystem
         #region Component Functions
         public void Interact(Player player)
         {
-            if (DialogueManager.Instance.CurrentStoryAsset != _storyAsset)
+            if (DialogueManager.Instance.CurrentStoryAsset != _storyAsset && !DialogueManager.Instance.IsOpen)
             {
                 DialogueManager.Instance.CurrentStoryAsset = _storyAsset;
             }

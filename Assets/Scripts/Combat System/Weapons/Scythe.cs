@@ -40,7 +40,7 @@ namespace Game.Combat
                     HealthObject healthObject = collider.GetComponentInParent<HealthObject>();
                     if (healthObject != null)
                     {
-                        healthObject.HealthSystem().Damage(_attackDamage);
+                        healthObject.HealthSystem.Damage(_attackDamage);
                     }
                 }
             }

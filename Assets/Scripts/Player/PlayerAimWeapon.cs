@@ -40,7 +40,7 @@ public class PlayerAimWeapon : MonoBehaviour
     public void UpdateTargetRotation()
     {
         //gets mouse pos and convert to world then sets the weapon angle towards mouse
-        Vector3 moussePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 moussePos = cam != null ? cam.ScreenToWorldPoint(Input.mousePosition) : Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         Vector3 aimDirection = (moussePos - transform.position).normalized;
         _targetAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;

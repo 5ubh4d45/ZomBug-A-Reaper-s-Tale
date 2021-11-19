@@ -2,6 +2,9 @@ using UnityEngine;
 
 namespace Game.Combat
 {
+    /// <summary>
+    /// This class should be inherited by classes that represent a Ranged Weapon.
+    /// </summary>
     public abstract class RangedWeapon : Weapon
     {
         #region Variables

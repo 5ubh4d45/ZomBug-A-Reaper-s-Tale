@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace Game.Combat
 {
+    /// <summary>
+    /// This class should be inherited by classes that represent melee weapons
+    /// </summary>
     public abstract class MeleeWeapon : Weapon
     {
         #region Variables

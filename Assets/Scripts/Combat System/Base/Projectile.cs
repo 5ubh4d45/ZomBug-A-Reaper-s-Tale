@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace Game.Combat
 {
+    /// <summary>
+    /// This script is attached to objects that are supposed to be projectiles emmitted from ranged weapons
+    /// </summary>
     public class Projectile : MonoBehaviour
     {
         #region Variables
@@ -38,10 +41,11 @@ namespace Game.Combat
             //replaced layermask with compareTags 
             if (healthObject != null && collision.gameObject.CompareTag(_attackTag))
             {
-                healthObject.HealthSystem().Damage(_damage);
-                
+                healthObject.HealthSystem.Damage(_damage);
+                // healthObject.HealthSystem().Damage(_damage);
                 //adding a force to impact
                 collision.gameObject.GetComponentInParent<Rigidbody2D>().AddForce(_direction * impactForce, ForceMode2D.Impulse);
+                
                 
             }
             Destroy(gameObject);

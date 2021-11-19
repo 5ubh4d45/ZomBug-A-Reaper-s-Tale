@@ -3,6 +3,10 @@ using UnityEngine;
 
 namespace Game.HealthSystem
 {
+    /// <summary>
+    /// This type of health bar is basically fill amount health but instead of relying on Image.fillAmount,
+    ///  This relies on Sprite's scale
+    /// </summary>
     public class SpriteFillHealthBar : HealthBar<IntHealthSystem>
     {
         #region Variables
