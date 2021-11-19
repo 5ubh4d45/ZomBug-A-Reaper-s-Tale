@@ -2,15 +2,23 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Game.Combat;
+using Pathfinding.Ionic.Zlib;
 using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
-{
+{   
+    [Header("Req. Comp.")]
     [SerializeField] private PlayerAimWeapon _weaponAim;
     [SerializeField] private int _maxWeapons;
     [SerializeField] private Player player;
-    [SerializeField] private Scythe2 _scythe2;
+    [SerializeField] private Scythe2 meleeAttackHitbox;
 
+    [Space] [Header("Scythe Attack Cooldowns")]
+    [SerializeField] private float meleeAttack1CoolDown;
+    [SerializeField] private float meleeAttack2CoolDown;
+    private float _nextMelee1Time;
+    private float _nextMelee2Time;
+    
     private Weapon _currentWeapon;
     private List<Weapon> _weapons;
     private GameObject _weaponHolder;
@@ -37,6 +45,10 @@ public class PlayerCombat : MonoBehaviour
     private void Start()
     {
         player = GetComponent<Player>();
+        if (meleeAttackHitbox == null)
+        {
+            meleeAttackHitbox = GetComponentInChildren<Scythe2>();
+        }
     }
 
     // Update is called once per frame
@@ -60,6 +72,9 @@ public class PlayerCombat : MonoBehaviour
         {
             MeleeAttack2();
         }
+
+        _nextMelee1Time += Time.deltaTime;
+        _nextMelee2Time += Time.deltaTime;
 
         for (int i = 1; i <= _maxWeapons; i++)
         {
@@ -158,11 +173,15 @@ public class PlayerCombat : MonoBehaviour
     }
 
     private void MeleeAttack1()
-    {
+    {   
+        if (_nextMelee1Time <= meleeAttack1CoolDown) return;
+        
         //setting up the different dmg outputs for different attacks
-        _scythe2.Damage = _scythe2.Melee1Damage;
+        meleeAttackHitbox.Damage = meleeAttackHitbox.Melee1Damage;
         
         player.PlayerAnimator.PlayMeleeAttack1();
+
+        _nextMelee1Time = 0f;
 
         IEnumerator stopMovement = player.PlayerMovement.StopMovement(1f);
         StartCoroutine(stopMovement);
@@ -170,12 +189,15 @@ public class PlayerCombat : MonoBehaviour
 
     private void MeleeAttack2()
     {  
+        if (_nextMelee2Time <= meleeAttack2CoolDown) return;
         
         //setting up the different dmg outputs for different attacks
-        _scythe2.Damage = _scythe2.Melee2Damage;
+        meleeAttackHitbox.Damage = meleeAttackHitbox.Melee2Damage;
         
         player.PlayerAnimator.PlayMeleeAttack2();
-
+        
+        _nextMelee2Time = 0f;
+        
         IEnumerator stopMovement = player.PlayerMovement.StopMovement(1f);
         StartCoroutine(stopMovement);
     }

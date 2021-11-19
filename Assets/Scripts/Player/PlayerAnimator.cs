@@ -153,10 +153,5 @@ public class PlayerAnimator : MonoBehaviour
         }
     }
 
-    public void PlayRangedAttack()
-    {
-        
-    }
-    
 
 }

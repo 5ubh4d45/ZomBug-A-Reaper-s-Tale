@@ -19,7 +19,7 @@ public class PistolV2 : MonoBehaviour
 
         if (anim == null)
         {
-            anim = GetComponent<Animator>();
+            anim = GetComponentInChildren<Animator>();
         }
     }
 

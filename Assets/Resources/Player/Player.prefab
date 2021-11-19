@@ -47,36 +47,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aimTransform: {fileID: 7377846266062267232}
   player: {fileID: 7225067727362570988}
---- !u!1 &4410464750207561195
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4410464750207561194}
-  m_Layer: 0
-  m_Name: FirePoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4410464750207561194
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4410464750207561195}
-  m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 1.359, y: 1.699, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4410464751036941391}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!1 &4410464750402709800
 GameObject:
   m_ObjectHideFlags: 0
@@ -193,9 +163,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a795f00d1b2718e48aaf07b9fe13b4e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _attackDamage: 0
+  _startTimeBtwShots: 0
+  _attackLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  _attackTag: 
+  _displayImage: {fileID: 0}
+  _displayImageTint: {r: 0, g: 0, b: 0, a: 0}
+  _displayGo: {fileID: 0}
+  IsPickedUp: 0
+  _ammoSystem:
+    _loadedAmmo: 0
+    _maximumAmmo: 0
+    _unloadedAmmo: 0
+    _reloadTime: 0
   anim: {fileID: 4410464750402709806}
   firePoint: {fileID: 4410464751534174206}
+  projectile: {fileID: 0}
   player: {fileID: 7225067727362570988}
+  fireRate: 0
 --- !u!1 &4410464750888049943
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,7 +295,7 @@ Transform:
   m_LocalPosition: {x: 1.611, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4410464750207561194}
+  - {fileID: 8634450910325506032}
   m_Father: {fileID: 7377846266062267232}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
@@ -659,7 +646,9 @@ MonoBehaviour:
   _weaponAim: {fileID: 6937651124051036906}
   _maxWeapons: 3
   player: {fileID: 7225067727362570988}
-  _scythe2: {fileID: 4410464750888049940}
+  meleeAttackHitbox: {fileID: 4410464750888049940}
+  meleeAttack1CoolDown: 0.5
+  meleeAttack2CoolDown: 2
   _hasGun: 0
 --- !u!114 &1042885579658857233
 MonoBehaviour:
@@ -704,3 +693,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 6260853133704625343}
   player: {fileID: 7225067727362570988}
+--- !u!1 &8634450910325506033
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8634450910325506032}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8634450910325506032
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8634450910325506033}
+  m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 1.359, y: 1.699, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4410464751036941391}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
