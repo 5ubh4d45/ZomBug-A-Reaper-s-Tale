@@ -616,7 +616,7 @@ GameObject:
   m_Component:
   - component: {fileID: 272029718}
   - component: {fileID: 272029719}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -755,7 +755,7 @@ GameObject:
   m_Component:
   - component: {fileID: 325100643}
   - component: {fileID: 325100644}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Back Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -874,7 +874,7 @@ GameObject:
   m_Component:
   - component: {fileID: 342354269}
   - component: {fileID: 342354270}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2103,9 +2103,9 @@ GameObject:
   - component: {fileID: 1204464216}
   - component: {fileID: 1204464212}
   - component: {fileID: 1204464213}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: NPC
-  m_TagString: NPC
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2635,7 +2635,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1432291968}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Fill Anchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4031,6 +4031,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6243545759424909743, guid: ff19242ead55f456ab71abaf3e3362ea, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6243545759424909743, guid: ff19242ead55f456ab71abaf3e3362ea, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6243545759424909743, guid: ff19242ead55f456ab71abaf3e3362ea, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6243545759424909743, guid: ff19242ead55f456ab71abaf3e3362ea, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6243545759424909743, guid: ff19242ead55f456ab71abaf3e3362ea, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7784336586530970050, guid: ff19242ead55f456ab71abaf3e3362ea, type: 3}
       propertyPath: m_Camera
       value: 
