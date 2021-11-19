@@ -21645,7 +21645,7 @@ MonoBehaviour:
   enemyAnimator: {fileID: 1325447920}
   canFollow: 1
   canForgetTarget: 1
-  enemyType: 0
+  enemyType: 1
   showRangeCircle: 1
   minFreeRoamRange: 1
   maxFreeRoamRange: 2
@@ -26695,6 +26695,7 @@ MonoBehaviour:
   _maxWeapons: 3
   player: {fileID: 7225067726461205801}
   _scythe2: {fileID: 910808415}
+  _hasGun: 0
 --- !u!1 &2600425223353999130
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,6 +14,7 @@ public class PlayerCombat : MonoBehaviour
     private Weapon _currentWeapon;
     private List<Weapon> _weapons;
     private GameObject _weaponHolder;
+    [SerializeField] private bool _hasGun;
 
     public Event<Weapon> OnWeaponPicked;
     public Event<Weapon> OnWeaponDropped;
@@ -22,6 +23,7 @@ public class PlayerCombat : MonoBehaviour
     public Weapon CurrentWeapon => _currentWeapon;
     public int MaxWeapons => _maxWeapons;
     public List<Weapon> Weapons => _weapons;
+    public bool HasGun => _hasGun;
 
     // Start is called before the first frame update
     void Awake()

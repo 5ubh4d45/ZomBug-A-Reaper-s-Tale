@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Game.HealthSystem;
@@ -8,15 +9,28 @@ public class PlayerAnimator : MonoBehaviour
     
     [SerializeField] private Animator anim;
     [SerializeField] private Player player;
-    
-    
+
     void Start()
     {
         anim = GetComponent<Animator>();
         
     }
 
-    
+    private void Update()
+    {
+        anim.SetBool("HasGun", player.PlayerCombat.HasGun);
+        
+        if (player.PlayerMovement.IsFacingRight)
+        {
+            anim.SetBool("FacingRight", true);
+        }
+        if (player.PlayerMovement.IsFacingLeft)
+        {
+            anim.SetBool("FacingRight", false);
+        }
+    }
+
+
     //adding all the animations as separate methods
     public void PlayIdle()
     {
@@ -29,9 +43,7 @@ public class PlayerAnimator : MonoBehaviour
             //BackRight
             case true when player.PlayerMovement.IsFacingUp:
                 // changed the backPose to front 
-                // anim.Play("IdleBackRight");
-                // anim.Play("IdleFrontRight");
-                
+
                 anim.SetBool("FacingRight", true);
                 break;
             //BackLeft
@@ -68,9 +80,9 @@ public class PlayerAnimator : MonoBehaviour
         {
             //moving right
             case true:
-                // anim.Play("ScytheWalkRight");
                 
                 anim.SetBool("MovingRight", true);
+
                 break;
             
             // not moving right but moving up facing right direction but not moving left
