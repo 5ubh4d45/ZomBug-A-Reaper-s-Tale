@@ -35,7 +35,7 @@ namespace Game.Combat
             
             if (healthObject != null && collision.gameObject.CompareTag(attackTag))
             {
-                healthObject.HealthSystem().Damage(_damage);
+                healthObject.HealthSystem.Damage(_damage);
                 
                 //adding a force to impact
                 collision.gameObject.GetComponentInParent<Rigidbody2D>().AddForce(player.PlayerMovement.LookDirection * impactForce, ForceMode2D.Impulse);

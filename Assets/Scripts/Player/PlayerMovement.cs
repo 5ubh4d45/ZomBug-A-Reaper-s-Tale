@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
         _player = GetComponent<Player>();
         cam = Camera.main;
         _lastPos = rb.transform.position;
-        player = GetComponent<Player>();
+        _player = GetComponent<Player>();
     }
 
 
