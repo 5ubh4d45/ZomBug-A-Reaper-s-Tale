@@ -13,17 +13,18 @@ namespace EnemyBehavior
         [Header("PathFinding Attributes")]
         [SerializeField] private float repeatRate = 0.5f;
         [SerializeField] private float speed = 10f;
-        [SerializeField] private float stopDistance = 1f;
         [SerializeField] private float nextWaypointDistance = 2f;
-    
+
+        private Vector3 _lookDir;
         private Path _path;
         private int _currentWaypoint = 0;
         private bool _reachedEndOfPath;
         private float _lastRepath = 0;
         
         //setting up required getters
-        public float StopDistance => stopDistance;
         public bool ReachedEndofPath => _reachedEndOfPath;
+
+        public Vector3 LookDir => _lookDir;
 
         // Start is called before the first frame update
         private void Start()
@@ -97,10 +98,10 @@ namespace EnemyBehavior
             float speedFactor = _reachedEndOfPath ? Mathf.Sqrt(distanceToWaypoint/nextWaypointDistance) : 1f;
             
             //gets movement direction
-            Vector3 dir = (_path.vectorPath[_currentWaypoint] - transform.position).normalized;
+            _lookDir = (_path.vectorPath[_currentWaypoint] - transform.position).normalized;
             
             //gets velocity
-            Vector3 velocity = dir * (speed * speedFactor);
+            Vector3 velocity = _lookDir * (speed * speedFactor);
             
             //moves the body
             rb.position += (Vector2)velocity * Time.deltaTime;
@@ -118,5 +119,6 @@ namespace EnemyBehavior
             
             Gizmos.DrawWireSphere(rb.position, nextWaypointDistance);
         }
+        
     }
 }

@@ -36,7 +36,7 @@ namespace Game.Combat
             if (_timeBtwShots > 0 || AmmoSystem.LoadedAmmo <= 0) return false;
 
             GameObject projectileClone = Instantiate(_projectile, _projectileEmitionPos.position, transform.rotation);
-            projectileClone.GetComponent<Projectile>().Initialise(_attackDamage, Camera.main.ScreenToWorldPoint(Input.mousePosition), _attackLayer);
+            projectileClone.GetComponent<Projectile>().Initialise(_attackDamage, Camera.main.ScreenToWorldPoint(Input.mousePosition), _attackTag);
             _timeBtwShots = _startTimeBtwShots;
             return true;
         }

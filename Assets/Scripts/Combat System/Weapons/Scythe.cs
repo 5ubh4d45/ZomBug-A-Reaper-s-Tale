@@ -37,7 +37,7 @@ namespace Game.Combat
                 for (int i = 0; i < colliders.Length; i++)
                 {
                     Collider2D collider = colliders[i];
-                    HealthObject healthObject = collider.GetComponent<HealthObject>();
+                    HealthObject healthObject = collider.GetComponentInParent<HealthObject>();
                     if (healthObject != null)
                     {
                         healthObject.HealthSystem.Damage(_attackDamage);

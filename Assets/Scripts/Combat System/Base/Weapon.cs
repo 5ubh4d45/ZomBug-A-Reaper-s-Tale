@@ -13,6 +13,7 @@ namespace Game.Combat
         [SerializeField] protected private float _attackDamage;
         [SerializeField] protected private float _startTimeBtwShots;
         [SerializeField] protected private LayerMask _attackLayer;
+        [SerializeField] protected private string _attackTag;
         [SerializeField] protected private Sprite _displayImage;
         [SerializeField] protected private Color _displayImageTint;
         [SerializeField] protected private GameObject _displayGo;

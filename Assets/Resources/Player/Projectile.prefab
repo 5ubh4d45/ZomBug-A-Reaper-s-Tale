@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6228590212864155172}
   - component: {fileID: 333491294720461908}
   - component: {fileID: 2602832271921857343}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -244,3 +244,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 15
   _aliveTime: 1
+  impactForce: 5
