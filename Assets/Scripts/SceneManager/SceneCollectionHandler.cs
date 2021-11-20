@@ -133,6 +133,14 @@ namespace Game.Scenes
 
             _loadingScreen.SetActive(false);
             _isLoading = false;
+
+            SceneReference activeSceneref = _currentCollection.SceneReferences[_currentCollection.ActiveSceneIndex];
+            Scene activeScene = SceneManager.GetSceneByPath(activeSceneref.ScenePath);
+            if (!SceneManager.SetActiveScene(activeScene))
+            {
+                throw new Exception($"Invalid ActiveSceneIndex for {_currentCollection.name} Collection or the {activeScene.name} is not loaded");
+            }
+
             OnLoadCompelete?.Invoke();
         }
 

@@ -616,7 +616,7 @@ GameObject:
   m_Component:
   - component: {fileID: 272029718}
   - component: {fileID: 272029719}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -755,7 +755,7 @@ GameObject:
   m_Component:
   - component: {fileID: 325100643}
   - component: {fileID: 325100644}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Back Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -874,7 +874,7 @@ GameObject:
   m_Component:
   - component: {fileID: 342354269}
   - component: {fileID: 342354270}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2103,7 +2103,7 @@ GameObject:
   - component: {fileID: 1204464216}
   - component: {fileID: 1204464212}
   - component: {fileID: 1204464213}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: NPC
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -2125,7 +2125,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -2635,7 +2635,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1432291968}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Fill Anchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}

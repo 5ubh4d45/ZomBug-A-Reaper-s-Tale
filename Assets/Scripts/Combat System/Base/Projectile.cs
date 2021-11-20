@@ -13,10 +13,9 @@ namespace Game.Combat
         [SerializeField] private float _speed;
         [SerializeField] private float _aliveTime;
         [SerializeField] private float impactForce;
-        
+
         private float _damage;
         private Vector2 _direction;
-        private LayerMask _attackLayer;
         private string _attackTag;
         #endregion
 
@@ -35,9 +34,10 @@ namespace Game.Combat
         private void OnCollisionEnter2D(Collision2D collision)
         {
             HealthObject healthObject = collision.gameObject.GetComponent<HealthObject>();
-            
+            Debug.Log(collision.gameObject.name + " " + collision.gameObject.CompareTag(_attackTag));
+
             // if (healthObject != null && (_attackLayer.value & (1 << collision.gameObject.layer)) > 0)
-            
+
             //replaced layermask with compareTags 
             if (healthObject != null && collision.gameObject.CompareTag(_attackTag))
             {
@@ -45,8 +45,8 @@ namespace Game.Combat
                 // healthObject.HealthSystem().Damage(_damage);
                 //adding a force to impact
                 collision.gameObject.GetComponentInParent<Rigidbody2D>().AddForce(_direction * impactForce, ForceMode2D.Impulse);
-                
-                
+
+
             }
             Destroy(gameObject);
         }

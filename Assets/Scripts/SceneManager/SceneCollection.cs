@@ -6,5 +6,7 @@ namespace Game.Scenes
     public class SceneCollection : ScriptableObject
     {
         public SceneReference[] SceneReferences;
+
+        public int ActiveSceneIndex;
     }
 }
