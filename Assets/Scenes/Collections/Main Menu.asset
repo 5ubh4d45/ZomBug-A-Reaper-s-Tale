@@ -15,3 +15,5 @@ MonoBehaviour:
   SceneReferences:
   - sceneAsset: {fileID: 102900000, guid: 3e81e3ecea81c74a291e40c72cdac27a, type: 3}
     scenePath: Assets/Scenes/Menus/Main Menu.unity
+  ActiveSceneIndex: 0
+  CursorSize: 3

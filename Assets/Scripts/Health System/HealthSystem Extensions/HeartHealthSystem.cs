@@ -71,7 +71,6 @@ namespace Game.HealthSystem
                 }
             }
             OnDamaged?.Invoke(damage);
-            Debug.Log("Percent: " + HealthPercent + "; Health01: " + Health01 + "; Health: " + Health);
         }
 
         public override void Heal(float healAmount)

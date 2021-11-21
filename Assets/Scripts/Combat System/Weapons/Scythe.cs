@@ -31,19 +31,27 @@ namespace Game.Combat
         #region Component Functions
         public override void AttackMelee()
         {
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(_attackPoint.position, _attackRange, _attackLayer);
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(_attackPoint.position, _attackRange);
             if (colliders.Length > 0)
             {
                 for (int i = 0; i < colliders.Length; i++)
                 {
                     Collider2D collider = colliders[i];
                     HealthObject healthObject = collider.GetComponentInParent<HealthObject>();
-                    if (healthObject != null)
+                    if (healthObject != null && collider.gameObject.CompareTag(_attackTag))
                     {
                         healthObject.HealthSystem.Damage(_attackDamage);
                     }
                 }
             }
+        }
+
+        public override void PickUp()
+        {
+        }
+
+        public override void DropDown()
+        {
         }
         #endregion
     }

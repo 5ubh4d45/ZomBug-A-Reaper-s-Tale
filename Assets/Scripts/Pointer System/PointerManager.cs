@@ -77,6 +77,11 @@ namespace Game.Pointer
         {
             SetCursor(_defaultCursors, _defaultFps);
         }
+
+        public void SetCursorSize(float size)
+        {
+            _renderer.transform.localScale = new Vector2(size, size);
+        }
         #endregion
     }
 }

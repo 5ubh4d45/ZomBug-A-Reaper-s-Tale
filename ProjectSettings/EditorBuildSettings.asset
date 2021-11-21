@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Music testing/Music Testing.unity
     guid: 53494fc9c9be0de4ea342e1ba56ba983
+  - enabled: 1
+    path: Assets/Scenes/AnimationTesting/ANimation Testing.unity
+    guid: ce402de95146b1f49a2c27bbb445857f
   m_configObjects: {}

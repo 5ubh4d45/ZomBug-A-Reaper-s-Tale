@@ -9,7 +9,7 @@ public class PlayerAimWeapon : MonoBehaviour
     [SerializeField] private Player player;
 
     public Transform AimTransform => aimTransform;
-    
+
     private Camera cam;
     private float _targetAngle;
     private float _targetAngleLeft;
@@ -33,7 +33,7 @@ public class PlayerAimWeapon : MonoBehaviour
     void Update()
     {
         UpdateTargetRotation();
-        
+
         AimWeapon();
     }
 
@@ -44,22 +44,22 @@ public class PlayerAimWeapon : MonoBehaviour
 
         Vector3 aimDirection = (moussePos - transform.position).normalized;
         _targetAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;
-        
+
         //clamping the angle
-            
-            
-            
+
+
+
         if (player.PlayerMovement.IsFacingRight)
         {
             _targetAngleRight = Mathf.Clamp(_targetAngle, -130f, -50f);
             _finalAngle = _targetAngleRight;
-            
+
             //flip the sprite
             transform.localScale = new Vector3(1f, 1f, 1f);
         }
 
         if (player.PlayerMovement.IsFacingLeft)
-        {   
+        {
             //breaking into positive and the negetive components (angles are confusing af)
             float plusAngle = Mathf.Clamp(_targetAngle, 50f, 90f);
             float minusAngle = Mathf.Clamp(_targetAngle, -270f, -220f);
@@ -74,7 +74,7 @@ public class PlayerAimWeapon : MonoBehaviour
                 _targetAngleLeft = minusAngle;
             }
             _finalAngle = _targetAngleLeft;
-            
+
             //flip the sprite
             transform.localScale = new Vector3(-1f, 1f, 1f);
         }
@@ -84,6 +84,6 @@ public class PlayerAimWeapon : MonoBehaviour
     private void AimWeapon()
     {
         aimTransform.eulerAngles = new Vector3(0, 0, _finalAngle);
-        
+
     }
 }

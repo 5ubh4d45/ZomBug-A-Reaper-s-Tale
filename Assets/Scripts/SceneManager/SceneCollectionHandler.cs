@@ -133,6 +133,13 @@ namespace Game.Scenes
 
             _loadingScreen.SetActive(false);
             _isLoading = false;
+
+            SceneReference activeSceneRef = _currentCollection.SceneReferences[_currentCollection.ActiveSceneIndex];
+            Scene activeScene = SceneManager.GetSceneByPath(activeSceneRef.ScenePath);
+            SceneManager.SetActiveScene(activeScene);
+
+            Pointer.PointerManager.Instance.SetCursorSize(_currentCollection.CursorSize);
+
             OnLoadCompelete?.Invoke();
         }
 

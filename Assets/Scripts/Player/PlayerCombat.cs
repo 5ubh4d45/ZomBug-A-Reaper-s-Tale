@@ -14,7 +14,6 @@ public class PlayerCombat : MonoBehaviour
     private Weapon _currentWeapon;
     private List<Weapon> _weapons;
     private GameObject _weaponHolder;
-    [SerializeField] private bool _hasGun;
 
     public Event<Weapon> OnWeaponPicked;
     public Event<Weapon> OnWeaponDropped;
@@ -23,7 +22,13 @@ public class PlayerCombat : MonoBehaviour
     public Weapon CurrentWeapon => _currentWeapon;
     public int MaxWeapons => _maxWeapons;
     public List<Weapon> Weapons => _weapons;
-    public bool HasGun => _hasGun;
+    public bool HasGun
+    {
+        get
+        {
+            return _currentWeapon as RangedWeapon != null;
+        }
+    }
 
     // Start is called before the first frame update
     void Awake()
@@ -56,7 +61,7 @@ public class PlayerCombat : MonoBehaviour
             MeleeAttack1();
         }
 
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
         {
             MeleeAttack2();
         }
@@ -84,6 +89,7 @@ public class PlayerCombat : MonoBehaviour
         ParentWeapon(weapon);
 
         _weapons.Add(_currentWeapon);
+        _currentWeapon.PickUp();
         UpdateWeaponList();
         OnWeaponPicked?.Invoke(_currentWeapon);
     }
@@ -124,6 +130,8 @@ public class PlayerCombat : MonoBehaviour
 
         Weapon lastWeapon = _currentWeapon;
         _currentWeapon.IsPickedUp = false;
+        _currentWeapon.DropDown();
+
         int index = _weapons.IndexOf(_currentWeapon);
         _weapons.RemoveAt(index);
 
@@ -161,7 +169,7 @@ public class PlayerCombat : MonoBehaviour
     {
         //setting up the different dmg outputs for different attacks
         _scythe2.Damage = _scythe2.Melee1Damage;
-        
+
         player.PlayerAnimator.PlayMeleeAttack1();
 
         IEnumerator stopMovement = player.PlayerMovement.StopMovement(1f);
@@ -169,11 +177,11 @@ public class PlayerCombat : MonoBehaviour
     }
 
     private void MeleeAttack2()
-    {  
-        
+    {
+
         //setting up the different dmg outputs for different attacks
         _scythe2.Damage = _scythe2.Melee2Damage;
-        
+
         player.PlayerAnimator.PlayMeleeAttack2();
 
         IEnumerator stopMovement = player.PlayerMovement.StopMovement(1f);
