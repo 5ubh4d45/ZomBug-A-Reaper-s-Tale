@@ -1,55 +1,68 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Shotgun : MonoBehaviour
+namespace Game.Combat
 {
-    [SerializeField] private Animator anim;
-    [SerializeField] private Transform firePoint;
-    [SerializeField] private Player player;
-
-    public Transform FirePoint => firePoint;
-
-    void Start()
+    public class Shotgun : RangedWeapon
     {
-        if (player == null)
+        #region Variables
+        [SerializeField] private Transform _projectileEmitionPos;
+        [SerializeField] private GameObject _projectile;
+        [SerializeField] private GameObject _mapDisplay;
+        [SerializeField] private GameObject _weapon;
+        [SerializeField] private ShotgunAnimator _animationHandler;
+
+        private float _timeBtwShots;
+        #endregion
+
+
+        #region Getters And Setters
+
+        #endregion
+
+
+        #region Unity Calls
+        private void Awake()
         {
-            player = GetComponentInParent<Player>();
+            _animationHandler = _animationHandler == null ? GetComponent<ShotgunAnimator>() : _animationHandler;
         }
 
-        if (anim == null)
+        public override void Update()
         {
-            anim = GetComponentInChildren<Animator>();
+            base.Update();
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                _ammoSystem.Reload();
+            }
+            _timeBtwShots -= Time.deltaTime;
         }
+        #endregion
+
+
+        #region Component Functions
+        public override bool AttackRanged()
+        {
+            if (_timeBtwShots > 0 || AmmoSystem.LoadedAmmo <= 0) return false;
+
+            GameObject projectileClone = Instantiate(_projectile, _projectileEmitionPos.position, transform.rotation);
+            projectileClone.GetComponent<Projectile>().Initialise(_attackDamage, Camera.main.ScreenToWorldPoint(Input.mousePosition), _attackTag);
+            _timeBtwShots = _startTimeBtwShots;
+
+            _animationHandler.PlayShotgunFire();
+
+            return true;
+        }
+
+        public override void PickUp()
+        {
+            _weapon.SetActive(true);
+            _mapDisplay.SetActive(false);
+        }
+
+        public override void DropDown()
+        {
+            _weapon.SetActive(true);
+            _mapDisplay.SetActive(false);
+        }
+        #endregion
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (player.PlayerMovement.IsFacingRight)
-        {
-            anim.SetBool("FacingRight", true);
-        }
-
-        if (player.PlayerMovement.IsFacingLeft)
-        {
-            anim.SetBool("FacingRight", false);
-        }
-    }
-
-    public void PlayPistolFire()
-    {
-        if (player.PlayerMovement.IsFacingRight)
-        {
-            anim.SetTrigger("FireRight");
-        }
-
-        if (player.PlayerMovement.IsFacingLeft)
-        {
-            anim.SetTrigger(("FireLeft"));
-        }
-    }
-
-
-
 }

@@ -15,7 +15,6 @@ namespace Game.Combat
         [SerializeField] protected private string _attackTag;
         [SerializeField] protected private Sprite _displayImage;
         [SerializeField] protected private Color _displayImageTint;
-        [SerializeField] protected private GameObject _displayGo;
 
         private List<Player> _players;
         #endregion
@@ -74,6 +73,8 @@ namespace Game.Combat
 
         #region Component Functions
         public abstract void Attack();
+        public abstract void PickUp();
+        public abstract void DropDown();
 
         public virtual void Interact(Player player)
         {

@@ -47,7 +47,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _attackDamage: 30
   _startTimeBtwShots: 1.2
-  _attackTag: Enemy
+  _attackLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  _attackTag: 
   _displayImage: {fileID: 21300000, guid: 07b37900891208748be39923626edf5d, type: 3}
   _displayImageTint: {r: 1, g: 1, b: 1, a: 1}
   _displayGo: {fileID: 8151602678255542347}

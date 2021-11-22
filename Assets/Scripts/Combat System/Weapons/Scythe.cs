@@ -38,12 +38,20 @@ namespace Game.Combat
                 {
                     Collider2D collider = colliders[i];
                     HealthObject healthObject = collider.GetComponentInParent<HealthObject>();
-                    if (healthObject != null && healthObject.CompareTag(_attackTag))
+                    if (healthObject != null && collider.gameObject.CompareTag(_attackTag))
                     {
                         healthObject.HealthSystem.Damage(_attackDamage);
                     }
                 }
             }
+        }
+
+        public override void PickUp()
+        {
+        }
+
+        public override void DropDown()
+        {
         }
         #endregion
     }
