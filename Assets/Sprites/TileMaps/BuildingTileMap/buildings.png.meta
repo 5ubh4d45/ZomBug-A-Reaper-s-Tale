@@ -241,10 +241,10 @@ TextureImporter:
       name: buildings_5
       rect:
         serializedVersion: 2
-        x: 130
+        x: 135
         y: 128
-        width: 61
-        height: 64
+        width: 48
+        height: 62
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
