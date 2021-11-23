@@ -2105,7 +2105,7 @@ GameObject:
   - component: {fileID: 1204464213}
   m_Layer: 7
   m_Name: NPC
-  m_TagString: Enemy
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2125,7 +2125,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -4031,26 +4031,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6243545759424909743, guid: ff19242ead55f456ab71abaf3e3362ea, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6243545759424909743, guid: ff19242ead55f456ab71abaf3e3362ea, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6243545759424909743, guid: ff19242ead55f456ab71abaf3e3362ea, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6243545759424909743, guid: ff19242ead55f456ab71abaf3e3362ea, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6243545759424909743, guid: ff19242ead55f456ab71abaf3e3362ea, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7784336586530970050, guid: ff19242ead55f456ab71abaf3e3362ea, type: 3}
       propertyPath: m_Camera
       value: 

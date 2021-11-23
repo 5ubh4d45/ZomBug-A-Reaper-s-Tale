@@ -2,27 +2,18 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Game.Combat;
-using Pathfinding.Ionic.Zlib;
 using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
-{   
-    [Header("Req. Comp.")]
+{
     [SerializeField] private PlayerAimWeapon _weaponAim;
     [SerializeField] private int _maxWeapons;
     [SerializeField] private Player player;
-    [SerializeField] private Scythe2 meleeAttackHitbox;
+    [SerializeField] private Scythe2 _scythe2;
 
-    [Space] [Header("Scythe Attack Cooldowns")]
-    [SerializeField] private float meleeAttack1CoolDown;
-    [SerializeField] private float meleeAttack2CoolDown;
-    private float _nextMelee1Time;
-    private float _nextMelee2Time;
-    
     private Weapon _currentWeapon;
     private List<Weapon> _weapons;
     private GameObject _weaponHolder;
-    [SerializeField] private bool _hasGun;
 
     public Event<Weapon> OnWeaponPicked;
     public Event<Weapon> OnWeaponDropped;
@@ -31,7 +22,13 @@ public class PlayerCombat : MonoBehaviour
     public Weapon CurrentWeapon => _currentWeapon;
     public int MaxWeapons => _maxWeapons;
     public List<Weapon> Weapons => _weapons;
-    public bool HasGun => _hasGun;
+    public bool HasGun
+    {
+        get
+        {
+            return _currentWeapon as RangedWeapon != null;
+        }
+    }
 
     // Start is called before the first frame update
     void Awake()
@@ -45,10 +42,6 @@ public class PlayerCombat : MonoBehaviour
     private void Start()
     {
         player = GetComponent<Player>();
-        if (meleeAttackHitbox == null)
-        {
-            meleeAttackHitbox = GetComponentInChildren<Scythe2>();
-        }
     }
 
     // Update is called once per frame
@@ -68,13 +61,10 @@ public class PlayerCombat : MonoBehaviour
             MeleeAttack1();
         }
 
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
         {
             MeleeAttack2();
         }
-
-        _nextMelee1Time += Time.deltaTime;
-        _nextMelee2Time += Time.deltaTime;
 
         for (int i = 1; i <= _maxWeapons; i++)
         {
@@ -99,6 +89,7 @@ public class PlayerCombat : MonoBehaviour
         ParentWeapon(weapon);
 
         _weapons.Add(_currentWeapon);
+        _currentWeapon.PickUp();
         UpdateWeaponList();
         OnWeaponPicked?.Invoke(_currentWeapon);
     }
@@ -139,6 +130,8 @@ public class PlayerCombat : MonoBehaviour
 
         Weapon lastWeapon = _currentWeapon;
         _currentWeapon.IsPickedUp = false;
+        _currentWeapon.DropDown();
+
         int index = _weapons.IndexOf(_currentWeapon);
         _weapons.RemoveAt(index);
 
@@ -173,31 +166,24 @@ public class PlayerCombat : MonoBehaviour
     }
 
     private void MeleeAttack1()
-    {   
-        if (_nextMelee1Time <= meleeAttack1CoolDown) return;
-        
+    {
         //setting up the different dmg outputs for different attacks
-        meleeAttackHitbox.Damage = meleeAttackHitbox.Melee1Damage;
-        
-        player.PlayerAnimator.PlayMeleeAttack1();
+        _scythe2.Damage = _scythe2.Melee1Damage;
 
-        _nextMelee1Time = 0f;
+        player.PlayerAnimator.PlayMeleeAttack1();
 
         IEnumerator stopMovement = player.PlayerMovement.StopMovement(1f);
         StartCoroutine(stopMovement);
     }
 
     private void MeleeAttack2()
-    {  
-        if (_nextMelee2Time <= meleeAttack2CoolDown) return;
-        
+    {
+
         //setting up the different dmg outputs for different attacks
-        meleeAttackHitbox.Damage = meleeAttackHitbox.Melee2Damage;
-        
+        _scythe2.Damage = _scythe2.Melee2Damage;
+
         player.PlayerAnimator.PlayMeleeAttack2();
-        
-        _nextMelee2Time = 0f;
-        
+
         IEnumerator stopMovement = player.PlayerMovement.StopMovement(1f);
         StartCoroutine(stopMovement);
     }

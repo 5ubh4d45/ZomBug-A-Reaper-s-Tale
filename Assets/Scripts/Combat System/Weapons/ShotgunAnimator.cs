@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PistolV2 : MonoBehaviour
+public class ShotgunAnimator : MonoBehaviour
 {
     [SerializeField] private Animator anim;
     [SerializeField] private Transform firePoint;
@@ -31,7 +31,7 @@ public class PistolV2 : MonoBehaviour
         }
     }
 
-    public void PlayPistolFire()
+    public void PlayShotgunFire()
     {
         if (Player.Instance.PlayerMovement.IsFacingRight)
         {

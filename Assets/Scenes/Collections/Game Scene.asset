@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Game Scene
   m_EditorClassIdentifier: 
   SceneReferences:
-  - sceneAsset: {fileID: 102900000, guid: 53494fc9c9be0de4ea342e1ba56ba983, type: 3}
-    scenePath: Assets/Scenes/Music testing/Music Testing.unity
+  - sceneAsset: {fileID: 102900000, guid: ce402de95146b1f49a2c27bbb445857f, type: 3}
+    scenePath: Assets/Scenes/AnimationTesting/ANimation Testing.unity
+  ActiveSceneIndex: 0
+  CursorSize: 6
