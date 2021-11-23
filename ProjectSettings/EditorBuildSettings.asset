@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Menus/Main Menu.unity
+    path: Assets/Scenes/UI/Main Menu.unity
     guid: 3e81e3ecea81c74a291e40c72cdac27a
   - enabled: 1
     path: Assets/Scenes/Dialogoue Testing/DialogueTest.unity
@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Music testing/Music Testing.unity
     guid: 53494fc9c9be0de4ea342e1ba56ba983
+  - enabled: 1
+    path: Assets/Scenes/AnimationTesting/ANimation Testing.unity
+    guid: ce402de95146b1f49a2c27bbb445857f
+  - enabled: 1
+    path: Assets/Scenes/UI/PlayerUI.unity
+    guid: cbdbd359233f3f7c3ac3edf96907a4fc
   m_configObjects: {}

@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Game Scene
   m_EditorClassIdentifier: 
   SceneReferences:
+  - sceneAsset: {fileID: 102900000, guid: cbdbd359233f3f7c3ac3edf96907a4fc, type: 3}
+    scenePath: Assets/Scenes/UI/PlayerUI.unity
   - sceneAsset: {fileID: 102900000, guid: ce402de95146b1f49a2c27bbb445857f, type: 3}
     scenePath: Assets/Scenes/AnimationTesting/ANimation Testing.unity
-  ActiveSceneIndex: 0
+  ActiveSceneIndex: 1
   CursorSize: 6

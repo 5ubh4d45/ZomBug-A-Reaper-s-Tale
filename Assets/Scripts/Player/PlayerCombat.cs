@@ -55,6 +55,10 @@ public class PlayerCombat : MonoBehaviour
         {
             DropWeapon();
         }
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            SwitchWeapon(-1);
+        }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -98,9 +102,14 @@ public class PlayerCombat : MonoBehaviour
     {
         for (int i = 0; i < _weapons.Count; i++)
         {
-            if (i == CurrentWeaponIndex || _weapons[i] == null)
+            if (_weapons[i] == null)
+            {
+                continue;
+            }
+            if (i == CurrentWeaponIndex)
             {
                 _weapons[i].IsPickedUp = true;
+                _weapons[i].gameObject.SetActive(true);
                 continue;
             }
 
@@ -148,7 +157,7 @@ public class PlayerCombat : MonoBehaviour
     {
         if (CurrentWeaponIndex == index) return;
 
-        if (index >= _weapons.Count)
+        if (index >= _weapons.Count || index < 0)
         {
             _weaponAim.aimTransform = _weaponAim.transform;
             _currentWeapon?.gameObject.SetActive(false);

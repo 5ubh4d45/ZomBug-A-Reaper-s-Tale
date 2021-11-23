@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Game.Scenes;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -75,9 +76,16 @@ namespace Game.Combat
         #region Unity Calls
         private void Awake()
         {
+            SceneCollectionHandler.Instance.OnLoadCompelete += Initialise;
+        }
+
+        private void Initialise()
+        {
             _weaponWheelButtons = new List<WeaponWheelButton>();
+            if (_playerCombat == null) _playerCombat = Player.Instance.PlayerCombat;
             _playerCombat.OnWeaponDropped += UpdateWheel;
             _playerCombat.OnWeaponPicked += UpdateWheel;
+            _playerCombat.OnWeaponSwitched += UpdateWheel;
             UpdateWheel(null);
         }
 

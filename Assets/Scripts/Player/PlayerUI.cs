@@ -1,15 +1,33 @@
 using System;
 using Game.Combat;
+using Game.Scenes;
 using TMPro;
 using UnityEngine;
 
 public class PlayerUI : MonoBehaviour
 {
+    #region Singleton
+    private static PlayerUI _instance;
+    public static PlayerUI Instance
+    {
+        get
+        {
+            if (_instance == null) _instance = FindObjectOfType<PlayerUI>();
+            if (_instance == null)
+            {
+                GameObject go = new GameObject("PlayerUI Instance", typeof(PlayerUI));
+                _instance = go.GetComponent<PlayerUI>();
+            }
+            return _instance;
+        }
+    }
+    #endregion
+
     #region Variables
     [SerializeField] private TMP_Text _loadedAmmoText;
     [SerializeField] private TMP_Text _unloadedAmmoText;
     [SerializeField] private GameObject _ammoCounter;
-    private PlayerCombat _playerCombat;
+    private PlayerCombat _playerCombat => Player.Instance.PlayerCombat;
     #endregion
 
 
@@ -21,7 +39,11 @@ public class PlayerUI : MonoBehaviour
     #region Unity Calls
     private void Start()
     {
-        _playerCombat = GetComponent<PlayerCombat>();
+        SceneCollectionHandler.Instance.OnLoadCompelete += Initialise;
+    }
+
+    private void Initialise()
+    {
         _playerCombat.OnWeaponPicked += WeaponPicked;
         _playerCombat.OnWeaponDropped += WeaponDropped;
         _playerCombat.OnWeaponSwitched += WeaponSwitched;
@@ -32,6 +54,7 @@ public class PlayerUI : MonoBehaviour
         _playerCombat.OnWeaponPicked -= WeaponPicked;
         _playerCombat.OnWeaponDropped -= WeaponDropped;
         _playerCombat.OnWeaponSwitched -= WeaponSwitched;
+        SceneCollectionHandler.Instance.OnLoadCompelete -= Initialise;
     }
     #endregion
 

@@ -6,6 +6,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 namespace Game.Scenes
 {
     public class SceneCollectionHandler : MonoBehaviour
@@ -56,17 +60,29 @@ namespace Game.Scenes
         #region Unity Calls
         private void Awake()
         {
+#if UNITY_EDITOR
+            EditorApplication.playModeStateChanged += CheckExitPlayMode;
+#endif
             _operations = new List<AsyncOperation>();
             LoadSceneCollection(_defaultSceneIndex);
         }
+
+#if UNITY_EDITOR
+        private void CheckExitPlayMode(PlayModeStateChange state)
+        {
+            if (state != PlayModeStateChange.ExitingPlayMode) return;
+
+            UnloadCurrentLoadedCollection(false);
+        }
+#endif
         #endregion
 
 
         #region Component Functions
         public void LoadSceneCollection(int collectionIndex)
         {
-            if (collectionIndex > _sceneCollections.Length || collectionIndex == -1) return;
-            if (_sceneCollections[collectionIndex] == null) return;
+            if (collectionIndex > _sceneCollections?.Length || collectionIndex == -1) return;
+            if (_sceneCollections?[collectionIndex] == null) return;
 
             _loadingScreen.SetActive(true);
 
