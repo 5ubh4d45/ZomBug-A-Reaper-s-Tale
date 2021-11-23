@@ -4,55 +4,31 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: -3208655825841176998
-    second: CollTopLeft
+    second: ColliderTileMap_0
   - first:
       213: 8242249198800860880
-    second: CollTop
+    second: ColliderTileMap_1
   - first:
       213: 4473414530144073836
-    second: CollTopRight
+    second: ColliderTileMap_2
   - first:
       213: 4679287203942937934
-    second: CollTopLeft_S
+    second: ColliderTileMap_3
   - first:
       213: -1791126744233710775
-    second: CollTop_S
+    second: ColliderTileMap_4
   - first:
       213: 5427765514934679260
-    second: CollTopRIght_S
+    second: ColliderTileMap_5
   - first:
       213: 4656678132068861502
-    second: CollLeft
+    second: ColliderTileMap_6
   - first:
       213: 5435239560843172142
-    second: CollCenter
+    second: ColliderTileMap_7
   - first:
       213: -8116022178100728859
-    second: CollRight
-  - first:
-      213: 3871054745315363890
-    second: CollLeft_S
-  - first:
-      213: 5426547732279597910
-    second: CollRight_S
-  - first:
-      213: 5403725299838128204
-    second: CollBotLeft
-  - first:
-      213: -7546008648901770442
-    second: CollBot
-  - first:
-      213: -4754015439093155734
-    second: CollBotRight
-  - first:
-      213: 179976860414432202
-    second: CollBotLeft_S
-  - first:
-      213: -8870076876416841902
-    second: CollBot_S
-  - first:
-      213: 5197040561936554346
-    second: CollBotRight_S
+    second: ColliderTileMap_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -154,13 +130,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CollTopLeft
+      name: ColliderTileMap_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 8
         y: 112
-        width: 16
-        height: 16
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,13 +151,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CollTop
+      name: ColliderTileMap_1
       rect:
         serializedVersion: 2
         x: 16
         y: 112
-        width: 16
-        height: 16
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,13 +172,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CollTopRight
+      name: ColliderTileMap_2
       rect:
         serializedVersion: 2
-        x: 32
+        x: 24
         y: 112
-        width: 16
-        height: 16
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -217,13 +193,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CollTopLeft_S
+      name: ColliderTileMap_3
       rect:
         serializedVersion: 2
-        x: 48
-        y: 112
-        width: 16
-        height: 16
+        x: 8
+        y: 104
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -238,13 +214,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CollTop_S
+      name: ColliderTileMap_4
       rect:
         serializedVersion: 2
-        x: 64
-        y: 112
-        width: 16
-        height: 16
+        x: 16
+        y: 104
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -259,13 +235,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CollTopRIght_S
+      name: ColliderTileMap_5
       rect:
         serializedVersion: 2
-        x: 80
-        y: 112
-        width: 16
-        height: 16
+        x: 24
+        y: 104
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -280,13 +256,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CollLeft
+      name: ColliderTileMap_6
       rect:
         serializedVersion: 2
-        x: 0
+        x: 8
         y: 96
-        width: 16
-        height: 16
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -301,13 +277,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CollCenter
+      name: ColliderTileMap_7
       rect:
         serializedVersion: 2
         x: 16
         y: 96
-        width: 16
-        height: 16
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -322,13 +298,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CollRight
+      name: ColliderTileMap_8
       rect:
         serializedVersion: 2
-        x: 32
+        x: 24
         y: 96
-        width: 16
-        height: 16
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -338,174 +314,6 @@ TextureImporter:
       bones: []
       spriteID: 5eb2d1d54d81e5f80800000000000000
       internalID: -8116022178100728859
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CollLeft_S
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 96
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 23ccc98f7cfb8b530800000000000000
-      internalID: 3871054745315363890
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CollRight_S
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 96
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 65b1a335968fe4b40800000000000000
-      internalID: 5426547732279597910
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CollBotLeft
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c4094a0b783edfa40800000000000000
-      internalID: 5403725299838128204
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CollBot
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6334f224d11374790800000000000000
-      internalID: -7546008648901770442
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CollBotRight
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a6831206528560eb0800000000000000
-      internalID: -4754015439093155734
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CollBotLeft_S
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ac3dac040086f7200800000000000000
-      internalID: 179976860414432202
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CollBot_S
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 25784ca931827e480800000000000000
-      internalID: -8870076876416841902
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CollBotRight_S
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a6956812bd89f1840800000000000000
-      internalID: 5197040561936554346
       vertices: []
       indices: 
       edges: []
