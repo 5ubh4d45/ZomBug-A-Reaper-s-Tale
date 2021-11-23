@@ -13,6 +13,9 @@ namespace Game.HealthSystem
         [SerializeField] private Gradient _tintGradient;
         [SerializeField] private Transform _barAnchor;
         [SerializeField] private SpriteRenderer _barFill;
+        [SerializeField] private SpriteRenderer _backGroundBox;
+
+        private bool _isHealthBarOn;
         #endregion
 
 
@@ -24,7 +27,14 @@ namespace Game.HealthSystem
         #region Unity Calls
 
         #endregion
-
+        
+        private void OnEnable()
+        {
+            //turning off the sprite renderer of the health bar
+            _barFill.enabled = false;
+            _backGroundBox.enabled = false;
+            _isHealthBarOn = false;
+        }
 
         #region Component Functions
         public override void Setup(IntHealthSystem healthSystem)
@@ -36,9 +46,19 @@ namespace Game.HealthSystem
 
         private void HealthChanged(float changeAmount)
         {
+            //turning on the sprite renderer of the health bar
+            HealthBarToggle();
+            
             Color color = _tintGradient.Evaluate(_healthSystem.Health01);
             _barFill.color = color;
             _barAnchor.localScale = new Vector3(_healthSystem.Health01, _barAnchor.localScale.y, _barAnchor.localScale.z);
+        }
+
+        private void HealthBarToggle()
+        {
+            if (_isHealthBarOn) return;
+            _barFill.enabled = true;
+            _backGroundBox.enabled = true;
         }
         #endregion
     }
