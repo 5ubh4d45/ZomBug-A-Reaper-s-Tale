@@ -1,8 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Game.HealthSystem;
+using Game.Score;
+using Game.Pointer;
 
-public class CatBoss : MonoBehaviour
+
+public class CatBoss : HealthObject<IntHealthSystem>
 {   
     [Header("Required Componenets")]
     [SerializeField] private BossMovement bossMovement;
@@ -11,13 +15,16 @@ public class CatBoss : MonoBehaviour
     [SerializeField] private BossBehavior bossBehavior;
 
     [Space] [SerializeField] private Transform target;
-
+    [SerializeField] private int _scorePerHit;
+    
+    
     #region Getters
 
     public BossAnimator BossAnimator => bossAnimator;
     public BossMovement BossMovement => bossMovement;
     public BossCombat BossCombat => bossCombat;
     public BossBehavior BossBehavior => bossBehavior;
+    public int ScorePerHit => _scorePerHit;
 
     public Transform Target => target;
 
@@ -59,7 +66,6 @@ public class CatBoss : MonoBehaviour
 
     private void FlipCheck()
     {
-        
         if (bossMovement.IsFacingRight)
         {
             transform.localScale = new Vector3(1f, 1f, 1f);
@@ -69,7 +75,16 @@ public class CatBoss : MonoBehaviour
         {
             transform.localScale = new Vector3(-1f, 1f, 1f);
         }
-        
-        
+    }
+    
+    public override void OnDead()
+    {
+        PointerManager.Instance.SetDefaultCursor();
+        Destroy(this.gameObject);
+    }
+    
+    public override void OnDamaged(float damageAmount)
+    {
+        ScoreManager.Instance.AddScore(_scorePerHit);
     }
 }

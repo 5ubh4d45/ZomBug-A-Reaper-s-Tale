@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using FMOD;
 using UnityEditor.VersionControl;
 using UnityEngine;
-using Debug = FMOD.Debug;
 
 public class BossBehavior : MonoBehaviour
 {
@@ -25,12 +24,13 @@ public class BossBehavior : MonoBehaviour
 
     #region PrivateVariables
 
-    public BossState _state;
+    private BossState _state;
 
     #endregion
 
     #region GettersSetters
-    
+
+    public BossState State => _state;
 
     #endregion
     
@@ -56,7 +56,8 @@ public class BossBehavior : MonoBehaviour
                 
                 //idle animations here
                 boss.BossAnimator.PlayIdle();
-                
+
+                _state = BossState.Chase;
                 break;
             
             case BossState.Chase:
@@ -75,6 +76,12 @@ public class BossBehavior : MonoBehaviour
                 if (boss.BossCombat.InMeleeRange)
                 {
                     _state = BossState.MeleeAttack;
+                }
+                
+                //if waay out of range
+                if (!boss.BossCombat.InRange)
+                {
+                    boss.BossCombat.JumpAttack();
                 }
                 
                 boss.BossMovement.Chase(true);

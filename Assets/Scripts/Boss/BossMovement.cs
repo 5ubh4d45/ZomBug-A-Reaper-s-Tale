@@ -123,6 +123,17 @@ public class BossMovement : MonoBehaviour
         Follow(canBackOff, reverseDir, backOffSpeed);
     }
 
+    
+    //for stopping the movement from anywhere
+    public IEnumerator StopMovement(float stopTime)
+    {
+        Chase(false);
+
+        yield return new WaitForSeconds(stopTime);
+        
+        Chase(true);
+    }
+
     public IEnumerator BackoffImpulse()
     {
         Vector3 reverseDir = new Vector3(_lookDir.x * -1, _lookDir.y * -1, _lookDir.z);

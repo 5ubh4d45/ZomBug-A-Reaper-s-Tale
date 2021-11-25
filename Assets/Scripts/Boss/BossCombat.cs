@@ -1,7 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Game.Combat;
+using Unity.Mathematics;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class BossCombat : MonoBehaviour
 {
@@ -27,7 +30,8 @@ public class BossCombat : MonoBehaviour
     [SerializeField] private int slashDamage;
     [SerializeField] private float skullFireRate;
     [SerializeField] private int skullDamage;
-    
+
+    private string _attackTag = "Player";
     
     //private floats & vectors
     private float _nextJumpAttackTime = 0f;
@@ -36,12 +40,14 @@ public class BossCombat : MonoBehaviour
     private float _nextSkullFireTime = 0f;
     
     private Vector3 _aimDirection;
+    private Vector3 targetPos;
     
     //private bools
     private bool _inRange;
     private bool _inAttackRange;
     private bool _inBackOffRange;
     private bool _inMeleeRange;
+    private bool _canRangeAttack;
 
     // getters
     public Vector3 AimDirection => _aimDirection;
@@ -90,10 +96,10 @@ public class BossCombat : MonoBehaviour
 
     private void CheckParameters()
     {
-        Vector3 targetPos = boss.Target.position;
-        
+        targetPos = boss.Target.position;
+
         //checks for aim direction
-        _aimDirection = (targetPos - firePoint.position);
+        _aimDirection = (targetPos - firePoint.position).normalized;
         
         //all cooldowns
         _nextJumpAttackTime += Time.deltaTime;
@@ -121,17 +127,94 @@ public class BossCombat : MonoBehaviour
 
     public void JumpAttack()
     {
+        if (_nextJumpAttackTime <= jumpAttackRate) return;
+
+        var stpMv = boss.BossMovement.StopMovement(1f);
+        StartCoroutine(stpMv);
+        
         boss.BossAnimator.PlayJumpAttack();
+
+        _nextJumpAttackTime = 0f;
     }
     
-    public void RangedAttack()
+    
+    //this attack in played on the animation itself
+    public void JumpedRangedAttack()
     {
-        
+        //skull chances are big
+        int rnd = Random.Range(0, 3);
+        if (rnd < 1)
+        {
+
+            // no delay as the attack played by animator
+            StartCoroutine(SlashAttack(0.0f));
+            StartCoroutine(SlashAttack(0.1f));
+            StartCoroutine(SlashAttack(0.2f));
+            
+        }
+        else
+        {
+
+            // no delay as the attack played by animator
+            StartCoroutine(SkullAttack(0.0f));
+            StartCoroutine(SkullAttack(0.1f));
+            StartCoroutine(SkullAttack(0.2f));
+
+        }
     }
 
-    public void CanRangeAttack()
+
+    public void RangedAttack()
     {
+        // slash chances are big
+        int rnd = Random.Range(0, 10);
+        if (rnd > 0)
+        {
+            if (_nextSlashFireTime <= slashFireRate) return;
+            
+            boss.BossAnimator.PlayMeleeAttack();
+            
+            //adds the delay to sync
+            StartCoroutine(SlashAttack(0.5f));
+            
+            _nextSlashFireTime = 0f;
+            
+        }
+        else
+        {
+            
+            if (_nextSlashFireTime <= slashFireRate) return;
+            
+            boss.BossAnimator.PlayMeleeAttack();
+            
+            //adds the delay to sync
+            StartCoroutine(SkullAttack(0.5f));
+            
+            _nextSlashFireTime = 0f;
+        }
+    }
+    
+
+    private IEnumerator SlashAttack(float delay)
+    {
+        //wait for a delay
+        yield return new WaitForSeconds(delay);
         
+        GameObject slash = Instantiate(slashProjectile, firePoint.position, Quaternion.identity);
+
+        slash.GetComponent<BossProjectile>().Initialise(slashDamage, boss.Target, _attackTag);
+
+    }
+    
+    private IEnumerator SkullAttack(float delay)
+    {
+        //wait for a delay
+        yield return new WaitForSeconds(delay);
+
+        GameObject slash = Instantiate(skullProjectile, firePoint.position, Quaternion.identity);
+
+        slash.GetComponent<BossProjectile>().Initialise(slashDamage, boss.Target, _attackTag);
+
     }
 
     private void OnDrawGizmosSelected()
