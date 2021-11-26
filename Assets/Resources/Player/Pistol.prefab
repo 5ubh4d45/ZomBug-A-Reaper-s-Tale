@@ -262,7 +262,7 @@ MonoBehaviour:
   _attackDamage: 15
   _startTimeBtwShots: 0.5
   _attackTag: Enemy
-  _displayImage: {fileID: -484760411732873900, guid: 173ca31725e774d4aa32ee0a4547f454, type: 3}
+  _displayImage: {fileID: 21300000, guid: 14e427d8eb4c87e5989d8d0f6ec8f43e, type: 3}
   _displayImageTint: {r: 1, g: 1, b: 1, a: 1}
   IsPickedUp: 0
   _ammoSystem:

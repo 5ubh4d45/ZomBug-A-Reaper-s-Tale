@@ -232,7 +232,7 @@ MonoBehaviour:
   _attackDamage: 25
   _startTimeBtwShots: 1
   _attackTag: Enemy
-  _displayImage: {fileID: 4566179327399126721, guid: b6a3d347a0a7fac47a6638bb1bcb015f, type: 3}
+  _displayImage: {fileID: 21300000, guid: f6ca25f849900d5abaf3b27266538f8d, type: 3}
   _displayImageTint: {r: 1, g: 1, b: 1, a: 1}
   IsPickedUp: 0
   _ammoSystem:
@@ -261,7 +261,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1143832687223356954
 Transform:
   m_ObjectHideFlags: 0
