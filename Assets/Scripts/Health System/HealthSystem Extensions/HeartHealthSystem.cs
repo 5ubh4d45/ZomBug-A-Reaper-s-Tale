@@ -13,7 +13,7 @@ namespace Game.HealthSystem
         #region Variables
         [SerializeField] private int _numberOfHearts;
         [SerializeField] private int _maxFragments;
-        private int _health;
+        [SerializeField] private int _health;
         private List<Heart> _hearts;
         #endregion
 

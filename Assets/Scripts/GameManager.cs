@@ -24,7 +24,7 @@ namespace Game.Core
         #region Variables
         [SerializeField] private GameState _defaultState;
 
-        private GameState _gameState;
+        private GameState _gameState = GameState.NONE;
 
         public Empty OnGameStateChanged;
         #endregion
@@ -32,13 +32,14 @@ namespace Game.Core
 
         #region Getters And Setters
         public GameState GameState => _gameState;
+        public bool DidWon;
         #endregion
 
 
         #region Unity Calls
         private void Awake()
         {
-            _gameState = _defaultState;
+            ChangeGameState(_defaultState);
         }
         #endregion
 

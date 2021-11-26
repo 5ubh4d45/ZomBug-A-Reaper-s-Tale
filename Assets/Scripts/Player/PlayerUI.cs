@@ -1,37 +1,56 @@
 using System;
 using Game.Combat;
+using Game.Core;
+using Game.HealthSystem;
 using TMPro;
 using UnityEngine;
 
 public class PlayerUI : MonoBehaviour
 {
     #region Variables
+    [SerializeField] private GameObject _root;
     [SerializeField] private TMP_Text _loadedAmmoText;
     [SerializeField] private TMP_Text _unloadedAmmoText;
     [SerializeField] private GameObject _ammoCounter;
-    private PlayerCombat _playerCombat;
+    [SerializeField] private HealthBar<HeartHealthSystem> _healthBar;
     #endregion
 
 
     #region Getters And Setters
-
+    public HealthBar<HeartHealthSystem> HealthBar => _healthBar;
     #endregion
 
 
     #region Unity Calls
     private void Start()
     {
-        _playerCombat = GetComponent<PlayerCombat>();
-        _playerCombat.OnWeaponPicked += WeaponPicked;
-        _playerCombat.OnWeaponDropped += WeaponDropped;
-        _playerCombat.OnWeaponSwitched += WeaponSwitched;
+        GameManager.Instance.OnGameStateChanged += UpdateState;
+        _root.SetActive(false);
     }
 
-    private void OnDestroy()
+    private void UpdateState()
     {
-        _playerCombat.OnWeaponPicked -= WeaponPicked;
-        _playerCombat.OnWeaponDropped -= WeaponDropped;
-        _playerCombat.OnWeaponSwitched -= WeaponSwitched;
+        if (GameManager.Instance.GameState == GameState.GAME)
+        {
+            Player.Instance.PlayerCombat.OnWeaponPicked += WeaponPicked;
+            Player.Instance.PlayerCombat.OnWeaponDropped += WeaponDropped;
+            Player.Instance.PlayerCombat.OnWeaponSwitched += WeaponSwitched;
+            _root.SetActive(true);
+        }
+        else
+        {
+            _root.SetActive(false);
+
+            try
+            {
+                Player.Instance.PlayerCombat.OnWeaponPicked -= WeaponPicked;
+                Player.Instance.PlayerCombat.OnWeaponDropped -= WeaponDropped;
+                Player.Instance.PlayerCombat.OnWeaponSwitched -= WeaponSwitched;
+            }
+            catch (System.Exception)
+            {
+            }
+        }
     }
     #endregion
 
@@ -39,24 +58,24 @@ public class PlayerUI : MonoBehaviour
     #region Component Functions
     private void UpdateCombatUI(int changeAmount)
     {
-        _loadedAmmoText.text = (_playerCombat.CurrentWeapon as RangedWeapon).AmmoSystem.LoadedAmmo.ToString();
-        _unloadedAmmoText.text = (_playerCombat.CurrentWeapon as RangedWeapon).AmmoSystem.UnloadedAmmo.ToString();
+        _loadedAmmoText.text = (Player.Instance.PlayerCombat.CurrentWeapon as RangedWeapon).AmmoSystem.LoadedAmmo.ToString();
+        _unloadedAmmoText.text = (Player.Instance.PlayerCombat.CurrentWeapon as RangedWeapon).AmmoSystem.UnloadedAmmo.ToString();
     }
 
     private void UpdateCombatUI()
     {
-        _loadedAmmoText.text = (_playerCombat.CurrentWeapon as RangedWeapon).AmmoSystem.LoadedAmmo.ToString();
-        _unloadedAmmoText.text = (_playerCombat.CurrentWeapon as RangedWeapon).AmmoSystem.UnloadedAmmo.ToString();
+        _loadedAmmoText.text = (Player.Instance.PlayerCombat.CurrentWeapon as RangedWeapon).AmmoSystem.LoadedAmmo.ToString();
+        _unloadedAmmoText.text = (Player.Instance.PlayerCombat.CurrentWeapon as RangedWeapon).AmmoSystem.UnloadedAmmo.ToString();
     }
 
     private void WeaponPicked(Weapon weapon)
     {
-        if (_playerCombat.CurrentWeapon as MeleeWeapon != null)
+        if (Player.Instance.PlayerCombat.CurrentWeapon as MeleeWeapon != null)
         {
             _loadedAmmoText.text = "\u221E";
             _unloadedAmmoText.text = "\u221E";
         }
-        else if (_playerCombat.CurrentWeapon as RangedWeapon != null)
+        else if (Player.Instance.PlayerCombat.CurrentWeapon as RangedWeapon != null)
         {
             RangedWeapon rangedWeapon = weapon as RangedWeapon;
             rangedWeapon.AmmoSystem.OnAmmoUsed += UpdateCombatUI;
@@ -86,7 +105,7 @@ public class PlayerUI : MonoBehaviour
             RangedWeapon rangedWeapon = weapon as RangedWeapon;
             UpdateCombatUI();
         }
-        else if (_playerCombat.CurrentWeapon as MeleeWeapon != null)
+        else if (Player.Instance.PlayerCombat.CurrentWeapon as MeleeWeapon != null)
         {
             _loadedAmmoText.text = "\u221E";
             _unloadedAmmoText.text = "\u221E";

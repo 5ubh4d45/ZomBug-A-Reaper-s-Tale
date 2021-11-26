@@ -51,6 +51,9 @@ namespace Game.Scenes
         // This should only ever be set during serialization/deserialization!
         [SerializeField]
         private string scenePath = string.Empty;
+        [SerializeField] private bool isPersistant;
+
+        public bool IsPersistent => isPersistant;
 
         // Use this when you want to actually have the scene path
         public string ScenePath
@@ -189,7 +192,7 @@ namespace Game.Scenes
                     //{
 
                     // reduce the height by one line and move the content one line below
-                    position.height -= lineHeight;
+                    position.height -= (paddedLine - lineHeight);
                     position.y += lineHeight;
 
                     var sceneAssetProperty = GetSceneAssetProperty(property);
@@ -224,6 +227,10 @@ namespace Game.Scenes
                         // Draw the Build Settings Info of the selected Scene
                         DrawSceneInfoGUI(position, buildScene, sceneControlID + 1);
                     }
+
+                    var persistenceProperty = property.FindPropertyRelative("isPersistant");
+                    position.y += paddedLine;
+                    persistenceProperty.boolValue = EditorGUI.Toggle(position, "Is Persistent", persistenceProperty.boolValue);
 
                     // Optional: If enabled before reset the indentlevel
                     //}

@@ -2,6 +2,7 @@ using UnityEngine;
 using Game.HealthSystem;
 using Game.Score;
 using Game.Pointer;
+using Game.Levels;
 
 public class Enemy : HealthObject<IntHealthSystem>
 {
@@ -17,7 +18,11 @@ public class Enemy : HealthObject<IntHealthSystem>
 
 
     #region Unity Calls
-
+    protected override void Awake()
+    {
+        base.Awake();
+        LevelManager.Instance.RegisterEnemy();
+    }
     #endregion
 
 
@@ -25,6 +30,7 @@ public class Enemy : HealthObject<IntHealthSystem>
     public override void OnDead()
     {
         PointerManager.Instance.SetDefaultCursor();
+        LevelManager.Instance.UnregisterEnemy();
         Destroy(this.gameObject);
     }
 

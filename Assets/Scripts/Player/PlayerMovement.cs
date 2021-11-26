@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Game.DialogueSystem;
 using Game.Combat;
+using Game.Core;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -50,11 +51,16 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        _player = GetComponent<Player>();
+        GameManager.Instance.OnGameStateChanged += Initialise;
+        Initialise();
+    }
+
+    private void Initialise()
+    {
+        _player = GetComponentInParent<Player>();
         cam = Camera.main;
         _lastPos = rb.transform.position;
     }
-
 
     void Update()
     {
@@ -63,6 +69,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (GameManager.Instance.GameState != GameState.GAME) return;
         //checks the directions the player moving
         CheckDirections();
 

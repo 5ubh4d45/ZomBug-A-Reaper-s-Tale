@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Game.Core;
 using Game.HealthSystem;
 using UnityEngine;
 
@@ -18,6 +19,7 @@ public class PlayerAnimator : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.Instance.GameState != GameState.GAME) return;
         anim.SetBool("HasGun", player.PlayerCombat.HasGun);
 
         if (player.PlayerMovement.IsFacingRight)
