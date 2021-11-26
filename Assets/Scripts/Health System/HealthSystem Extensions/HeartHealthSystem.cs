@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 namespace Game.HealthSystem
 {
@@ -13,7 +14,7 @@ namespace Game.HealthSystem
         #region Variables
         [SerializeField] private int _numberOfHearts;
         [SerializeField] private int _maxFragments;
-        private int _health;
+        [SerializeField] private int _health;
         private List<Heart> _hearts;
         #endregion
 
@@ -63,6 +64,8 @@ namespace Game.HealthSystem
             _health -= damage;
             if (_health <= 0)
             {
+                //play dying sound
+                RuntimeManager.PlayOneShot("event:/SFX_player_die");
                 _health = 0;
                 if (!IsDead)
                 {
@@ -76,6 +79,9 @@ namespace Game.HealthSystem
         public override void Heal(float healAmount)
         {
             int heal = Mathf.RoundToInt(healAmount);
+
+            //play heal sound
+            RuntimeManager.PlayOneShot("event:/SFX_heal");
 
             for (int i = 0; i < _hearts.Count; i++)
             {

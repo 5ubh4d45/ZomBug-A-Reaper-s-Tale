@@ -1,3 +1,5 @@
+using System;
+using Game.Core;
 using UnityEngine;
 
 namespace Game.Score
@@ -51,11 +53,20 @@ namespace Game.Score
 
 
         #region Unity Calls
-
+        private void Awake()
+        {
+            _highScore = PlayerPrefs.GetInt("HighScore", 0);
+        }
         #endregion
 
 
         #region Component Functions
+        public void Reset()
+        {
+            _currentScore = 0;
+            OnScoreReduced?.Invoke(0);
+        }
+
         public void AddScore(Enemy enemy)
         {
             _currentScore += enemy.ScorePerHit;
@@ -63,6 +74,7 @@ namespace Game.Score
             if (_highScore < _currentScore)
             {
                 _highScore = _currentScore;
+                PlayerPrefs.SetInt("HighScore", _highScore);
                 OnNewHighScore?.Invoke();
             }
 
@@ -76,6 +88,7 @@ namespace Game.Score
             if (_highScore < _currentScore)
             {
                 _highScore = _currentScore;
+                PlayerPrefs.SetInt("HighScore", _highScore);
                 OnNewHighScore?.Invoke();
             }
 

@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Game.HealthSystem;
+using Game.Core;
+using System;
+using Game.Levels;
+using FMODUnity;
 
 
 //this class will contain all the functionalities
@@ -12,7 +16,6 @@ public class Player : HealthObject<HeartHealthSystem>
 
 
     [Header("CameraShake")]
-    [SerializeField] private CameraShake cameraShake;
     [SerializeField] private float camShakeIntensity = 1f;
     [SerializeField] private float camShakeFrequency = 3f;
     [SerializeField] private float camShakeTime = 0.2f;
@@ -23,6 +26,8 @@ public class Player : HealthObject<HeartHealthSystem>
     private PlayerCombat _playerCombat;
     private PlayerAnimator _playerAnimator;
     private PlayerMovement _playerMovement;
+    private SpriteRenderer _renderer;
+    private CameraShake _cameraShake => CameraShake.Instance;
 
     private float _meleeDamageCoolDown = 1f;
     private float _nextMeleeDamageTime = 0f;
@@ -33,13 +38,38 @@ public class Player : HealthObject<HeartHealthSystem>
     public PlayerAnimator PlayerAnimator => _playerAnimator;
     public PlayerMovement PlayerMovement => _playerMovement;
 
+    public void Reset()
+    {
+        _healthSystem.Heal(_healthSystem.MaxHealth);
+        PlayerCombat.Reset();
+    }
+
+    protected override void Awake()
+    {
+        base.Awake();
+        GameManager.Instance.OnGameStateChanged += UpdateState;
+        _renderer = GetComponent<SpriteRenderer>();
+        _renderer.enabled = false;
+    }
+
+    private void UpdateState()
+    {
+        if (GameManager.Instance.GameState == GameState.GAME)
+        {
+            _renderer.enabled = true;
+        }
+        else
+        {
+            _renderer.enabled = false;
+        }
+    }
 
     private void Start()
     {
         _instance = this;
         _playerCombat = GetComponent<PlayerCombat>();
         _playerAnimator = GetComponent<PlayerAnimator>();
-        _playerMovement = GetComponent<PlayerMovement>();
+        _playerMovement = GetComponentInChildren<PlayerMovement>();
     }
 
     private void Update()
@@ -66,19 +96,13 @@ public class Player : HealthObject<HeartHealthSystem>
                 
                 _nextMeleeDamageTime = 0f;
                 
+                //plays sound of player being hurt
+                RuntimeManager.PlayOneShot("event:/SFX_player_hurt");
+
                 //adds cam shake when damage taken
                 cameraShake.ShakeCamera(camShakeIntensity, camShakeFrequency, camShakeTime);
             }
-            if (collision2D.gameObject.CompareTag("Boss"))
-            {
-                _healthSystem.Damage(1);
-                
-                _nextMeleeDamageTime = 0f;
-                
-                //adds cam shake when damage taken
-                cameraShake.ShakeCamera(camShakeIntensity, camShakeFrequency, camShakeTime);
-            }
-            
+
         }
         
 
@@ -93,5 +117,12 @@ public class Player : HealthObject<HeartHealthSystem>
             _healthSystem.Heal(1);
 
         }
+    }
+
+    public override void OnDead()
+    {
+        _renderer.enabled = false;
+        GameManager.Instance.DidWon = false;
+        LevelSceneManager.Instance.LoadEndScreen(false);
     }
 }

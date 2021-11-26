@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Game.Combat;
+using Game.Core;
 using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
@@ -47,6 +48,8 @@ public class PlayerCombat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.Instance.GameState != GameState.GAME) return;
+
         if (Input.GetMouseButtonDown(0))
         {
             _currentWeapon?.Attack();
@@ -188,4 +191,15 @@ public class PlayerCombat : MonoBehaviour
         StartCoroutine(stopMovement);
     }
 
+    public void Reset()
+    {
+        foreach (var child in _weapons)
+        {
+            Destroy(child.gameObject);
+        }
+        _weaponAim.aimTransform = _weaponAim.transform;
+        _currentWeapon = null;
+        _weaponHolder = null;
+        _weapons = new List<Weapon>();
+    }
 }

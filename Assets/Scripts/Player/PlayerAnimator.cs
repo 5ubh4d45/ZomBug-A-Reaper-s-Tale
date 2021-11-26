@@ -1,8 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Game.Core;
 using Game.HealthSystem;
 using UnityEngine;
+using FMODUnity;
 
 public class PlayerAnimator : MonoBehaviour
 {
@@ -18,6 +20,7 @@ public class PlayerAnimator : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.Instance.GameState != GameState.GAME) return;
         anim.SetBool("HasGun", player.PlayerCombat.HasGun);
 
         if (player.PlayerMovement.IsFacingRight)
@@ -127,7 +130,7 @@ public class PlayerAnimator : MonoBehaviour
 
     public void PlayMeleeAttack1()
     {
-
+        RuntimeManager.PlayOneShot("event:/SFX_scythe_miss");
         if (player.PlayerMovement.IsFacingRight)
         {
             anim.SetTrigger("Melee1R");
@@ -142,6 +145,7 @@ public class PlayerAnimator : MonoBehaviour
 
     public void PlayMeleeAttack2()
     {
+        RuntimeManager.PlayOneShot("event:/SFX_scythe_miss");
         if (player.PlayerMovement.IsFacingRight)
         {
             anim.SetTrigger("Melee2R");

@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d5303944236f7604aa63ab9daa97dfbe, type: 3}
-  m_Name: Game Scene
+  m_Name: Level 6
   m_EditorClassIdentifier: 
   SceneReferences:
-  - sceneAsset: {fileID: 102900000, guid: ce402de95146b1f49a2c27bbb445857f, type: 3}
-    scenePath: Assets/Scenes/AnimationTesting/ANimation Testing.unity
+  - sceneAsset: {fileID: 102900000, guid: f3dc8da4a18e35d4fbab5e50a533250e, type: 3}
+    scenePath: Assets/Scenes/Levels/Level_6.unity
   ActiveSceneIndex: 0
   CursorSize: 6

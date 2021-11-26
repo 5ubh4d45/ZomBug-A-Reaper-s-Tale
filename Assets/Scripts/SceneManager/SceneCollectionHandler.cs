@@ -111,6 +111,29 @@ namespace Game.Scenes
             StartCoroutine(UpdateSceneLoadProgress());
         }
 
+        public void LoadSceneCollection(SceneCollection collection, bool forceUnload = false, bool updateSceneLoadProgress = true)
+        {
+            if (collection == null) return;
+
+            _loadingScreen.SetActive(updateSceneLoadProgress);
+            _lastCollection = _currentCollection;
+
+
+            foreach (var sceneRef in collection.SceneReferences)
+            {
+                string sceneName = sceneRef.ScenePath.Split('/').Last();
+                sceneName = sceneName.Substring(0, sceneName.Length - 6);
+                AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+
+                _operations.Add(operation);
+            }
+
+            UnloadCurrentLoadedCollection(forceUnload, updateSceneLoadProgress);
+
+            _currentCollection = collection;
+            StartCoroutine(UpdateSceneLoadProgress());
+        }
+
         public IEnumerator UpdateSceneLoadProgress()
         {
             _isLoading = true;
@@ -143,12 +166,14 @@ namespace Game.Scenes
             OnLoadCompelete?.Invoke();
         }
 
-        public void UnloadCurrentLoadedCollection(bool updateProgress = true)
+        public void UnloadCurrentLoadedCollection(bool forceUnload = false, bool updateProgress = true)
         {
             if (_currentCollection == null) return;
 
             foreach (var sceneRef in _currentCollection.SceneReferences)
             {
+                if (sceneRef.IsPersistent && !forceUnload) continue;
+
                 Scene scene = SceneManager.GetSceneByPath(sceneRef.ScenePath);
                 AsyncOperation operation = SceneManager.UnloadSceneAsync(scene.buildIndex);
 

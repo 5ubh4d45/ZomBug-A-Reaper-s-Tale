@@ -35,6 +35,10 @@ namespace Game.Core
                 //The new game state is the Game scene, so play the emitter.
                 _emitter.Play();
             }
+            else if (GameManager.Instance.GameState != GameState.GAME)
+            {
+                _emitter.Stop();
+            }
         }
 
         // Update is called once per frame
