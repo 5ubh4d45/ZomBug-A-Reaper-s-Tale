@@ -5,6 +5,7 @@ using Game.HealthSystem;
 using Game.Core;
 using System;
 using Game.Levels;
+using FMODUnity;
 
 
 //this class will contain all the functionalities
@@ -85,6 +86,9 @@ public class Player : HealthObject<HeartHealthSystem>
         if (collision2D.gameObject.CompareTag("Enemy"))
         {
             _healthSystem.Damage(1);
+
+            //plays sound of player being hurt
+            RuntimeManager.PlayOneShot("event:/SFX_player_hurt");
 
             //adds cam shake when damage taken
             _cameraShake.ShakeCamera(camShakeIntensity, camShakeFrequency, camShakeTime);
