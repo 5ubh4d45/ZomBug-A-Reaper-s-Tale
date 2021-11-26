@@ -85213,12 +85213,12 @@ MonoBehaviour:
   _healthSystem:
     _current: 500
     _maximum: 1000
+  _scorePerHit: 0
   bossMovement: {fileID: 1253596777}
   bossAnimator: {fileID: 1253596774}
   bossCombat: {fileID: 1253596775}
   bossBehavior: {fileID: 1253596776}
   target: {fileID: 1944823130}
-  _scorePerHit: 0
 --- !u!1 &1360990267
 GameObject:
   m_ObjectHideFlags: 0
@@ -87748,6 +87748,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 1724228026}
   behavior: {fileID: 1724228021}
+  deathAnimationTIme: 0
 --- !u!114 &1724228019
 MonoBehaviour:
   m_ObjectHideFlags: 0

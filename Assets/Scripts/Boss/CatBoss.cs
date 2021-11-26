@@ -6,7 +6,7 @@ using Game.Score;
 using Game.Pointer;
 
 
-public class CatBoss : HealthObject<IntHealthSystem>
+public class CatBoss : Enemy
 {   
     [Header("Required Componenets")]
     [SerializeField] private BossMovement bossMovement;
@@ -15,16 +15,15 @@ public class CatBoss : HealthObject<IntHealthSystem>
     [SerializeField] private BossBehavior bossBehavior;
 
     [Space] [SerializeField] private Transform target;
-    [SerializeField] private int _scorePerHit;
-    
-    
+
+
     #region Getters
 
     public BossAnimator BossAnimator => bossAnimator;
     public BossMovement BossMovement => bossMovement;
     public BossCombat BossCombat => bossCombat;
     public BossBehavior BossBehavior => bossBehavior;
-    public int ScorePerHit => _scorePerHit;
+    
 
     public Transform Target => target;
 
@@ -85,6 +84,7 @@ public class CatBoss : HealthObject<IntHealthSystem>
     
     public override void OnDamaged(float damageAmount)
     {
-        ScoreManager.Instance.AddScore(_scorePerHit);
+        ScoreManager.Instance.AddScore(this.ScorePerHit);
     }
+    
 }

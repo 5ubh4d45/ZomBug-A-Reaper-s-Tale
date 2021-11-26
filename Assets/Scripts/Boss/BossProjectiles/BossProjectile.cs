@@ -75,6 +75,7 @@ public class BossProjectile : MonoBehaviour
         {
             healthObject.HealthSystem.Damage(_damage);
             // healthObject.HealthSystem().Damage(_damage);
+            
             //adding a force to impact
             collision.gameObject.GetComponentInParent<Rigidbody2D>().AddForce(_direction * impactForce, ForceMode2D.Impulse);
             

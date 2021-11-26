@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebb99da44d7e57344b3e1e6619f8cbf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 12
+  speed: 10
   aliveTime: 10
   impactForce: 5
   introAnimationWaitTime: 0.1
