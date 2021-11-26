@@ -88941,7 +88941,7 @@ MonoBehaviour:
   _weaponAim: {fileID: 574740459}
   _maxWeapons: 3
   player: {fileID: 1944823131}
-  _scythe2: {fileID: 0}
+  _scythe2: {fileID: 889241898}
 --- !u!114 &1944823133
 MonoBehaviour:
   m_ObjectHideFlags: 0

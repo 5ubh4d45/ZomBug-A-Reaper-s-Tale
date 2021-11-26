@@ -324,8 +324,8 @@ GameObject:
   - component: {fileID: 4299325147034976387}
   - component: {fileID: 4299325147034976386}
   - component: {fileID: 4299325147034976385}
-  - component: {fileID: 4299325147034976384}
   - component: {fileID: 4299325147034976399}
+  - component: {fileID: 4299325147034976384}
   - component: {fileID: 4299325147034976398}
   - component: {fileID: 4299325147034976397}
   m_Layer: 0
@@ -532,28 +532,11 @@ MonoBehaviour:
   enemyType: 1
   showRangeCircle: 1
   minFreeRoamRange: 1
-  maxFreeRoamRange: 2
-  detectionRange: 7.74
-  idleWaitTime: 2
-  attackRange: 3
-  meleeRange: 0.55
---- !u!114 &4299325147034976384
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4299325147034976396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c46f1ad23f2e2f229b1279ce63050adc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  seeker: {fileID: 4299325147034976389}
-  rb: {fileID: 4299325147034976386}
-  repeatRate: 0.5
-  speed: 2
-  nextWaypointDistance: 1
+  maxFreeRoamRange: 3.09
+  detectionRange: 7.53
+  idleWaitTime: 1
+  attackRange: 3.38
+  meleeRange: 1.28
 --- !u!114 &4299325147034976399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -571,6 +554,23 @@ MonoBehaviour:
     _current: 100
     _maximum: 100
   _scorePerHit: 0
+--- !u!114 &4299325147034976384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4299325147034976396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c46f1ad23f2e2f229b1279ce63050adc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seeker: {fileID: 4299325147034976389}
+  rb: {fileID: 4299325147034976386}
+  repeatRate: 0.5
+  speed: 3.5
+  nextWaypointDistance: 1
 --- !u!114 &4299325147034976398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -603,8 +603,8 @@ MonoBehaviour:
   firePoint: {fileID: 4299325147106251987}
   fireRate: 1
   attackDamage: 1
-  meleeRate: 1
-  meleeDamage: 1
+  meleeRate: 1.21
+  meleeDamage: 1.54
 --- !u!1 &4299325147038416921
 GameObject:
   m_ObjectHideFlags: 0
