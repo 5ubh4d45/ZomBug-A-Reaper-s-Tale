@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using  Game.HealthSystem;
 using Pathfinding.Ionic.Zlib;
+using FMODUnity;
 
 namespace Game.Combat
 {
@@ -32,7 +33,8 @@ namespace Game.Combat
         private void OnTriggerEnter2D(Collider2D collision)
         {
             HealthObject healthObject = collision.gameObject.GetComponent<HealthObject>();
-            
+            RuntimeManager.PlayOneShot("event:/SFX_scythe_hits");
+
             if (healthObject != null && collision.gameObject.CompareTag(attackTag))
             {
                 healthObject.HealthSystem.Damage(_damage);
