@@ -85707,6 +85707,7 @@ GameObject:
   - component: {fileID: 1628193713}
   - component: {fileID: 1628193712}
   - component: {fileID: 1628193711}
+  - component: {fileID: 1628193714}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -85762,6 +85763,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1628193714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1628193710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d12d36cefe7078345963e51466a3a658, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1724228016
 GameObject:
   m_ObjectHideFlags: 0
@@ -85822,6 +85835,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 1724228026}
   behavior: {fileID: 1724228021}
+  deathAnimationTIme: 0
 --- !u!114 &1724228019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85876,6 +85890,7 @@ MonoBehaviour:
   canFollow: 1
   canForgetTarget: 1
   enemyType: 1
+  backOffImpulseForce: 5
   showRangeCircle: 1
   minFreeRoamRange: 1
   maxFreeRoamRange: 2
