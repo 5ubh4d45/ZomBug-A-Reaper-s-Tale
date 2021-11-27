@@ -100,7 +100,7 @@ public class Player : HealthObject<HeartHealthSystem>
                 RuntimeManager.PlayOneShot("event:/SFX_player_hurt");
 
                 //adds cam shake when damage taken
-                cameraShake.ShakeCamera(camShakeIntensity, camShakeFrequency, camShakeTime);
+                _cameraShake.ShakeCamera(camShakeIntensity, camShakeFrequency, camShakeTime);
             }
 
         }

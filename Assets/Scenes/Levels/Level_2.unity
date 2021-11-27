@@ -83308,6 +83308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 1597328364}
   behavior: {fileID: 1597328359}
+  deathAnimationTIme: 0
 --- !u!114 &1597328357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83670,6 +83671,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 1724228026}
   behavior: {fileID: 1724228021}
+  deathAnimationTIme: 0
 --- !u!114 &1724228019
 MonoBehaviour:
   m_ObjectHideFlags: 0
