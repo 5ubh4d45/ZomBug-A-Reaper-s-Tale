@@ -43,6 +43,10 @@ public class PlayerCombat : MonoBehaviour
     private void Start()
     {
         player = GetComponent<Player>();
+        if (_scythe2 == null)
+        {
+            _scythe2 = GetComponentInChildren<Scythe2>();
+        }
     }
 
     // Update is called once per frame

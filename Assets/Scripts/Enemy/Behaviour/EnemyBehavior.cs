@@ -89,6 +89,11 @@ namespace EnemyBehavior
             {
                 enemyCombat = GetComponent<EnemyCombat>();
             }
+
+            if (playerTarget == null)
+            {
+                playerTarget = GameObject.FindGameObjectWithTag("Player").transform;
+            }
             
             
             //setting up private variables

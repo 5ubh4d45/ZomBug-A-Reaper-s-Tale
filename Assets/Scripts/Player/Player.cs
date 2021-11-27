@@ -29,6 +29,9 @@ public class Player : HealthObject<HeartHealthSystem>
     private SpriteRenderer _renderer;
     private CameraShake _cameraShake => CameraShake.Instance;
 
+    private float _meleeDamageCoolDown = 1f;
+    private float _nextMeleeDamageTime = 0f;
+
     public float MoveSpeed => moveSpeed;
     public IInteractable Interactable { get; set; }
     public PlayerCombat PlayerCombat => _playerCombat;
@@ -80,19 +83,31 @@ public class Player : HealthObject<HeartHealthSystem>
                 Interactable.Interact(this);
             }
         }
+
+        _nextMeleeDamageTime += Time.deltaTime;
     }
     private void OnCollisionEnter2D(Collision2D collision2D)
     {
-        if (collision2D.gameObject.CompareTag("Enemy"))
+        if (_nextMeleeDamageTime >= _meleeDamageCoolDown)
         {
-            _healthSystem.Damage(1);
+            if (collision2D.gameObject.CompareTag("Enemy"))
+            {
+                _healthSystem.Damage(1);
+                
+                _nextMeleeDamageTime = 0f;
+                
+                //plays sound of player being hurt
+                RuntimeManager.PlayOneShot("event:/SFX_player_hurt");
 
-            //plays sound of player being hurt
-            RuntimeManager.PlayOneShot("event:/SFX_player_hurt");
+                //adds cam shake when damage taken
+                _cameraShake.ShakeCamera(camShakeIntensity, camShakeFrequency, camShakeTime);
+            }
 
-            //adds cam shake when damage taken
-            _cameraShake.ShakeCamera(camShakeIntensity, camShakeFrequency, camShakeTime);
         }
+        
+
+        
+
     }
 
     private void OnTriggerEnter2D(Collider2D collider2D)

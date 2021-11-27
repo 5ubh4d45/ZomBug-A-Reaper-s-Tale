@@ -7,6 +7,9 @@ public class EnemyAnimator : MonoBehaviour
 {
     [SerializeField] private Animator anim;
     [SerializeField] private EnemyBehavior.EnemyBehavior behavior;
+    [SerializeField] private float deathAnimationTIme;
+
+    public float DeathAnimationTime => deathAnimationTIme;
     
     
     // Start is called before the first frame update
@@ -60,6 +63,11 @@ public class EnemyAnimator : MonoBehaviour
     public void PlayRangedAttack()
     {
         anim.SetTrigger("RangedAttack");
+    }
+
+    public void PlayDeathAnimation()
+    {
+        anim.SetTrigger("Death");
     }
     
 }

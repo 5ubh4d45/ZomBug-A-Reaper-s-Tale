@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
     private bool _isMovingUp;
     private bool _isMovingDown;
 
-    private bool _canMove = true;
+    private float _moveSpeedModifier = 1f;
 
     public bool IsMoving => _isMoving;
     public bool IsFacingRight => _isFacingRight;
@@ -98,11 +98,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void MovePlayer()
     {
-        if (!_canMove) return;
         //changing positions according to input
-        rb.MovePosition(rb.position + _movementDir * _player.MoveSpeed * Time.fixedDeltaTime);
-
-
+        //added the movespeedmodifier to control the movement speed like stopping the player
+        rb.MovePosition(rb.position + _movementDir * _player.MoveSpeed * Time.fixedDeltaTime * _moveSpeedModifier);
+        
     }
 
     private void CheckDirections()
@@ -146,10 +145,14 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public IEnumerator StopMovement(float secsToStop)
-    {
-        _canMove = false;
+    {   
+        //stops the player
+        _moveSpeedModifier = 0f;
+        
         yield return new WaitForSeconds(secsToStop);
-        _canMove = true;
+        
+        //resumes the player
+        _moveSpeedModifier = 1f;
     }
 
 }

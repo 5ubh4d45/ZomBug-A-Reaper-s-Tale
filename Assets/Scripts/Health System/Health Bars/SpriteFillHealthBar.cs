@@ -13,7 +13,7 @@ namespace Game.HealthSystem
         [SerializeField] private Gradient _tintGradient;
         [SerializeField] private Transform _barAnchor;
         [SerializeField] private SpriteRenderer _barFill;
-        [SerializeField] private GameObject _backGroundBox;
+        [SerializeField] private SpriteRenderer _backGroundBox;
 
         private bool _isHealthBarOn;
         #endregion
@@ -32,7 +32,7 @@ namespace Game.HealthSystem
         {
             //turning off the sprite renderer of the health bar
             _barFill.enabled = false;
-            _backGroundBox.SetActive(false);
+            _backGroundBox.enabled = false;
             _isHealthBarOn = false;
         }
 
@@ -58,7 +58,7 @@ namespace Game.HealthSystem
         {
             if (_isHealthBarOn) return;
             _barFill.enabled = true;
-            _backGroundBox.SetActive(true);
+            _backGroundBox.enabled = false;
         }
         #endregion
     }
