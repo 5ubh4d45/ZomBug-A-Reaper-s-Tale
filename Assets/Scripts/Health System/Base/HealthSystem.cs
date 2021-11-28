@@ -6,7 +6,7 @@ namespace Game.HealthSystem
     public abstract class HealthSystem
     {
         #region Variables
-        protected private bool IsDead;
+        protected private bool _isDead;
         public Empty OnDead;
         public Event<float> OnDamaged;
         public Event<float> OnHealed;
@@ -28,6 +28,11 @@ namespace Game.HealthSystem
         public virtual void Heal(float healAmount)
         {
 
+        }
+
+        public virtual void Reset()
+        {
+            _isDead = false;
         }
         #endregion
 

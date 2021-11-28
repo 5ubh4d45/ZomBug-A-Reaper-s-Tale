@@ -47,6 +47,7 @@ public class Player : HealthObject<HeartHealthSystem>
     protected override void Awake()
     {
         base.Awake();
+        _instance = this;
         GameManager.Instance.OnGameStateChanged += UpdateState;
         _renderer = GetComponent<SpriteRenderer>();
         _renderer.enabled = false;
@@ -66,7 +67,6 @@ public class Player : HealthObject<HeartHealthSystem>
 
     private void Start()
     {
-        _instance = this;
         _playerCombat = GetComponent<PlayerCombat>();
         _playerAnimator = GetComponent<PlayerAnimator>();
         _playerMovement = GetComponentInChildren<PlayerMovement>();
@@ -93,9 +93,9 @@ public class Player : HealthObject<HeartHealthSystem>
             if (collision2D.gameObject.CompareTag("Enemy"))
             {
                 _healthSystem.Damage(1);
-                
+
                 _nextMeleeDamageTime = 0f;
-                
+
                 //plays sound of player being hurt
                 RuntimeManager.PlayOneShot("event:/SFX_player_hurt");
 
@@ -104,9 +104,9 @@ public class Player : HealthObject<HeartHealthSystem>
             }
 
         }
-        
 
-        
+
+
 
     }
 

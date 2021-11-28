@@ -289,7 +289,7 @@ MonoBehaviour:
   _healthSystem:
     _current: 500
     _maximum: 1000
-  _scorePerHit: 0
+  _scorePerHit: 55
   bossMovement: {fileID: 7148152073028882079}
   bossAnimator: {fileID: 7148152073028882064}
   bossCombat: {fileID: 7148152073028882065}

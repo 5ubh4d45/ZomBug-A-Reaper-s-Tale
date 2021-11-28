@@ -30,9 +30,9 @@ namespace Game.HealthSystem
             if (_current <= _minimum)
             {
                 _current = _minimum;
-                if (!IsDead)
+                if (!_isDead)
                 {
-                    IsDead = true;
+                    _isDead = true;
                     OnDead?.Invoke();
                 }
             }
@@ -44,6 +44,12 @@ namespace Game.HealthSystem
             _current += healAmount;
             if (_current > _maximum) _current = _maximum;
             OnHealed?.Invoke(healAmount);
+        }
+
+        public override void Reset()
+        {
+            base.Reset();
+            _current = _maximum;
         }
         #endregion
 

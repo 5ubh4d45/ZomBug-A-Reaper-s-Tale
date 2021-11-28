@@ -554,7 +554,7 @@ MonoBehaviour:
   _healthSystem:
     _current: 100
     _maximum: 100
-  _scorePerHit: 0
+  _scorePerHit: 20
 --- !u!114 &4299325147034976384
 MonoBehaviour:
   m_ObjectHideFlags: 0

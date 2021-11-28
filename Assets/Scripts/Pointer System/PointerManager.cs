@@ -60,7 +60,7 @@ namespace Game.Pointer
                 _renderer.sprite = _cursorTextures[_currentFrame];
             }
             Vector3 cursorPos = Camera.main != null ? Camera.main.ScreenToWorldPoint(Input.mousePosition) : Vector3.zero;
-            cursorPos = new Vector3(cursorPos.x, cursorPos.y, 5);
+            cursorPos = new Vector3(cursorPos.x, cursorPos.y, -5);
             transform.position = Vector3.Lerp(transform.position, cursorPos, _cursorSpeed);
         }
         #endregion

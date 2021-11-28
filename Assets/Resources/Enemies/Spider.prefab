@@ -339,7 +339,7 @@ MonoBehaviour:
   _healthSystem:
     _current: 100
     _maximum: 100
-  _scorePerHit: 0
+  _scorePerHit: 25
 --- !u!114 &4538395533092418573
 MonoBehaviour:
   m_ObjectHideFlags: 0
