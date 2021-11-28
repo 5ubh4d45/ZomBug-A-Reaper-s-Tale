@@ -287,6 +287,7 @@ MonoBehaviour:
   canFollow: 1
   canForgetTarget: 1
   enemyType: 1
+  backOffImpulseForce: 5
   showRangeCircle: 1
   minFreeRoamRange: 1
   maxFreeRoamRange: 2
@@ -585,7 +586,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6941460641047632858}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1

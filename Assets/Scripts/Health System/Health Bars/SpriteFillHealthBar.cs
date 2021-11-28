@@ -58,7 +58,7 @@ namespace Game.HealthSystem
         {
             if (_isHealthBarOn) return;
             _barFill.enabled = true;
-            _backGroundBox.enabled = false;
+            _backGroundBox.enabled = true;
         }
         #endregion
     }
