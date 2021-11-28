@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using FMODUnity;
 
 public class PistolV2 : MonoBehaviour
 {
@@ -34,9 +33,6 @@ public class PistolV2 : MonoBehaviour
 
     public void PlayPistolFire()
     {
-        //play pistol sound
-        RuntimeManager.PlayOneShot("event:/SFX_pistol");
-
         if (Player.Instance.PlayerMovement.IsFacingRight)
         {
             anim.SetTrigger("FireRight");

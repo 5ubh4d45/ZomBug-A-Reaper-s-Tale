@@ -20,12 +20,27 @@ namespace Game.Core
             // Subscribe to the Game State changed event. 
             // To make sure the emitter only plays when we are in the game scene.
             GameManager.Instance.OnGameStateChanged += UpdateMusic;
+            Player.Instance.HealthSystem.OnHealed += PlayHealFX;
+            Player.Instance.HealthSystem.OnDead += PlayDeathFX;
+        }
+
+        private void PlayDeathFX()
+        {
+            //play dying sound
+            RuntimeManager.PlayOneShot("event:/SFX_player_die");
+        }
+
+        private void PlayHealFX(float healAmount)
+        {
+            //play heal sound
+            RuntimeManager.PlayOneShot("event:/SFX_heal");
         }
 
         private void OnDestroy()
         {
             //Unsubscribe to the Game state changed event to avoid null reference exceptions
             GameManager.Instance.OnGameStateChanged -= UpdateMusic;
+            Player.Instance.HealthSystem.OnHealed -= PlayHealFX;
         }
 
         private void UpdateMusic()

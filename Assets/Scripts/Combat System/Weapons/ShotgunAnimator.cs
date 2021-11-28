@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using FMODUnity;
 
 public class ShotgunAnimator : MonoBehaviour
 {
@@ -34,9 +33,6 @@ public class ShotgunAnimator : MonoBehaviour
 
     public void PlayShotgunFire()
     {
-        //play shotgun sound
-        RuntimeManager.PlayOneShot("event:/SFX_shotgun");
-
         if (Player.Instance.PlayerMovement.IsFacingRight)
         {
             anim.SetTrigger("FireRight");

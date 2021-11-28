@@ -64,13 +64,11 @@ namespace Game.HealthSystem
             _health -= damage;
             if (_health <= 0)
             {
-                //play dying sound
-                RuntimeManager.PlayOneShot("event:/SFX_player_die");
                 _health = 0;
-                if (!IsDead)
+                if (!_isDead)
                 {
                     OnDead?.Invoke();
-                    IsDead = true;
+                    _isDead = true;
                 }
             }
             OnDamaged?.Invoke(damage);
@@ -79,9 +77,6 @@ namespace Game.HealthSystem
         public override void Heal(float healAmount)
         {
             int heal = Mathf.RoundToInt(healAmount);
-
-            //play heal sound
-            RuntimeManager.PlayOneShot("event:/SFX_heal");
 
             for (int i = 0; i < _hearts.Count; i++)
             {
@@ -102,6 +97,12 @@ namespace Game.HealthSystem
             _health += heal;
             if (_health > MaxHealth) _health = MaxHealth;
             OnHealed?.Invoke(heal);
+        }
+
+        public override void Reset()
+        {
+            base.Reset();
+            Heal(MaxHealth);
         }
         #endregion
 

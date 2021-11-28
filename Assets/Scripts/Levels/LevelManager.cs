@@ -26,7 +26,6 @@ namespace Game.Levels
 
         #region Variables
         private int _activeEnemiesCount;
-        private List<Enemy> _enemies;
         private int _currentLevel = -1;
 
         /// <summary>
@@ -60,6 +59,7 @@ namespace Game.Levels
             else if (GameManager.Instance.GameState != GameState.GAME)
             {
                 _currentLevel = -1;
+                _activeEnemiesCount = 0;
             }
         }
 
@@ -70,6 +70,7 @@ namespace Game.Levels
             if (_activeEnemiesCount <= 0)
             {
                 _currentLevel++;
+                _activeEnemiesCount = 0;
                 OnLevelFinish?.Invoke(_currentLevel);
             }
         }
