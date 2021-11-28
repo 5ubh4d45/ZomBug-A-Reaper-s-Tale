@@ -89015,6 +89015,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 1724228026}
   behavior: {fileID: 1724228021}
+  deathAnimationTIme: 0
 --- !u!114 &1724228019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89704,7 +89705,7 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   _barAnchor: {fileID: 1360990268}
   _barFill: {fileID: 795498939}
-  _backGroundBox: {fileID: 1289518402}
+  _backGroundBox: {fileID: 98581272}
 --- !u!4 &2014744733
 Transform:
   m_ObjectHideFlags: 0
