@@ -297,8 +297,9 @@ MonoBehaviour:
   enemyCombat: {fileID: 4538395533092418574}
   enemyAnimator: {fileID: 4538395533092418573}
   canFollow: 1
-  canForgetTarget: 1
+  canForgetTarget: 0
   enemyType: 1
+  backOffImpulseForce: 5
   showRangeCircle: 1
   minFreeRoamRange: 1
   maxFreeRoamRange: 2
@@ -320,8 +321,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   seeker: {fileID: 4538395533092418566}
   rb: {fileID: 4538395533092418569}
-  repeatRate: 0.5
-  speed: 2
+  repeatRate: 0.25
+  speed: 3
   nextWaypointDistance: 1
 --- !u!114 &4538395533092418572
 MonoBehaviour:
@@ -337,8 +338,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _healthBar: {fileID: 4538395532941074376}
   _healthSystem:
-    _current: 100
-    _maximum: 100
+    _current: 30
+    _maximum: 30
   _scorePerHit: 25
 --- !u!114 &4538395533092418573
 MonoBehaviour:
@@ -354,7 +355,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 4538395533092418565}
   behavior: {fileID: 4538395533092418570}
-  deathAnimationTIme: 0
+  deathAnimationTIme: 0.5
 --- !u!114 &4538395533092418574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -522,7 +523,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 4f03f151739bdc1f9adfdd5914b1761a, type: 3}
   m_Color: {r: 0.745283, g: 0.34100214, b: 0.34100214, a: 1}
   m_FlipX: 0
@@ -699,7 +700,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 4f03f151739bdc1f9adfdd5914b1761a, type: 3}
   m_Color: {r: 0.23113209, g: 1, b: 0.41539752, a: 1}
   m_FlipX: 0

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 
@@ -34,6 +35,7 @@ namespace EnemyBehavior
         public bool canFollow = true;
         public bool canForgetTarget = true;
         [SerializeField] private EnemyType enemyType;
+        [SerializeField] private float backOffImpulseForce = 5f;
         [SerializeField] private bool showRangeCircle = false;
         
         [Space] [Header("Range Variables")]
@@ -203,6 +205,7 @@ namespace EnemyBehavior
                         case EnemyType.IsMelee: //if its melee it'll follow constantly
 
                             bool withinMeleeRange = _distanceFromTarget <= meleeRange;
+                            
                             if (withinMeleeRange)
                             {
                                 //attack logic and animations here
@@ -210,6 +213,7 @@ namespace EnemyBehavior
                                 
                                 enemyPathFinder.FollowTarget(false, playerTarget.position);
                                 
+
                             }
                             else
                             {
@@ -218,17 +222,29 @@ namespace EnemyBehavior
 
                             break;
                         case EnemyType.IsRanged: //if ranged it'll stop and shoot
-
+                            
+                            //checks for conditions again
+                            withinMeleeRange = _distanceFromTarget <= meleeRange;
                             bool withinAttackRange = _distanceFromTarget <= attackRange;
-                            if (withinAttackRange)
+                            
+                            if (withinAttackRange && !withinMeleeRange)
                             {
                                 //attack logic and animations here
                                 enemyCombat.RangedAttack(transform.position, playerTarget.position);
                                 
                                 enemyPathFinder.FollowTarget(false, playerTarget.position);
                                 
+                                //then add the backoff force to keep the enemy away
+                                StartCoroutine(BackOffImpulse(0.6f));
                             }
-                            else
+                            else if (withinMeleeRange)
+                            {
+                                //attack logic and animations here
+                                // enemyCombat.RangedAttack(transform.position, playerTarget.position);
+                                enemyCombat.MeleeAttack();
+                                
+                                enemyPathFinder.FollowTarget(false, playerTarget.position);
+                            }
                             {
                                 enemyPathFinder.FollowTarget(true, playerTarget.position);
                                 //run animations here
@@ -279,6 +295,20 @@ namespace EnemyBehavior
             }
 
             // return _onLineOfSight;
+        }
+
+        private IEnumerator BackOffImpulse(float delay)
+        {
+            Vector3 lookDir = (playerTarget.position - transform.position).normalized;
+
+            Vector3 reverseDir = new Vector3(lookDir.x * -1, lookDir.y * -1, lookDir.z);
+
+            Vector3 reverseDirForce = reverseDir * backOffImpulseForce;
+
+            yield return new WaitForSeconds(delay);
+            
+            rb.AddForce(reverseDirForce, ForceMode2D.Impulse);
+
         }
 
         private void OnDrawGizmosSelected()

@@ -241,7 +241,7 @@ MonoBehaviour:
     _unloadedAmmo: 25
     _reloadTime: 1
   _projectileEmitionPos: {fileID: 1143832687712328266}
-  _projectile: {fileID: 2501398746736019066, guid: ebae384b33179847091f452e22fe9a69, type: 3}
+  _projectile: {fileID: 2501398746736019066, guid: 75257475c4bdf074c93de128059e50db, type: 3}
   _mapDisplay: {fileID: 1143832686537915707}
   _weapon: {fileID: 1143832687223356953}
   _animationHandler: {fileID: 1143832687223356955}
