@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class EnemySoundHolder : MonoBehaviour
 {
-    [Tooltip("Add String like: event:/(your trigger name) /n [NO QUOTATIONS REQUIRED]")]
     [Header("All the sound Triggers")]
+    [Tooltip("Add String like: event:/(your trigger name) \n [NO QUOTATIONS REQUIRED]")]
     [SerializeField] private string meleeAttackSoundTrigger;
     [SerializeField] private string rangeAttackSoundTrigger;
     [Space]
