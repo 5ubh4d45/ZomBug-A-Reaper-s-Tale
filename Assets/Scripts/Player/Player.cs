@@ -96,17 +96,14 @@ public class Player : HealthObject<HeartHealthSystem>
 
                 _nextMeleeDamageTime = 0f;
 
-                //plays sound of player being hurt
-                RuntimeManager.PlayOneShot("event:/SFX_player_hurt");
+                //starts the dmg effect
+                StartCoroutine(DamageEffect());
 
                 //adds cam shake when damage taken
-                _cameraShake.ShakeCamera(camShakeIntensity, camShakeFrequency, camShakeTime);
+                CameraShake.Instance.ShakeCamera(camShakeIntensity, camShakeFrequency, camShakeTime);
             }
 
         }
-
-
-
 
     }
 
@@ -125,4 +122,26 @@ public class Player : HealthObject<HeartHealthSystem>
         GameManager.Instance.DidWon = false;
         LevelSceneManager.Instance.LoadEndScreen(false);
     }
+    
+    public IEnumerator DamageEffect()
+    {
+        //plays sound of player being hurt
+        RuntimeManager.PlayOneShot("event:/SFX_player_hurt");
+        
+        var sprtRnd = GetComponent<SpriteRenderer>();
+        float flashDelay = 0.06f;
+        
+        sprtRnd.color = Color.red;
+        yield return new WaitForSeconds(flashDelay);
+        
+        sprtRnd.color = new Color(255f, 255, 255f, 255f);
+        yield return new WaitForSeconds(flashDelay);
+        
+        sprtRnd.color = Color.red;
+        yield return new WaitForSeconds(flashDelay);
+
+        sprtRnd.color = new Color(255f, 255, 255f, 255f);
+
+    }
+    
 }

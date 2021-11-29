@@ -328,6 +328,7 @@ GameObject:
   - component: {fileID: 4299325147034976384}
   - component: {fileID: 4299325147034976398}
   - component: {fileID: 4299325147034976397}
+  - component: {fileID: 2690281998521927093}
   m_Layer: 0
   m_Name: FlyingZombie
   m_TagString: Enemy
@@ -522,6 +523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2749ac764d76bcb8bcaacb9722470b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _state: 0
   enemyPathFinder: {fileID: 4299325147034976384}
   playerTarget: {fileID: 0}
   rb: {fileID: 4299325147034976386}
@@ -555,6 +557,7 @@ MonoBehaviour:
     _current: 100
     _maximum: 100
   _scorePerHit: 20
+  soundHolder: {fileID: 0}
 --- !u!114 &4299325147034976384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -587,6 +590,7 @@ MonoBehaviour:
   anim: {fileID: 4299325147034976390}
   behavior: {fileID: 4299325147034976385}
   deathAnimationTIme: 0.8
+  soundHolder: {fileID: 0}
 --- !u!114 &4299325147034976397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -606,6 +610,22 @@ MonoBehaviour:
   attackDamage: 1
   meleeRate: 1.21
   meleeDamage: 1.54
+--- !u!114 &2690281998521927093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4299325147034976396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e784e65a9c2b364c947b64ab4bf2b08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meleeAttackSoundTrigger: 
+  rangeAttackSoundTrigger: 
+  deathSoundTrigger: 
+  hitSoundTrigger: 
 --- !u!1 &4299325147038416921
 GameObject:
   m_ObjectHideFlags: 0

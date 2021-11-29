@@ -1,34 +1,28 @@
 fileFormatVersion: 2
-guid: 445664ea407a3fe4083a535b26345868
+guid: 87596dd1ce5ee8347892f5263bb236b0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2346302928887187388
-    second: bullet_0
+      213: -5552182034233235621
+    second: Heading_1
   - first:
-      213: 5379323082974078785
-    second: bullet_1
+      213: -2979037473780062217
+    second: Heading_2
   - first:
-      213: -2863499236874410579
-    second: bullet_2
+      213: 766194556095288008
+    second: LeftArrow
   - first:
-      213: 6740024121541949626
-    second: bullet_3
+      213: -7012779952056723359
+    second: RightArrow
   - first:
-      213: -470569841363968007
-    second: bullet_4
+      213: -3711311571578955035
+    second: Skull
   - first:
-      213: 6566341438952775323
-    second: bullet_5
+      213: -134149198372127621
+    second: Bar
   - first:
-      213: 746583492180927201
-    second: bullet_6
-  - first:
-      213: -7971052247733296559
-    second: bullet_7
-  - first:
-      213: -1442467264476482086
-    second: bullet_8
+      213: 589414698342460026
+    second: SkullBorder
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -130,190 +124,148 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bullet_0
+      name: Heading_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 32
-        width: 16
-        height: 16
-      alignment: 9
-      pivot: {x: 0.4739298, y: 0.53128433}
+        x: 6
+        y: 65
+        width: 148
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 448783cdae1407fd0800000000000000
-      internalID: -2346302928887187388
+      spriteID: b57e8394bdfa2f2b0800000000000000
+      internalID: -5552182034233235621
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bullet_1
+      name: Heading_2
       rect:
         serializedVersion: 2
-        x: 16
-        y: 32
-        width: 16
-        height: 16
-      alignment: 9
-      pivot: {x: 0.47132277, y: 0.5182493}
+        x: 2
+        y: 33
+        width: 124
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 147aab4d7d137aa40800000000000000
-      internalID: 5379323082974078785
+      spriteID: 7f723c2833558a6d0800000000000000
+      internalID: -2979037473780062217
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bullet_2
+      name: LeftArrow
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 33
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c2d5e8a3e112aa00800000000000000
+      internalID: 766194556095288008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightArrow
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 33
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1689da5f9c99dae90800000000000000
+      internalID: -7012779952056723359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skull
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 1
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ea5d3df9c5ce7cc0800000000000000
+      internalID: -3711311571578955035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bar
       rect:
         serializedVersion: 2
         x: 32
-        y: 32
+        y: 6
         width: 16
-        height: 16
-      alignment: 9
-      pivot: {x: 0.47392988, y: 0.5208564}
+        height: 3
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da5af739d9ec248d0800000000000000
-      internalID: -2863499236874410579
+      spriteID: b7c302cc308632ef0800000000000000
+      internalID: -134149198372127621
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bullet_3
+      name: SkullBorder
       rect:
         serializedVersion: 2
-        x: 0
-        y: 16
-        width: 16
-        height: 16
-      alignment: 9
-      pivot: {x: 0.47914383, y: 0.5104282}
+        x: 3
+        y: 1
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab872167a30698d50800000000000000
-      internalID: 6740024121541949626
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bullet_4
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 16
-        width: 16
-        height: 16
-      alignment: 9
-      pivot: {x: 0.48175097, y: 0.5156423}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9ff1d73f8333879f0800000000000000
-      internalID: -470569841363968007
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bullet_5
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 16
-        width: 16
-        height: 16
-      alignment: 9
-      pivot: {x: 0.48435807, y: 0.52085626}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b9e15beafb4502b50800000000000000
-      internalID: 6566341438952775323
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bullet_6
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 16
-        height: 16
-      alignment: 9
-      pivot: {x: 0.47914383, y: 0.5130351}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1e26d960bb56c5a00800000000000000
-      internalID: 746583492180927201
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bullet_7
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 0
-        width: 16
-        height: 16
-      alignment: 9
-      pivot: {x: 0.49478626, y: 0.46610868}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 15227cf8632216190800000000000000
-      internalID: -7971052247733296559
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bullet_8
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 16
-        height: 16
-      alignment: 9
-      pivot: {x: 0.51, y: 0.46749988}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ad5ffbc5aa35bfbe0800000000000000
-      internalID: -1442467264476482086
+      spriteID: a7aa8189b850e2800800000000000000
+      internalID: 589414698342460026
       vertices: []
       indices: 
       edges: []
