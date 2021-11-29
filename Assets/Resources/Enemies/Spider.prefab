@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 4538395533092418572}
   - component: {fileID: 4538395533092418573}
   - component: {fileID: 4538395533092418574}
+  - component: {fileID: 1446926203944609772}
   m_Layer: 0
   m_Name: Spider
   m_TagString: Enemy
@@ -291,6 +292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2749ac764d76bcb8bcaacb9722470b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _state: 0
   enemyPathFinder: {fileID: 4538395533092418571}
   playerTarget: {fileID: 0}
   rb: {fileID: 4538395533092418569}
@@ -341,6 +343,7 @@ MonoBehaviour:
     _current: 30
     _maximum: 30
   _scorePerHit: 25
+  soundHolder: {fileID: 0}
 --- !u!114 &4538395533092418573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -356,6 +359,7 @@ MonoBehaviour:
   anim: {fileID: 4538395533092418565}
   behavior: {fileID: 4538395533092418570}
   deathAnimationTIme: 0.5
+  soundHolder: {fileID: 0}
 --- !u!114 &4538395533092418574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -375,6 +379,22 @@ MonoBehaviour:
   attackDamage: 1
   meleeRate: 1
   meleeDamage: 1
+--- !u!114 &1446926203944609772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4538395533092418575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e784e65a9c2b364c947b64ab4bf2b08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meleeAttackSoundTrigger: 
+  rangeAttackSoundTrigger: 
+  deathSoundTrigger: 
+  hitSoundTrigger: 
 --- !u!1 &4538395533894734911
 GameObject:
   m_ObjectHideFlags: 0

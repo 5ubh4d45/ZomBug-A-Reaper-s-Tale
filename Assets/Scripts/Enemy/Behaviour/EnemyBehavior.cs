@@ -6,12 +6,13 @@ namespace EnemyBehavior
 {
     public class EnemyBehavior : MonoBehaviour
     {
-        private enum EnemyState
+        public enum EnemyState
         {   
             Idle,
             FreeRoam,
             ChasingTarget,
             AttackingTarget,
+            Dead
         
         }
         private enum EnemyType
@@ -20,7 +21,7 @@ namespace EnemyBehavior
             IsMelee,
         }
 
-        private EnemyState _state;
+        [HideInInspector] public EnemyState _state;
 
         #region InspectorVariables
         
@@ -259,6 +260,13 @@ namespace EnemyBehavior
                     }
                     
                     break;
+                
+                case EnemyState.Dead:
+                    
+                    enemyPathFinder.FollowTarget(false, playerTarget.position);
+                    
+                    break;
+                
                 default:
                     _state = EnemyState.FreeRoam;
                     break;

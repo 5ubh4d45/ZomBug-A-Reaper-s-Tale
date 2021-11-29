@@ -76,7 +76,11 @@ public class PlayerMovement : MonoBehaviour
         //play animations related to movements
         PlayMovementAnims();
 
-        if (DialogueManager.Instance.IsOpen || WeaponWheel.Instance.IsOpened) return;
+        if (DialogueManager.Instance.IsOpen)
+        {
+            StartCoroutine(StopMovement(Time.fixedDeltaTime));
+        }
+        
 
         MovePlayer();
 

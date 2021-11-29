@@ -367,6 +367,7 @@ GameObject:
   - component: {fileID: 151354537389265109}
   - component: {fileID: 151354537389265110}
   - component: {fileID: 151354537389265112}
+  - component: {fileID: 7721292036064980673}
   m_Layer: 0
   m_Name: RadioActiveZombie
   m_TagString: Enemy
@@ -561,6 +562,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2749ac764d76bcb8bcaacb9722470b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _state: 0
   enemyPathFinder: {fileID: 151354537389265107}
   playerTarget: {fileID: 0}
   rb: {fileID: 151354537389265105}
@@ -611,6 +613,7 @@ MonoBehaviour:
     _current: 30
     _maximum: 30
   _scorePerHit: 25
+  soundHolder: {fileID: 0}
 --- !u!114 &151354537389265109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -626,6 +629,7 @@ MonoBehaviour:
   anim: {fileID: 151354537389265117}
   behavior: {fileID: 151354537389265106}
   deathAnimationTIme: 0.5
+  soundHolder: {fileID: 0}
 --- !u!114 &151354537389265110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -657,6 +661,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e4242439f96f124b9f080e183fa5eaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7721292036064980673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151354537389265111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e784e65a9c2b364c947b64ab4bf2b08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meleeAttackSoundTrigger: 
+  rangeAttackSoundTrigger: 
+  deathSoundTrigger: 
+  hitSoundTrigger: 
 --- !u!1 &151354537639574289
 GameObject:
   m_ObjectHideFlags: 0

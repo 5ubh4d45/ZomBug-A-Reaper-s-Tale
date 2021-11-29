@@ -2,13 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using EnemyBehavior;
 using UnityEngine;
+using FMODUnity;
 
 public class EnemyAnimator : MonoBehaviour
 {
     [SerializeField] private Animator anim;
     [SerializeField] private EnemyBehavior.EnemyBehavior behavior;
     [SerializeField] private float deathAnimationTIme;
-
+    
+    [Space]
+    // reference to the sound holder use _soundHolder.(your sound string variable)
+    // at the Fmod sound string like
+    // RuntimeManager.PlayOneShot(soundHolder.DeathSound);
+    [SerializeField] private EnemySoundHolder soundHolder;
+    
     public float DeathAnimationTime => deathAnimationTIme;
     
     
@@ -23,6 +30,11 @@ public class EnemyAnimator : MonoBehaviour
         if (anim == null)
         {
             anim = GetComponent<Animator>();
+        }
+
+        if (soundHolder == null)
+        {
+            soundHolder = GetComponent<EnemySoundHolder>();
         }
     }
 
