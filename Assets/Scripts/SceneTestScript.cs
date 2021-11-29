@@ -27,6 +27,11 @@ namespace Game.Tests
         {
             Levels.LevelSceneManager.Instance.RestartLevel();
         }
+
+        public void ShowOptions()
+        {
+            Options.OptionsMenu.Instance.ShowOptions();
+        }
         #endregion
     }
 }
