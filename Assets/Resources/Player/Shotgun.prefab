@@ -127,8 +127,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1143832686537915707}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 1.31, y: -0.19, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1143832686743865777}
   m_RootOrder: 0
@@ -173,7 +173,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 4566179327399126721, guid: b6a3d347a0a7fac47a6638bb1bcb015f, type: 3}
+  m_Sprite: {fileID: -4725527172312626962, guid: b5a982ed7149ab548bf217273d504189, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -183,7 +183,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!1 &1143832686743865776
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,7 +232,7 @@ MonoBehaviour:
   _attackDamage: 25
   _startTimeBtwShots: 1
   _attackTag: Enemy
-  _displayImage: {fileID: 21300000, guid: f6ca25f849900d5abaf3b27266538f8d, type: 3}
+  _displayImage: {fileID: -4725527172312626962, guid: b5a982ed7149ab548bf217273d504189, type: 3}
   _displayImageTint: {r: 1, g: 1, b: 1, a: 1}
   IsPickedUp: 0
   _ammoSystem:
