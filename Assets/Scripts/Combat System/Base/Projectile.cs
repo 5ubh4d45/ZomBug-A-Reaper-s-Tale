@@ -52,19 +52,29 @@ namespace Game.Combat
         {
             HealthObject healthObject = collision.gameObject.GetComponent<HealthObject>();
             
-            // if (healthObject != null && (_attackLayer.value & (1 << collision.gameObject.layer)) > 0)
             
             //replaced layermask with compareTags 
             if (healthObject != null && collision.gameObject.CompareTag(_attackTag))
             {
                 healthObject.HealthSystem.Damage(_damage);
-                // healthObject.HealthSystem().Damage(_damage);
+
+                //if its player then plays the damage effects
+                if (collision.gameObject.CompareTag("Player"))
+                {
+                    //adds cam shake when damage taken
+                    CameraShake.Instance.ShakeCamera(3f, 3f, 0.2f);
+                    
+                    var player = collision.gameObject.GetComponent<Player>();
+                    
+                    //plays the dmg effect
+                    StartCoroutine(player.DamageEffect());
+                }
+                
                 //adding a force to impact
                 collision.gameObject.GetComponentInParent<Rigidbody2D>().AddForce(_direction * impactForce, ForceMode2D.Impulse);
                 
-                
             }
-            
+
             //destrying and playing the blast
             StartCoroutine(DestroyBullet(0f));
         }

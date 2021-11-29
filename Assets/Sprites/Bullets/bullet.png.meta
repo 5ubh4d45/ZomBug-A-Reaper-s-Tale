@@ -26,6 +26,9 @@ TextureImporter:
   - first:
       213: -7971052247733296559
     second: bullet_7
+  - first:
+      213: -1442467264476482086
+    second: bullet_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -290,6 +293,27 @@ TextureImporter:
       bones: []
       spriteID: 15227cf8632216190800000000000000
       internalID: -7971052247733296559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bullet_8
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.51, y: 0.46749988}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad5ffbc5aa35bfbe0800000000000000
+      internalID: -1442467264476482086
       vertices: []
       indices: 
       edges: []

@@ -85,6 +85,29 @@ public class CatBoss : Enemy
     public override void OnDamaged(float damageAmount)
     {
         ScoreManager.Instance.AddScore(this.ScorePerHit);
+        
+        StartCoroutine(DamageEffect());
+    }
+    
+    private IEnumerator DamageEffect()
+    {
+        //adds cam shake when damage taken
+        CameraShake.Instance.ShakeCamera(3f, 3f, 0.2f);
+        
+        var sprtRnd = GetComponent<SpriteRenderer>();
+        float flashDelay = 0.05f;
+        
+        sprtRnd.color = Color.red;
+        yield return new WaitForSeconds(flashDelay);
+        
+        sprtRnd.color = new Color(255f, 255, 255f, 255f);
+        yield return new WaitForSeconds(flashDelay);
+        
+        sprtRnd.color = Color.red;
+        yield return new WaitForSeconds(flashDelay);
+
+        sprtRnd.color = new Color(255f, 255, 255f, 255f);
+
     }
     
 }

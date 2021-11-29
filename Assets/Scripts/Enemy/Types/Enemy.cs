@@ -1,3 +1,4 @@
+using System.Collections;
 using EnemyBehavior;
 using UnityEngine;
 using Game.HealthSystem;
@@ -55,6 +56,8 @@ public class Enemy : HealthObject<IntHealthSystem>
     public override void OnDamaged(float damageAmount)
     {
         ScoreManager.Instance.AddScore(_scorePerHit);
+
+        StartCoroutine(DamageEffect());
     }
 
     private void DeadSetUp()
@@ -76,6 +79,26 @@ public class Enemy : HealthObject<IntHealthSystem>
         {
             collider2D.enabled = false;
         }
+    }
+
+    private IEnumerator DamageEffect()
+    {
+        //adds cam shake when damage taken
+        CameraShake.Instance.ShakeCamera(3f, 3f, 0.2f);
+        
+        var sprtRnd = GetComponent<SpriteRenderer>();
+        float flashDelay = 0.06f;
+        
+        sprtRnd.color = Color.red;
+        yield return new WaitForSeconds(flashDelay);
+        
+        sprtRnd.color = new Color(255f, 255, 255f, 255f);
+        yield return new WaitForSeconds(flashDelay);
+        
+        sprtRnd.color = Color.red;
+        yield return new WaitForSeconds(flashDelay);
+
+        sprtRnd.color = new Color(255f, 255, 255f, 255f);
 
     }
     #endregion

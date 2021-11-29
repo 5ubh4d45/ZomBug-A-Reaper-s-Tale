@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 6228590212864155172}
   - component: {fileID: 333491294720461908}
   - component: {fileID: 2602832271921857343}
+  - component: {fileID: 4787451712833146791}
   m_Layer: 8
-  m_Name: Projectile
+  m_Name: ShotGunBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 2501398746736019066}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -75,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 6
-  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-  m_Color: {r: 0.9529412, g: 0.5995179, b: 0.2901961, a: 1}
+  m_Sprite: {fileID: -1442467264476482086, guid: 445664ea407a3fe4083a535b26345868, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -94,7 +95,7 @@ TrailRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2501398746736019066}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -206,9 +207,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.03, y: -0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.08578579
 --- !u!50 &333491294720461908
 Rigidbody2D:
   serializedVersion: 4
@@ -242,7 +243,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ca5b2626fbfc3b1d8f1b2f4622981b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 15
-  _aliveTime: 1
+  _speed: 10
+  _aliveTime: 0.3
   impactForce: 5
-  anim: {fileID: 0}
+  anim: {fileID: 4787451712833146791}
+--- !u!95 &4787451712833146791
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2501398746736019066}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4e7d2c014d608e0439c4ad2ac532c7c7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

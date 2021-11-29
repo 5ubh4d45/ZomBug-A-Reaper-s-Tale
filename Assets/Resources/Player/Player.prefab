@@ -275,7 +275,7 @@ MonoBehaviour:
     _numberOfHearts: 10
     _maxFragments: 1
     _health: 10
-  camShakeIntensity: 1
+  camShakeIntensity: 3
   camShakeFrequency: 3
   camShakeTime: 0.2
   moveSpeed: 5
