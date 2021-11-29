@@ -4,10 +4,10 @@ using UnityEngine;
 using Game.HealthSystem;
 using Game.Score;
 using Game.Pointer;
-
+using Game.Levels;
 
 public class CatBoss : Enemy
-{   
+{
     [Header("Required Componenets")]
     [SerializeField] private BossMovement bossMovement;
     [SerializeField] private BossAnimator bossAnimator;
@@ -23,12 +23,12 @@ public class CatBoss : Enemy
     public BossMovement BossMovement => bossMovement;
     public BossCombat BossCombat => bossCombat;
     public BossBehavior BossBehavior => bossBehavior;
-    
+
 
     public Transform Target => target;
 
     #endregion
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -75,13 +75,14 @@ public class CatBoss : Enemy
             transform.localScale = new Vector3(-1f, 1f, 1f);
         }
     }
-    
+
     public override void OnDead()
     {
         PointerManager.Instance.SetDefaultCursor();
+        LevelManager.Instance.UnregisterEnemy();
         Destroy(this.gameObject);
     }
-    
+
     public override void OnDamaged(float damageAmount)
     {
         ScoreManager.Instance.AddScore(this.ScorePerHit);
@@ -109,5 +110,5 @@ public class CatBoss : Enemy
         sprtRnd.color = new Color(255f, 255, 255f, 255f);
 
     }
-    
+
 }

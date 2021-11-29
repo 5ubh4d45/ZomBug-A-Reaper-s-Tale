@@ -105,7 +105,7 @@ public class PlayerMovement : MonoBehaviour
         //changing positions according to input
         //added the movespeedmodifier to control the movement speed like stopping the player
         rb.MovePosition(rb.position + _movementDir * _player.MoveSpeed * Time.fixedDeltaTime * _moveSpeedModifier);
-        
+
     }
 
     private void CheckDirections()
@@ -149,12 +149,12 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public IEnumerator StopMovement(float secsToStop)
-    {   
+    {
         //stops the player
         _moveSpeedModifier = 0f;
-        
+
         yield return new WaitForSeconds(secsToStop);
-        
+
         //resumes the player
         _moveSpeedModifier = 1f;
     }

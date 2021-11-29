@@ -86,6 +86,7 @@ namespace Game.Combat
                 _weaponWheelButtons = new List<WeaponWheelButton>();
                 _playerCombat.OnWeaponDropped += UpdateWheel;
                 _playerCombat.OnWeaponPicked += UpdateWheel;
+                _playerCombat.OnWeaponSwitched += UpdateWheel;
                 UpdateWheel(null);
             }
         }
@@ -110,6 +111,7 @@ namespace Game.Combat
         {
             _playerCombat.OnWeaponDropped -= UpdateWheel;
             _playerCombat.OnWeaponPicked -= UpdateWheel;
+            _playerCombat.OnWeaponSwitched -= UpdateWheel;
         }
 
         private void OnDrawGizmos()
@@ -153,10 +155,16 @@ namespace Game.Combat
                 float fillAmount = StepLength / 360 - _gapWidth / 360f;
                 image.fillAmount = fillAmount;
 
-                Weapon weapon = _playerCombat.Weapons?.Count > i ? _playerCombat.Weapons?[i] : null;
+                Weapon weapon = _playerCombat.Weapons?.Count > i - 1 && i != 0 ? _playerCombat.Weapons?[i - 1] : null;
 
                 button.IconUI.sprite = weapon?.DisplayImage;
                 button.IconUI.color = weapon?.DisplayImage == null ? new Color(0, 0, 0, 0) : weapon.DisplayImageTint;
+
+                if (i == 0)
+                {
+                    button.IconUI.sprite = Player.Instance.PlayerCombat.ScytheDisplay;
+                    button.IconUI.color = new Color(1, 1, 1, 1);
+                }
 
                 _weaponWheelButtons.Add(button);
             }
@@ -211,7 +219,7 @@ namespace Game.Combat
                     button.ButtonUI.color = _colors.highlightedColor;
                 }
 
-                if (_selectedWheelButton == button || i == _playerCombat.CurrentWeaponIndex)
+                if (_playerCombat.CurrentWeaponIndex == -1 ? i == 0 : i == _playerCombat.CurrentWeaponIndex + 1)
                 {
                     button.ButtonUI.color = _colors.selectedColor;
                 }

@@ -1,3 +1,4 @@
+using Game.Score;
 using UnityEngine;
 
 namespace Game.Core
@@ -50,6 +51,12 @@ namespace Game.Core
             if (_gameState == gameState) return;
             _gameState = gameState;
             OnGameStateChanged?.Invoke();
+        }
+
+        public void Reset()
+        {
+            Player.Instance.Reset();
+            ScoreManager.Instance.Reset();
         }
         #endregion
     }

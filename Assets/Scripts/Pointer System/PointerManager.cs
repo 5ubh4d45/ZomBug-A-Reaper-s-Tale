@@ -49,7 +49,7 @@ namespace Game.Pointer
             _renderer = GetComponent<SpriteRenderer>();
         }
 
-        private void FixedUpdate()
+        private void Update()
         {
             Cursor.visible = false;
             _frameTimer -= Time.deltaTime;

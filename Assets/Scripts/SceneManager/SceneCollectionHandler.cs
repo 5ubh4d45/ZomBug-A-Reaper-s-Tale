@@ -56,7 +56,6 @@ namespace Game.Scenes
         #region Unity Calls
         private void Awake()
         {
-            _operations = new List<AsyncOperation>();
             LoadSceneCollection(_defaultSceneIndex);
         }
         #endregion
@@ -65,6 +64,7 @@ namespace Game.Scenes
         #region Component Functions
         public void LoadSceneCollection(int collectionIndex)
         {
+            _operations = new List<AsyncOperation>();
             if (collectionIndex > _sceneCollections.Length || collectionIndex == -1) return;
             if (_sceneCollections[collectionIndex] == null) return;
 
@@ -90,6 +90,7 @@ namespace Game.Scenes
 
         public void LoadSceneCollection(SceneCollection collection)
         {
+            _operations = new List<AsyncOperation>();
             if (collection == null) return;
 
             _loadingScreen.SetActive(true);

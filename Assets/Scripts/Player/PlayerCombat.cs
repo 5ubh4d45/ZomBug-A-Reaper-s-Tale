@@ -10,7 +10,8 @@ public class PlayerCombat : MonoBehaviour
     [SerializeField] private PlayerAimWeapon _weaponAim;
     [SerializeField] private int _maxWeapons;
     [SerializeField] private Player player;
-    [SerializeField] private Scythe2 _scythe2;
+    [SerializeField] private Scythe2 _scythe;
+    [SerializeField] private Sprite _scytheDisplay;
 
     private Weapon _currentWeapon;
     private List<Weapon> _weapons;
@@ -19,6 +20,7 @@ public class PlayerCombat : MonoBehaviour
     public Event<Weapon> OnWeaponPicked;
     public Event<Weapon> OnWeaponDropped;
     public Event<Weapon> OnWeaponSwitched;
+    public Sprite ScytheDisplay => _scytheDisplay;
     public int CurrentWeaponIndex => _weapons?.IndexOf(_currentWeapon) == null ? -1 : _weapons.IndexOf(_currentWeapon);
     public Weapon CurrentWeapon => _currentWeapon;
     public int MaxWeapons => _maxWeapons;
@@ -43,9 +45,9 @@ public class PlayerCombat : MonoBehaviour
     private void Start()
     {
         player = GetComponent<Player>();
-        if (_scythe2 == null)
+        if (_scythe == null)
         {
-            _scythe2 = GetComponentInChildren<Scythe2>();
+            _scythe = GetComponentInChildren<Scythe2>();
         }
     }
 
@@ -57,10 +59,6 @@ public class PlayerCombat : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             _currentWeapon?.Attack();
-        }
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            DropWeapon();
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -87,7 +85,7 @@ public class PlayerCombat : MonoBehaviour
         if (_weapons.Contains(weapon)) return;
 
         // Drop the current weapon if any
-        if (_weapons.Count >= _maxWeapons)
+        if (_weapons.Count >= _maxWeapons - 1)
         {
             DropWeapon();
         }
@@ -153,9 +151,10 @@ public class PlayerCombat : MonoBehaviour
 
     public void SwitchWeapon(int index)
     {
-        if (CurrentWeaponIndex == index) return;
+        Debug.Log(index - 1 >= _weapons.Count || index == 0);
+        if (CurrentWeaponIndex + 1 == index) return;
 
-        if (index >= _weapons.Count)
+        if (index - 1 >= _weapons.Count || index == 0)
         {
             _weaponAim.aimTransform = _weaponAim.transform;
             _currentWeapon?.gameObject.SetActive(false);
@@ -165,7 +164,7 @@ public class PlayerCombat : MonoBehaviour
             return;
         }
 
-        Weapon weapon = _weapons[index];
+        Weapon weapon = _weapons[index - 1];
         ParentWeapon(weapon);
         UpdateWeaponList();
 
@@ -175,7 +174,7 @@ public class PlayerCombat : MonoBehaviour
     private void MeleeAttack1()
     {
         //setting up the different dmg outputs for different attacks
-        _scythe2.Damage = _scythe2.Melee1Damage;
+        _scythe.Damage = _scythe.Melee1Damage;
 
         player.PlayerAnimator.PlayMeleeAttack1();
 
@@ -187,7 +186,7 @@ public class PlayerCombat : MonoBehaviour
     {
 
         //setting up the different dmg outputs for different attacks
-        _scythe2.Damage = _scythe2.Melee2Damage;
+        _scythe.Damage = _scythe.Melee2Damage;
 
         player.PlayerAnimator.PlayMeleeAttack2();
 
@@ -197,11 +196,11 @@ public class PlayerCombat : MonoBehaviour
 
     public void Reset()
     {
+        _weaponAim.aimTransform = _weaponAim.transform;
         foreach (var child in _weapons)
         {
             Destroy(child.gameObject);
         }
-        _weaponAim.aimTransform = _weaponAim.transform;
         _currentWeapon = null;
         _weaponHolder = null;
         _weapons = new List<Weapon>();

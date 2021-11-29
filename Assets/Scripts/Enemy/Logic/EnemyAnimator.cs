@@ -17,8 +17,8 @@ public class EnemyAnimator : MonoBehaviour
     [SerializeField] private EnemySoundHolder soundHolder;
     
     public float DeathAnimationTime => deathAnimationTIme;
-    
-    
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,14 +47,14 @@ public class EnemyAnimator : MonoBehaviour
     {
         if (behavior.IsFacingRight)
         {
-            transform.localScale = new Vector3(1f, 1f ,1f);
+            transform.localScale = new Vector3(1f, 1f, 1f);
         }
-        
+
         if (!behavior.IsFacingRight)
         {
             transform.localScale = new Vector3(-1f, 1f, 1f);
         }
-        
+
     }
 
     public void PlayIdle()
@@ -81,5 +81,5 @@ public class EnemyAnimator : MonoBehaviour
     {
         anim.SetTrigger("Death");
     }
-    
+
 }
