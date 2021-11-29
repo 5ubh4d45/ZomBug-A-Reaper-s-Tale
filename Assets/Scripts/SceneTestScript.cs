@@ -25,14 +25,7 @@ namespace Game.Tests
         #region Component Functions
         public void LoadGame()
         {
-            SceneCollectionHandler.Instance.LoadSceneCollection(_gameCollection);
-            SceneCollectionHandler.Instance.OnLoadCompelete += WaitForLoad;
-        }
-
-        private void WaitForLoad()
-        {
-            GameManager.Instance.ChangeGameState(GameState.GAME);
-            SceneCollectionHandler.Instance.OnLoadCompelete -= WaitForLoad;
+            Levels.LevelSceneManager.Instance.RestartLevel();
         }
         #endregion
     }

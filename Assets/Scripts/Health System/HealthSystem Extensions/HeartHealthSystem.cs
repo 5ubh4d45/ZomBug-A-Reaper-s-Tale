@@ -20,7 +20,7 @@ namespace Game.HealthSystem
 
 
         #region Getters And Setters
-        public int MaxHealth => _numberOfHearts * _maxFragments;
+        public override float MaxHealth => _numberOfHearts * _maxFragments;
         public int HeartCount => _numberOfHearts;
         public int Health
         {
@@ -95,7 +95,7 @@ namespace Game.HealthSystem
             }
 
             _health += heal;
-            if (_health > MaxHealth) _health = MaxHealth;
+            if (_health > MaxHealth) _health = (int)MaxHealth;
             OnHealed?.Invoke(heal);
         }
 
@@ -112,7 +112,7 @@ namespace Game.HealthSystem
         {
             _maxFragments = maxFragments;
             _numberOfHearts = numberOfHearts;
-            _health = MaxHealth;
+            _health = (int)MaxHealth;
 
             SetupHearts(maxFragments);
         }

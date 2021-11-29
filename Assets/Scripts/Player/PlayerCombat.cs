@@ -58,10 +58,6 @@ public class PlayerCombat : MonoBehaviour
         {
             _currentWeapon?.Attack();
         }
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            DropWeapon();
-        }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -87,7 +83,7 @@ public class PlayerCombat : MonoBehaviour
         if (_weapons.Contains(weapon)) return;
 
         // Drop the current weapon if any
-        if (_weapons.Count >= _maxWeapons)
+        if (_weapons.Count >= _maxWeapons - 1)
         {
             DropWeapon();
         }
@@ -153,9 +149,10 @@ public class PlayerCombat : MonoBehaviour
 
     public void SwitchWeapon(int index)
     {
+        Debug.Log(CurrentWeaponIndex == index);
         if (CurrentWeaponIndex == index) return;
 
-        if (index >= _weapons.Count)
+        if (index - 1 >= _weapons.Count || index == 0)
         {
             _weaponAim.aimTransform = _weaponAim.transform;
             _currentWeapon?.gameObject.SetActive(false);
@@ -165,7 +162,7 @@ public class PlayerCombat : MonoBehaviour
             return;
         }
 
-        Weapon weapon = _weapons[index];
+        Weapon weapon = _weapons[index - 1];
         ParentWeapon(weapon);
         UpdateWeaponList();
 
@@ -197,11 +194,11 @@ public class PlayerCombat : MonoBehaviour
 
     public void Reset()
     {
+        _weaponAim.aimTransform = _weaponAim.transform;
         foreach (var child in _weapons)
         {
             Destroy(child.gameObject);
         }
-        _weaponAim.aimTransform = _weaponAim.transform;
         _currentWeapon = null;
         _weaponHolder = null;
         _weapons = new List<Weapon>();

@@ -43,6 +43,17 @@ namespace Game.Levels
             LevelManager.Instance.OnLevelFinish += UpdateLevel;
         }
 
+        private void OnDestroy()
+        {
+            LevelManager.Instance.OnLevelFinish -= UpdateLevel;
+        }
+
+        public void RestartLevel()
+        {
+            Debug.Log(LevelManager.Instance.CurrentLevelIndex);
+            UpdateLevel(LevelManager.Instance.CurrentLevelIndex);
+        }
+
         private void UpdateLevel(int levelIndex)
         {
             if (levelIndex >= _levels.Length)
@@ -66,6 +77,7 @@ namespace Game.Levels
                 _transitionGroup.gameObject.SetActive(false);
                 SceneCollectionHandler.Instance.OnLoadCompelete -= LevelLoadCompelete;
             });
+            GameManager.Instance.ChangeGameState(GameState.GAME);
         }
         #endregion
 

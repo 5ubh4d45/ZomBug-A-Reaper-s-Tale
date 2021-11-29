@@ -16,7 +16,7 @@ namespace Game.HealthSystem
         #region Getters And Setters
         public float Current => _current;
         public float Minimum => _minimum;
-        public float Maximum => _maximum;
+        public override float MaxHealth => _maximum;
 
         public override float Health01 => ((_current - _minimum) / (_maximum - _minimum));
         public override float HealthPercent => ((_current - _minimum) / (_maximum - _minimum)) * 100;

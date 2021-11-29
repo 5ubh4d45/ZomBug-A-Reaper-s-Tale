@@ -1,6 +1,7 @@
 using Game.Scenes;
 using Game.Core;
 using UnityEngine;
+using System.Linq;
 using System.Collections.Generic;
 
 namespace Game.Levels
@@ -26,7 +27,7 @@ namespace Game.Levels
 
         #region Variables
         private int _activeEnemiesCount;
-        private int _currentLevel = -1;
+        private int _currentLevel = 0;
 
         /// <summary>
         /// This Event is triggered when the player Finishes A level by killing all enemies.
@@ -37,6 +38,7 @@ namespace Game.Levels
 
         #region Getters And Setters
         public int EnemiesAlive => _activeEnemiesCount;
+        public int CurrentLevelIndex { get => _currentLevel; set => _currentLevel = value; }
         #endregion
 
 
@@ -52,15 +54,20 @@ namespace Game.Levels
 
         private void UpdateState()
         {
-            if (GameManager.Instance.GameState == GameState.GAME)
+            if (GameManager.Instance.GameState != GameState.GAME)
             {
-                _currentLevel = 0;
-            }
-            else if (GameManager.Instance.GameState != GameState.GAME)
-            {
-                _currentLevel = -1;
                 _activeEnemiesCount = 0;
             }
+        }
+
+        public void SkipLevel()
+        {
+            if (GameManager.Instance.GameState != GameState.GAME) return;
+
+            GameObject.FindObjectsOfType<Enemy>().ToList().ForEach((Enemy enemy) =>
+            {
+                enemy.HealthSystem.Damage(enemy.HealthSystem.MaxHealth);
+            });
         }
 
         public void RegisterEnemy() => _activeEnemiesCount++;

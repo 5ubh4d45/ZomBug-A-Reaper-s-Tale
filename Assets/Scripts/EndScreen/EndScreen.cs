@@ -1,4 +1,5 @@
 using Game.Core;
+using Game.Levels;
 using Game.Scenes;
 using Game.Score;
 using TMPro;
@@ -29,6 +30,7 @@ namespace Game.End
             _score.text = "Score: " + ScoreManager.Instance.CurrentScore.ToString();
             _highScore.text = "HighScore: " + ScoreManager.Instance.HighScore.ToString();
 
+            if (GameManager.Instance.DidWon) LevelManager.Instance.CurrentLevelIndex = 0;
             _title.text = GameManager.Instance.DidWon ? _winTitle : _dieTitle;
             GameManager.Instance.DidWon = false;
         }

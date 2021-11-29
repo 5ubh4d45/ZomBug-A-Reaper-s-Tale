@@ -2,6 +2,7 @@ using System;
 using Game.Combat;
 using Game.Core;
 using Game.HealthSystem;
+using Game.Scenes;
 using TMPro;
 using UnityEngine;
 
@@ -13,6 +14,7 @@ public class PlayerUI : MonoBehaviour
     [SerializeField] private TMP_Text _unloadedAmmoText;
     [SerializeField] private GameObject _ammoCounter;
     [SerializeField] private HealthBar<HeartHealthSystem> _healthBar;
+    private Canvas _playerCanvas;
     #endregion
 
 
@@ -22,6 +24,12 @@ public class PlayerUI : MonoBehaviour
 
 
     #region Unity Calls
+    private void Awake()
+    {
+        SceneCollectionHandler.Instance.OnLoadCompelete += UpdateCamera;
+        _playerCanvas = GetComponent<Canvas>();
+    }
+
     private void Start()
     {
         GameManager.Instance.OnGameStateChanged += UpdateState;
@@ -56,6 +64,13 @@ public class PlayerUI : MonoBehaviour
 
 
     #region Component Functions
+    private void UpdateCamera()
+    {
+        _playerCanvas.renderMode = RenderMode.ScreenSpaceCamera;
+        _playerCanvas.worldCamera = Camera.main;
+        _playerCanvas.planeDistance = 10;
+    }
+
     private void UpdateCombatUI(int changeAmount)
     {
         _loadedAmmoText.text = (Player.Instance.PlayerCombat.CurrentWeapon as RangedWeapon).AmmoSystem.LoadedAmmo.ToString();

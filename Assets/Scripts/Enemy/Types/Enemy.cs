@@ -3,6 +3,7 @@ using Game.HealthSystem;
 using Game.Score;
 using Game.Pointer;
 using Game.Levels;
+using System;
 
 public class Enemy : HealthObject<IntHealthSystem>
 {
@@ -32,12 +33,12 @@ public class Enemy : HealthObject<IntHealthSystem>
     public override void OnDead()
     {
         PointerManager.Instance.SetDefaultCursor();
-        
+
         DeadSetUp();
 
         LevelManager.Instance.UnregisterEnemy();
         Destroy(this.gameObject, _delay);
-        
+
     }
 
     public override void OnDamaged(float damageAmount)
@@ -47,13 +48,13 @@ public class Enemy : HealthObject<IntHealthSystem>
 
     private void DeadSetUp()
     {
-        
+
         //playing the death animation and gets the death animation duration
         var anim = GetComponent<EnemyAnimator>();
         anim.PlayDeathAnimation();
 
         _delay = anim.DeathAnimationTime;
-        
+
         GetComponent<Collider2D>().enabled = false;
         var collider2Ds = GetComponentsInChildren<Collider2D>();
         foreach (var collider2D in collider2Ds)

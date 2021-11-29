@@ -16,6 +16,7 @@ namespace Game.HealthSystem
         #region Getters And Setters
         public abstract float HealthPercent { get; }
         public abstract float Health01 { get; }
+        public abstract float MaxHealth { get; }
         #endregion
 
 

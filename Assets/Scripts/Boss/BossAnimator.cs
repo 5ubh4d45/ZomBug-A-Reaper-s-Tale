@@ -6,7 +6,7 @@ public class BossAnimator : MonoBehaviour
 {
     [SerializeField] private CatBoss boss;
     [SerializeField] private Animator anim;
-    
+
 
 
     // Start is called before the first frame update
@@ -47,5 +47,5 @@ public class BossAnimator : MonoBehaviour
     public void PlayJumpAttack()
     {
         anim.SetTrigger("JumpAttack");
-    } 
+    }
 }
