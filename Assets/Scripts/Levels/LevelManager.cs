@@ -26,7 +26,6 @@ namespace Game.Levels
         #endregion
 
         #region Variables
-        [SerializeField] private GameObject _cat;
 
         private int _activeEnemiesCount;
         private int _currentLevel = 0;
@@ -34,7 +33,7 @@ namespace Game.Levels
         /// <summary>
         /// This Event is triggered when the player Finishes A level by killing all enemies.
         /// </summary>
-        public Event<int> OnLevelFinish;
+        public Event<int> OnEnemiesKilled;
         #endregion
 
 
@@ -87,8 +86,7 @@ namespace Game.Levels
             if (_activeEnemiesCount <= 0)
             {
                 _activeEnemiesCount = 0;
-                _cat.SetActive(true);
-                OnLevelFinish?.Invoke(_currentLevel);
+                OnEnemiesKilled?.Invoke(_currentLevel);
             }
         }
         #endregion

@@ -1,3 +1,4 @@
+using Ink.Runtime;
 using UnityEngine;
 
 namespace Game.DialogueSystem
@@ -14,7 +15,7 @@ namespace Game.DialogueSystem
 
 
         #region Getters And Setters
-
+        public Story Story => new Story(_storyAsset.text);
         #endregion
 
 
@@ -47,6 +48,11 @@ namespace Game.DialogueSystem
 
         #region Component Functions
         public void Interact(Player player)
+        {
+            ShowDialog();
+        }
+
+        public void ShowDialog()
         {
             if (DialogueManager.Instance.CurrentStoryAsset != _storyAsset && !DialogueManager.Instance.IsOpen)
             {
