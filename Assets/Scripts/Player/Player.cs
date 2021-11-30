@@ -23,6 +23,8 @@ public class Player : HealthObject<HeartHealthSystem>
     [Space]
     [SerializeField] private float moveSpeed = 10;
 
+    [SerializeField] private float deathAnimationTime;
+
     private PlayerCombat _playerCombat;
     private PlayerAnimator _playerAnimator;
     private PlayerMovement _playerMovement;
@@ -31,12 +33,15 @@ public class Player : HealthObject<HeartHealthSystem>
 
     private float _meleeDamageCoolDown = 1f;
     private float _nextMeleeDamageTime = 0f;
+    private bool _isDead = false;
 
     public float MoveSpeed => moveSpeed;
     public IInteractable Interactable { get; set; }
     public PlayerCombat PlayerCombat => _playerCombat;
     public PlayerAnimator PlayerAnimator => _playerAnimator;
     public PlayerMovement PlayerMovement => _playerMovement;
+
+    public bool IsDead => _isDead;
 
     public void Reset()
     {
@@ -118,9 +123,42 @@ public class Player : HealthObject<HeartHealthSystem>
 
     public override void OnDead()
     {
-        _renderer.enabled = false;
+        //playing the death effects
+        StartCoroutine(DeathEffects());
+        
+        
         GameManager.Instance.DidWon = false;
+        
+    }
+
+    private IEnumerator DeathEffects()
+    {
+        _isDead = true;
+        _playerAnimator.PlayDeath();
+        StartCoroutine(_playerMovement.StopMovement(deathAnimationTime));
+        
+        // disabling all colliders
+        GetComponent<Collider2D>().enabled = false;
+        Collider2D[] colliders = GetComponentsInChildren<Collider2D>();
+        foreach (var collider in colliders)
+        {
+            collider.enabled = false;
+        }
+        
+        yield return new WaitForSeconds(deathAnimationTime);
+
+        // enabling colliders after death animation
+        _isDead = false;
+
+        GetComponent<Collider2D>().enabled = false;
+        foreach (var collider in colliders)
+        {
+            collider.enabled = true;
+        }
+        
+        _renderer.enabled = false;
         LevelSceneManager.Instance.LoadEndScreen(false);
+        
     }
     
     public IEnumerator DamageEffect()

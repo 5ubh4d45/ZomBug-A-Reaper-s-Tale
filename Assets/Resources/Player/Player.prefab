@@ -279,6 +279,7 @@ MonoBehaviour:
   camShakeFrequency: 3
   camShakeTime: 0.2
   moveSpeed: 5
+  deathAnimationTime: 3
 --- !u!114 &6635023700471064493
 MonoBehaviour:
   m_ObjectHideFlags: 0
