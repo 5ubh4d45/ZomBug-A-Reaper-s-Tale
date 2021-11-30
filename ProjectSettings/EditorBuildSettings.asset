@@ -38,4 +38,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/BossLevel.unity
     guid: 51737498316a3c14ca97ca49d749b563
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level_7.unity
+    guid: 9eba4b6601b7eda4ebe23f42e4150d31
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level_8.unity
+    guid: a506952247ba4cb44adf42bbfd7ef3b4
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level_9.unity
+    guid: fe208581adb80194faea118623e71b84
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level_10.unity
+    guid: 074f38b2b90fcde48aec52f0b7e55057
   m_configObjects: {}
