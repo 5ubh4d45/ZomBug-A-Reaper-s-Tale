@@ -26,6 +26,8 @@ namespace Game.Levels
         #endregion
 
         #region Variables
+        [SerializeField] private GameObject _cat;
+
         private int _activeEnemiesCount;
         private int _currentLevel = 0;
 
@@ -68,6 +70,14 @@ namespace Game.Levels
             {
                 enemy.HealthSystem.Damage(enemy.HealthSystem.MaxHealth);
             });
+
+            ChangeLevel(_currentLevel + 1);
+        }
+
+        public void ChangeLevel(int index)
+        {
+            _currentLevel = index;
+            LevelSceneManager.Instance.LoadLevel(index);
         }
 
         public void RegisterEnemy() => _activeEnemiesCount++;
@@ -76,8 +86,8 @@ namespace Game.Levels
             _activeEnemiesCount--;
             if (_activeEnemiesCount <= 0)
             {
-                _currentLevel++;
                 _activeEnemiesCount = 0;
+                _cat.SetActive(true);
                 OnLevelFinish?.Invoke(_currentLevel);
             }
         }

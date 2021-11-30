@@ -29,6 +29,7 @@ namespace Game.Levels
         [SerializeField] private SceneCollection _endScreen;
         [SerializeField] private CanvasGroup _transitionGroup;
         [SerializeField] private float _transitionTime;
+        private int _currentLevelIndex;
         #endregion
 
 
@@ -38,23 +39,12 @@ namespace Game.Levels
 
 
         #region Unity Calls
-        private void Awake()
-        {
-            LevelManager.Instance.OnLevelFinish += UpdateLevel;
-        }
-
-        private void OnDestroy()
-        {
-            LevelManager.Instance.OnLevelFinish -= UpdateLevel;
-        }
-
         public void RestartLevel()
         {
-            Debug.Log(LevelManager.Instance.CurrentLevelIndex);
-            UpdateLevel(LevelManager.Instance.CurrentLevelIndex);
+            LoadLevel(LevelManager.Instance.CurrentLevelIndex);
         }
 
-        private void UpdateLevel(int levelIndex)
+        public void LoadLevel(int levelIndex)
         {
             if (levelIndex >= _levels.Length)
             {
