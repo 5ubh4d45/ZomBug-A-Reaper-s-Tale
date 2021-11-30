@@ -9,6 +9,7 @@ namespace Game.Levels
     {
         #region Variables
         private SpriteRenderer _renderer;
+        private SpriteRenderer _popUp;
         private List<Collider2D> _colliders;
         #endregion
 
@@ -25,6 +26,10 @@ namespace Game.Levels
             _colliders = GetComponents<Collider2D>().ToList();
             _renderer.enabled = false;
             _colliders.ForEach((Collider2D collider) => { collider.enabled = false; });
+            
+            //also for the popup sign
+            _popUp = GetComponentInChildren<SpriteRenderer>();
+            _popUp.enabled = false;
 
             LevelManager.Instance.OnEnemiesKilled += EnemiesKilled;
         }
@@ -38,6 +43,9 @@ namespace Game.Levels
         {
             _renderer.enabled = true;
             _colliders.ForEach((Collider2D collider) => { collider.enabled = true; });
+            
+            // for the popup
+            _popUp.enabled = true;
         }
         #endregion
 

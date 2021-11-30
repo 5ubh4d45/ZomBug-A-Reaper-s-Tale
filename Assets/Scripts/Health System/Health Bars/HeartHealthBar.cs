@@ -72,7 +72,7 @@ namespace Game.HealthSystem
             for (int i = 0; i < _healthSystem.HeartCount; i++)
             {
                 Heart heart = _healthSystem.Hearts[i];
-                _hearts[i].sprite = _heartSprites[heart.MaxFragments];
+                _hearts[i].sprite = _heartSprites[heart.Fragments];
                 
                 Debug.Log("Health Changing:  " + heart.Fragments);
             }
