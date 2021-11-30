@@ -674,10 +674,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e784e65a9c2b364c947b64ab4bf2b08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meleeAttackSoundTrigger: 
+  meleeAttackSoundTrigger: event:/SFX_radioactive_zombie_die
   rangeAttackSoundTrigger: 
   deathSoundTrigger: event:/SFX_radioactive_zombie_die
-  hitSoundTrigger: event:/SFX_radioactive_zombie_die
+  hitSoundTrigger: 
 --- !u!1 &151354537639574289
 GameObject:
   m_ObjectHideFlags: 0

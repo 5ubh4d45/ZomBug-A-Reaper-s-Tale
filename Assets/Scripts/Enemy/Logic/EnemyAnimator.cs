@@ -69,6 +69,7 @@ public class EnemyAnimator : MonoBehaviour
 
     public void PlayMeleeAttack()
     {
+        RuntimeManager.PlayOneShot(soundHolder.MeleeAttackSound);
         anim.SetTrigger("MeleeAttack");
     }
 
