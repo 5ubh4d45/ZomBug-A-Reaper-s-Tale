@@ -259,8 +259,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7957240c65c017c7fba844a613f7b7d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attackDamage: 10
-  _startTimeBtwShots: 0.5
+  _attackDamage: 15
+  _startTimeBtwShots: 0.3
   _attackTag: Enemy
   _displayImage: {fileID: 4661910834511361979, guid: b5a982ed7149ab548bf217273d504189, type: 3}
   _displayImageTint: {r: 1, g: 1, b: 1, a: 1}

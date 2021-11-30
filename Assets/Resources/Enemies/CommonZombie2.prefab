@@ -645,8 +645,8 @@ MonoBehaviour:
   backOffImpulseForce: 3
   showRangeCircle: 1
   minFreeRoamRange: 1
-  maxFreeRoamRange: 2
-  detectionRange: 7.74
+  maxFreeRoamRange: 4
+  detectionRange: 10.74
   idleWaitTime: 1
   attackRange: 3
   meleeRange: 1.34

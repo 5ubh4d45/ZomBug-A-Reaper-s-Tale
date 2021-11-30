@@ -229,7 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55239ed9858a9a04b92b307808ee0dd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attackDamage: 10
+  _attackDamage: 15
   _startTimeBtwShots: 1
   _attackTag: Enemy
   _displayImage: {fileID: -4725527172312626962, guid: b5a982ed7149ab548bf217273d504189, type: 3}

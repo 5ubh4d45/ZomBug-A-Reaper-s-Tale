@@ -244,7 +244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 15
-  _aliveTime: 1
+  _aliveTime: 0.8
   impactForce: 5
   anim: {fileID: 4787451712833146791}
 --- !u!95 &4787451712833146791

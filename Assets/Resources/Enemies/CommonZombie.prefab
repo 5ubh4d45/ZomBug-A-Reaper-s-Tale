@@ -292,8 +292,8 @@ MonoBehaviour:
   backOffImpulseForce: 5
   showRangeCircle: 1
   minFreeRoamRange: 1
-  maxFreeRoamRange: 2
-  detectionRange: 7
+  maxFreeRoamRange: 3
+  detectionRange: 10
   idleWaitTime: 2
   attackRange: 3
   meleeRange: 0.55
@@ -328,8 +328,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _healthBar: {fileID: 6941460639824118253}
   _healthSystem:
-    _current: 60
-    _maximum: 60
+    _current: 30
+    _maximum: 30
   _scorePerHit: 10
   soundHolder: {fileID: 0}
 --- !u!114 &6941460639600880167

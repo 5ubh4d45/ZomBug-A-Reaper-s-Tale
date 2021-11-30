@@ -1,8 +1,10 @@
 using System.Collections.Generic;
 using System.Collections;
+using Game.Scenes;
 using Ink.Runtime;
 using TMPro;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 namespace Game.DialogueSystem
 {
@@ -39,6 +41,7 @@ namespace Game.DialogueSystem
         private TextAsset _currentStoryAsset;
         private TypeWriterEffect _typeWriterEffect;
         private bool _isOpen;
+        private Canvas _canvas;
         #endregion
 
 
@@ -75,6 +78,9 @@ namespace Game.DialogueSystem
         {
             _typeWriterEffect = GetComponent<TypeWriterEffect>();
 
+            SceneCollectionHandler.Instance.OnLoadCompelete += UpdateCamera;
+            _canvas = GetComponent<Canvas>();
+            
             gameObject.SetActive(false);
         }
         #endregion
@@ -174,6 +180,14 @@ namespace Game.DialogueSystem
             _isOpen = false;
             _currentStory = null;
             _currentStoryAsset = null;
+        }
+        
+        // updates the camera
+        private void UpdateCamera()
+        {
+            _canvas.renderMode = RenderMode.ScreenSpaceCamera;
+            _canvas.worldCamera = Camera.main;
+            _canvas.planeDistance = 10;
         }
         #endregion
     }

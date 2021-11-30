@@ -186,7 +186,7 @@ public class PlayerCombat : MonoBehaviour
 
         player.PlayerAnimator.PlayMeleeAttack1();
 
-        IEnumerator stopMovement = player.PlayerMovement.StopMovement(1f);
+        IEnumerator stopMovement = player.PlayerMovement.StopMovement(0.5f);
         StartCoroutine(stopMovement);
     }
 
