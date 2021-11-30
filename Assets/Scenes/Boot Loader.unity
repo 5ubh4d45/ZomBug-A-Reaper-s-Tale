@@ -2285,8 +2285,8 @@ MonoBehaviour:
     m_DisabledColor: {r: 0, g: 0, b: 0, a: 0.24705882}
     m_ColorMultiplier: 0
     m_FadeDuration: 0
-  _minimumHieght: 0.277
-  _maximumHieght: 0.426
+  _minimumHieght: 0.11
+  _maximumHieght: 0.8
 --- !u!1 &1578860507269588531
 GameObject:
   m_ObjectHideFlags: 0
