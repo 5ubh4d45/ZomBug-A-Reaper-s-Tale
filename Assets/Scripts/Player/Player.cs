@@ -97,7 +97,7 @@ public class Player : HealthObject<HeartHealthSystem>
         {
             if (collision2D.gameObject.CompareTag("Enemy"))
             {
-                _healthSystem.Damage(1);
+                _healthSystem.Damage(collision2D.gameObject.GetComponent<EnemyCombat>().MeleeDamage);
 
                 _nextMeleeDamageTime = 0f;
 
@@ -136,7 +136,7 @@ public class Player : HealthObject<HeartHealthSystem>
         _isDead = true;
         _playerAnimator.PlayDeath();
         StartCoroutine(_playerMovement.StopMovement(deathAnimationTime));
-        
+
         // disabling all colliders
         GetComponent<Collider2D>().enabled = false;
         Collider2D[] colliders = GetComponentsInChildren<Collider2D>();
@@ -145,12 +145,12 @@ public class Player : HealthObject<HeartHealthSystem>
             collider.enabled = false;
         }
         
-        yield return new WaitForSeconds(deathAnimationTime);
+        yield return new WaitForSeconds(deathAnimationTime - 0.01f);
 
         // enabling colliders after death animation
         _isDead = false;
 
-        GetComponent<Collider2D>().enabled = false;
+        GetComponent<Collider2D>().enabled = true;
         foreach (var collider in colliders)
         {
             collider.enabled = true;

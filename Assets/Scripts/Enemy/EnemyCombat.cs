@@ -16,6 +16,8 @@ public class EnemyCombat : MonoBehaviour
     [SerializeField] private float meleeRate;
     [SerializeField] private float meleeDamage;
 
+    public float MeleeDamage => meleeDamage;
+
     
     private Enemy _enemy;
     private float _nextFireTime = 0f;

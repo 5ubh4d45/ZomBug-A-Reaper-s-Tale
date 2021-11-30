@@ -45,15 +45,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c3564ea6e9e1aa5fb18ef41626fad2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attackDamage: 30
+  _attackDamage: 40
   _startTimeBtwShots: 1.2
-  _attackLayer:
-    serializedVersion: 2
-    m_Bits: 128
   _attackTag: 
   _displayImage: {fileID: 21300000, guid: 07b37900891208748be39923626edf5d, type: 3}
   _displayImageTint: {r: 1, g: 1, b: 1, a: 1}
-  _displayGo: {fileID: 8151602678255542347}
   IsPickedUp: 0
   _attackRange: 0.79
   _attackPoint: {fileID: 6645997426238284468}

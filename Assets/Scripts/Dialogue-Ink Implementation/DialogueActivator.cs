@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Game.DialogueSystem
@@ -10,12 +11,24 @@ namespace Game.DialogueSystem
     {
         #region Variables
         [SerializeField] private TextAsset _storyAsset;
-        #endregion
 
+        [SerializeField] private SpriteRenderer _popUP;
+        #endregion
+        
 
         #region Getters And Setters
 
         #endregion
+
+        private void Start()
+        {
+            if (_popUP == null)
+            {
+                _popUP = GetComponentInChildren<SpriteRenderer>();
+            }
+
+            _popUP.enabled = false;
+        }
 
 
         #region Unity Calls
@@ -25,6 +38,10 @@ namespace Game.DialogueSystem
             if (collider.CompareTag("Player") && player != null)
             {
                 player.Interactable = this;
+                
+                
+                // enables the pop UP
+                _popUP.enabled = true;
             }
         }
 
@@ -39,6 +56,9 @@ namespace Game.DialogueSystem
                 {
 
                     player.Interactable = null;
+                    
+                    // disables the pop UP
+                    _popUP.enabled = false;
                 }
             }
         }
@@ -54,6 +74,7 @@ namespace Game.DialogueSystem
             }
             DialogueManager.Instance.ShowNextDialogue();
         }
+        
         #endregion
     }
 }

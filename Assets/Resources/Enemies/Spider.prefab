@@ -304,8 +304,8 @@ MonoBehaviour:
   backOffImpulseForce: 5
   showRangeCircle: 1
   minFreeRoamRange: 1
-  maxFreeRoamRange: 2
-  detectionRange: 3.4
+  maxFreeRoamRange: 4
+  detectionRange: 4
   idleWaitTime: 0.5
   attackRange: 2.42
   meleeRange: 0.6
@@ -324,7 +324,7 @@ MonoBehaviour:
   seeker: {fileID: 4538395533092418566}
   rb: {fileID: 4538395533092418569}
   repeatRate: 0.25
-  speed: 3
+  speed: 4
   nextWaypointDistance: 1
 --- !u!114 &4538395533092418572
 MonoBehaviour:
