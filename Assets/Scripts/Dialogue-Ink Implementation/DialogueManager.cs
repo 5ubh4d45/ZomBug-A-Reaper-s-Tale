@@ -61,6 +61,12 @@ namespace Game.DialogueSystem
         /// Is some dialog is being shown.
         /// </summary>
         public bool IsOpen => _isOpen;
+
+        /// <summary>
+        /// This event is fired when the Dialogue ends and passes the story that was finished
+        /// as Argument
+        /// </summary>
+        public Event<Story> OnDialogueEnd;
         #endregion
 
 
@@ -100,6 +106,7 @@ namespace Game.DialogueSystem
             }
             else
             {
+                OnDialogueEnd?.Invoke(_currentStory);
                 HideDialogue();
             }
         }

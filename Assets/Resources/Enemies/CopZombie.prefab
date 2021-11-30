@@ -457,8 +457,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _healthBar: {fileID: 1568880808435631061}
   _healthSystem:
-    _current: 100
-    _maximum: 100
+    _current: 60
+    _maximum: 60
   _scorePerHit: 0
   soundHolder: {fileID: 0}
 --- !u!114 &1568880807725852703

@@ -67,11 +67,17 @@ namespace Game.HealthSystem
 
         private void HealthChanged(float changeAmount)
         {
+            Debug.Log("Starting HealthChanged");
+            
             for (int i = 0; i < _healthSystem.HeartCount; i++)
             {
                 Heart heart = _healthSystem.Hearts[i];
-                _hearts[i].sprite = _heartSprites[heart.Fragments];
+                _hearts[i].sprite = _heartSprites[heart.MaxFragments];
+                
+                Debug.Log("Health Changing:  " + heart.Fragments);
             }
+            
+            Debug.Log("Ending HealthChanged");
         }
 
         private Image CreateHeartImage(Vector2 anchoredPosition, int index)

@@ -55,10 +55,10 @@ namespace Game.HealthSystem
                 {
                     damage -= heart.Fragments;
                 }
-                else if (didResist)
-                {
-                    break;
-                }
+                // else if (didResist)
+                // {
+                //     break;
+                // }
             }
 
             _health -= damage;

@@ -279,6 +279,7 @@ MonoBehaviour:
   camShakeFrequency: 3
   camShakeTime: 0.2
   moveSpeed: 5
+  deathAnimationTime: 3
 --- !u!114 &6635023700471064493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -294,8 +295,8 @@ MonoBehaviour:
   _weaponAim: {fileID: 6635023699135845658}
   _maxWeapons: 3
   player: {fileID: 6635023700471064490}
-  _scythe: {fileID: 0}
-  _scytheDisplay: {fileID: 0}
+  _scythe: {fileID: 6635023699282707419}
+  _scytheDisplay: {fileID: -3835045918207530741, guid: b5a982ed7149ab548bf217273d504189, type: 3}
 --- !u!114 &6635023700471064492
 MonoBehaviour:
   m_ObjectHideFlags: 0

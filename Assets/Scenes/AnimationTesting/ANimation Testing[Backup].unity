@@ -16656,6 +16656,7 @@ MonoBehaviour:
   _mapDisplay: {fileID: 0}
   _weapon: {fileID: 0}
   _animationHandler: {fileID: 0}
+  spread: 0
 --- !u!1 &391958980
 GameObject:
   m_ObjectHideFlags: 0
@@ -23187,6 +23188,7 @@ MonoBehaviour:
     _current: 50
     _maximum: 50
   _scorePerHit: 0
+  soundHolder: {fileID: 0}
 --- !u!114 &737598510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33561,6 +33563,63 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.5388042
+--- !u!1001 &1295380157
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4100473903094421316, guid: e2564b850b6ba1b4faf7acea8121bec5, type: 3}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 4100473903094421316, guid: e2564b850b6ba1b4faf7acea8121bec5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.4243226
+      objectReference: {fileID: 0}
+    - target: {fileID: 4100473903094421316, guid: e2564b850b6ba1b4faf7acea8121bec5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.2443008
+      objectReference: {fileID: 0}
+    - target: {fileID: 4100473903094421316, guid: e2564b850b6ba1b4faf7acea8121bec5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4100473903094421316, guid: e2564b850b6ba1b4faf7acea8121bec5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4100473903094421316, guid: e2564b850b6ba1b4faf7acea8121bec5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4100473903094421316, guid: e2564b850b6ba1b4faf7acea8121bec5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4100473903094421316, guid: e2564b850b6ba1b4faf7acea8121bec5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4100473903094421316, guid: e2564b850b6ba1b4faf7acea8121bec5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4100473903094421316, guid: e2564b850b6ba1b4faf7acea8121bec5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4100473903094421316, guid: e2564b850b6ba1b4faf7acea8121bec5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4100473903094421372, guid: e2564b850b6ba1b4faf7acea8121bec5, type: 3}
+      propertyPath: m_Name
+      value: NPC_Boss
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e2564b850b6ba1b4faf7acea8121bec5, type: 3}
 --- !u!1 &1319826145
 GameObject:
   m_ObjectHideFlags: 0
@@ -60489,6 +60548,7 @@ MonoBehaviour:
   camShakeFrequency: 3
   camShakeTime: 0.2
   moveSpeed: 5
+  deathAnimationTime: 0
 --- !u!114 &1699202500084650171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60626,7 +60686,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2365125049169068128, guid: 1c36f9a73f5f30d49a1e031643e2ed8b, type: 3}
       propertyPath: m_RootOrder
-      value: 20
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 2365125049169068128, guid: 1c36f9a73f5f30d49a1e031643e2ed8b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -60736,7 +60796,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2481931409525974152, guid: 7b7131c93d4181e44af810e713385e3a, type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 2481931409525974152, guid: 7b7131c93d4181e44af810e713385e3a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -60846,7 +60906,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4100473903094421316, guid: 49fe5e32af5e2ef40938fe377def1c14, type: 3}
       propertyPath: m_RootOrder
-      value: 23
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 4100473903094421316, guid: 49fe5e32af5e2ef40938fe377def1c14, type: 3}
       propertyPath: m_LocalPosition.x
@@ -60972,7 +61032,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 151354537389265115, guid: 56dda62d4621cfe45a43d073703981b0, type: 3}
       propertyPath: m_RootOrder
-      value: 25
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 151354537389265115, guid: 56dda62d4621cfe45a43d073703981b0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -61086,7 +61146,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4711415425138267486, guid: f990f41e482b38841b8db3a7d268c520, type: 3}
       propertyPath: m_RootOrder
-      value: 19
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4711415425138267486, guid: f990f41e482b38841b8db3a7d268c520, type: 3}
       propertyPath: m_LocalPosition.x
@@ -61523,7 +61583,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1568880807725852675, guid: f44fcca798b21e94fb7fd55d0f7a96ca, type: 3}
       propertyPath: m_RootOrder
-      value: 24
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 1568880807725852675, guid: f44fcca798b21e94fb7fd55d0f7a96ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -61590,7 +61650,8 @@ MonoBehaviour:
   _weaponAim: {fileID: 1699202500084650171}
   _maxWeapons: 3
   player: {fileID: 1411636083886858429}
-  _scythe2: {fileID: 0}
+  _scythe: {fileID: 0}
+  _scytheDisplay: {fileID: 0}
 --- !u!1001 &6846597222635979830
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -61665,7 +61726,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8350656969727555311, guid: ce37622bc7bf282488c840f2504a6c3c, type: 3}
       propertyPath: m_RootOrder
-      value: 22
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 8350656969727555311, guid: ce37622bc7bf282488c840f2504a6c3c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -61749,7 +61810,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8793932702844506325, guid: 3237133993a5dfe41998527ef03fe0f0, type: 3}
       propertyPath: m_RootOrder
-      value: 21
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 8793932702844506325, guid: 3237133993a5dfe41998527ef03fe0f0, type: 3}
       propertyPath: m_LocalPosition.x

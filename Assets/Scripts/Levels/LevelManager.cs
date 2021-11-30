@@ -26,13 +26,14 @@ namespace Game.Levels
         #endregion
 
         #region Variables
+
         private int _activeEnemiesCount;
         private int _currentLevel = 0;
 
         /// <summary>
         /// This Event is triggered when the player Finishes A level by killing all enemies.
         /// </summary>
-        public Event<int> OnLevelFinish;
+        public Event<int> OnEnemiesKilled;
         #endregion
 
 
@@ -68,6 +69,14 @@ namespace Game.Levels
             {
                 enemy.HealthSystem.Damage(enemy.HealthSystem.MaxHealth);
             });
+
+            ChangeLevel(_currentLevel + 1);
+        }
+
+        public void ChangeLevel(int index)
+        {
+            _currentLevel = index;
+            LevelSceneManager.Instance.LoadLevel(index);
         }
 
         public void RegisterEnemy() => _activeEnemiesCount++;
@@ -76,9 +85,8 @@ namespace Game.Levels
             _activeEnemiesCount--;
             if (_activeEnemiesCount <= 0)
             {
-                _currentLevel++;
                 _activeEnemiesCount = 0;
-                OnLevelFinish?.Invoke(_currentLevel);
+                OnEnemiesKilled?.Invoke(_currentLevel);
             }
         }
         #endregion

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Game.Combat;
 using Game.Core;
+using Game.DialogueSystem;
 using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
@@ -16,6 +17,7 @@ public class PlayerCombat : MonoBehaviour
     private Weapon _currentWeapon;
     private List<Weapon> _weapons;
     private GameObject _weaponHolder;
+
 
     public Event<Weapon> OnWeaponPicked;
     public Event<Weapon> OnWeaponDropped;
@@ -56,18 +58,24 @@ public class PlayerCombat : MonoBehaviour
     {
         if (GameManager.Instance.GameState != GameState.GAME) return;
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !DialogueManager.Instance.IsOpen && !WeaponWheel.Instance.IsOpened)
         {
+            if (player.IsDead) return;
+
             _currentWeapon?.Attack();
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            if (player.IsDead) return;
+
             MeleeAttack1();
         }
 
         if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
         {
+            if (player.IsDead) return;
+
             MeleeAttack2();
         }
 

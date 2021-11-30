@@ -287,9 +287,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _healthBar: {fileID: 7148152072919067295}
   _healthSystem:
-    _current: 500
-    _maximum: 1000
+    _current: 200
+    _maximum: 200
   _scorePerHit: 55
+  soundHolder: {fileID: 0}
   bossMovement: {fileID: 7148152073028882079}
   bossAnimator: {fileID: 7148152073028882064}
   bossCombat: {fileID: 7148152073028882065}
