@@ -69,16 +69,19 @@ public class EnemyAnimator : MonoBehaviour
 
     public void PlayMeleeAttack()
     {
+        RuntimeManager.PlayOneShot(soundHolder.MeleeAttackSound);
         anim.SetTrigger("MeleeAttack");
     }
 
     public void PlayRangedAttack()
     {
+        RuntimeManager.PlayOneShot(soundHolder.RangedAttackSound);
         anim.SetTrigger("RangedAttack");
     }
 
     public void PlayDeathAnimation()
     {
+        RuntimeManager.PlayOneShot(soundHolder.DeathSound);
         anim.SetTrigger("Death");
     }
 

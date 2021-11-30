@@ -509,8 +509,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meleeAttackSoundTrigger: 
-  rangeAttackSoundTrigger: 
-  deathSoundTrigger: 
+  rangeAttackSoundTrigger: event:/SFX_cop_zombie_ranged
+  deathSoundTrigger: event:/SFX_zombie_die
   hitSoundTrigger: 
 --- !u!1 &1568880807730807444
 GameObject:
