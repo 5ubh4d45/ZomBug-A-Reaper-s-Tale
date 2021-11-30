@@ -16,6 +16,7 @@ public class PlayerCombat : MonoBehaviour
     private Weapon _currentWeapon;
     private List<Weapon> _weapons;
     private GameObject _weaponHolder;
+    
 
     public Event<Weapon> OnWeaponPicked;
     public Event<Weapon> OnWeaponDropped;
@@ -58,16 +59,22 @@ public class PlayerCombat : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
+            if(player.IsDead) return;
+            
             _currentWeapon?.Attack();
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            if(player.IsDead) return;
+
             MeleeAttack1();
         }
 
         if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
         {
+            if(player.IsDead) return;
+
             MeleeAttack2();
         }
 

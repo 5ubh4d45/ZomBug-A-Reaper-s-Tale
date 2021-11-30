@@ -791,7 +791,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 762, y: 339}
+  m_ReferenceResolution: {x: 480, y: 270}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -828,9 +828,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da57f759eb6cd39898ece8ac035ca5c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _root: {fileID: 0}
   _loadedAmmoText: {fileID: 4631026643268077777}
   _unloadedAmmoText: {fileID: 4631026643661338169}
   _ammoCounter: {fileID: 4631026644028091342}
+  _healthBar: {fileID: 0}
 --- !u!1 &4631026644448366965
 GameObject:
   m_ObjectHideFlags: 0

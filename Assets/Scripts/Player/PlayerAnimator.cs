@@ -157,9 +157,9 @@ public class PlayerAnimator : MonoBehaviour
         }
     }
 
-    public void PlayRangedAttack()
+    public void PlayDeath()
     {
-
+        anim.SetTrigger("Dead");
     }
 
 
