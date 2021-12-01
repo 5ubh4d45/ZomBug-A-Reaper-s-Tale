@@ -12,7 +12,8 @@ public class BossBehavior : MonoBehaviour
         BackOff,
         Chase,
         RangedAttack,
-        MeleeAttack
+        MeleeAttack,
+        Dead
     }
 
     #region InspectorVariables
@@ -24,13 +25,12 @@ public class BossBehavior : MonoBehaviour
 
     #region PrivateVariables
 
-    private BossState _state;
+    public BossState _state;
 
     #endregion
 
     #region GettersSetters
-
-    public BossState State => _state;
+    
 
     #endregion
     
@@ -150,6 +150,13 @@ public class BossBehavior : MonoBehaviour
                 // attack animation and logic here
                 // boss.BossAnimator.PlayJumpAttack();
                 boss.BossCombat.RangedAttack();
+                
+                break;
+            
+            case BossState.Dead:
+                
+                boss.BossMovement.Chase(false);
+                boss.BossMovement.BackOff(false);
                 
                 break;
             

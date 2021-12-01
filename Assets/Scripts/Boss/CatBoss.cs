@@ -15,8 +15,12 @@ public class CatBoss : Enemy
     [SerializeField] private BossBehavior bossBehavior;
 
     [Space] [SerializeField] private Transform target;
+    [SerializeField] private SpriteRenderer _sprtRnd;
+    
 
-
+    private float _delay;
+    
+    
     #region Getters
 
     public BossAnimator BossAnimator => bossAnimator;
@@ -28,6 +32,7 @@ public class CatBoss : Enemy
     public Transform Target => target;
 
     #endregion
+    
 
     // Start is called before the first frame update
     void Start()
@@ -53,8 +58,14 @@ public class CatBoss : Enemy
 
         if (target == null)
         {
-            target = FindObjectOfType<Player>().gameObject.transform;
+            target = GameObject.FindGameObjectWithTag("Player").transform;
         }
+
+        if (_sprtRnd == null)
+        {
+            _sprtRnd = GetComponent<SpriteRenderer>();
+        }
+        
     }
 
     // Update is called once per frame
@@ -79,8 +90,10 @@ public class CatBoss : Enemy
     public override void OnDead()
     {
         PointerManager.Instance.SetDefaultCursor();
-        LevelManager.Instance.UnregisterEnemy();
-        Destroy(this.gameObject);
+        
+        DeadSetUp();
+        
+        Destroy(this.gameObject, _delay);
     }
 
     public override void OnDamaged(float damageAmount)
@@ -88,6 +101,31 @@ public class CatBoss : Enemy
         ScoreManager.Instance.AddScore(this.ScorePerHit);
         
         StartCoroutine(DamageEffect());
+        
+    }
+
+    private void DeadSetUp()
+    {
+        //plays the death animation and stops all movements of the boss
+        bossAnimator.PlayDeathAniamtion();
+        bossBehavior._state = BossBehavior.BossState.Dead;
+        
+        //disables the healthbar
+        _healthBar.gameObject.SetActive(false);
+        
+        _delay = bossAnimator.DeathAnimationTime;
+        
+        GetComponent<Collider2D>().enabled = false;
+        GetComponent<Rigidbody2D>().mass = 1000f;
+        
+        var collider2Ds = GetComponentsInChildren<Collider2D>();
+        foreach (var collider2D in collider2Ds)
+        {
+            collider2D.enabled = false;
+        }
+        
+        LevelManager.Instance.UnregisterEnemy();
+        
     }
     
     private IEnumerator DamageEffect()
@@ -95,19 +133,18 @@ public class CatBoss : Enemy
         //adds cam shake when damage taken
         CameraShake.Instance.ShakeCamera(3f, 3f, 0.2f);
         
-        var sprtRnd = GetComponent<SpriteRenderer>();
         float flashDelay = 0.05f;
         
-        sprtRnd.color = Color.red;
+        _sprtRnd.color = Color.red;
         yield return new WaitForSeconds(flashDelay);
         
-        sprtRnd.color = new Color(255f, 255, 255f, 255f);
+        _sprtRnd.color = new Color(255f, 255, 255f, 255f);
         yield return new WaitForSeconds(flashDelay);
         
-        sprtRnd.color = Color.red;
+        _sprtRnd.color = Color.red;
         yield return new WaitForSeconds(flashDelay);
 
-        sprtRnd.color = new Color(255f, 255, 255f, 255f);
+        _sprtRnd.color = Color.white;
 
     }
 

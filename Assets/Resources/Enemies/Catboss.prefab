@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7148152072806135333}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.09, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7148152072919067292}
@@ -107,8 +107,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7148152072919067294}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.12, z: 0}
-  m_LocalScale: {x: 180, y: 24, z: 1}
+  m_LocalPosition: {x: 0, y: 0.4, z: 0}
+  m_LocalScale: {x: 332.4, y: 24, z: 1}
   m_Children:
   - {fileID: 7148152072806135331}
   - {fileID: 7148152074591633612}
@@ -175,6 +175,7 @@ GameObject:
   - component: {fileID: 7148152073028882078}
   - component: {fileID: 7148152073028882065}
   - component: {fileID: 7148152073028882064}
+  - component: {fileID: -3735454542493192871}
   - component: {fileID: 7148152073028882067}
   - component: {fileID: 7148152073028882066}
   m_Layer: 0
@@ -287,10 +288,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _healthBar: {fileID: 7148152072919067295}
   _healthSystem:
-    _current: 200
-    _maximum: 200
+    _current: 500
+    _maximum: 500
   _scorePerHit: 55
-  soundHolder: {fileID: 0}
+  soundHolder: {fileID: -3735454542493192871}
   bossMovement: {fileID: 7148152073028882079}
   bossAnimator: {fileID: 7148152073028882064}
   bossCombat: {fileID: 7148152073028882065}
@@ -326,6 +327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boss: {fileID: 7148152073028882076}
+  _state: 0
 --- !u!114 &7148152073028882065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -367,6 +369,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boss: {fileID: 7148152073028882076}
   anim: {fileID: 7148152073028882068}
+  deathAnimationTime: 3.7
+  soundHolder: {fileID: 0}
+--- !u!114 &-3735454542493192871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7148152073028882070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e784e65a9c2b364c947b64ab4bf2b08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meleeAttackSoundTrigger: 
+  rangeAttackSoundTrigger: 
+  deathSoundTrigger: 
+  hitSoundTrigger: 
 --- !u!58 &7148152073028882067
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -429,7 +449,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7148152073668641858}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0049699866, y: 0, z: 0}
+  m_LocalPosition: {x: 0.0049699866, y: 0.09, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7148152074591633612}

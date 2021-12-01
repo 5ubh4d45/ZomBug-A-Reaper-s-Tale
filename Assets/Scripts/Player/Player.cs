@@ -176,9 +176,12 @@ public class Player : HealthObject<HeartHealthSystem>
         yield return new WaitForSeconds(flashDelay);
         
         sprtRnd.color = Color.red;
+        
         yield return new WaitForSeconds(flashDelay);
-
-        sprtRnd.color = new Color(255f, 255, 255f, 255f);
+        sprtRnd.color = Color.white;
+        
+        yield return new WaitForSeconds(flashDelay);
+        sprtRnd.color = Color.white;
 
     }
     

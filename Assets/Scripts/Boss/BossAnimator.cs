@@ -6,8 +6,16 @@ public class BossAnimator : MonoBehaviour
 {
     [SerializeField] private CatBoss boss;
     [SerializeField] private Animator anim;
+    [SerializeField] private float deathAnimationTime;
 
+    [Space]
+    // reference to the sound holder use _soundHolder.(your sound string variable)
+    // at the Fmod sound string like
+    // RuntimeManager.PlayOneShot(soundHolder.DeathSound);
+    [SerializeField] private EnemySoundHolder soundHolder;
 
+    public float DeathAnimationTime => deathAnimationTime;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +28,10 @@ public class BossAnimator : MonoBehaviour
         if (boss == null)
         {
             boss = GetComponent<CatBoss>();
+        }
+        if (soundHolder == null)
+        {
+            soundHolder = GetComponent<EnemySoundHolder>();
         }
     }
 
@@ -47,5 +59,10 @@ public class BossAnimator : MonoBehaviour
     public void PlayJumpAttack()
     {
         anim.SetTrigger("JumpAttack");
+    }
+
+    public void PlayDeathAniamtion()
+    {
+        anim.SetTrigger("Death");
     }
 }

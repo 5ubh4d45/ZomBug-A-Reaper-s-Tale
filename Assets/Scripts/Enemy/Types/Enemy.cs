@@ -66,6 +66,8 @@ public class Enemy : HealthObject<IntHealthSystem>
         //playing the death animation and gets the death animation duration
         var anim = GetComponent<EnemyAnimator>();
         var behavior = GetComponent<EnemyBehavior.EnemyBehavior>();
+        
+        GetComponentInChildren<HealthBar>().gameObject.SetActive(false);
 
         //puts the enemy into dead state
         anim.PlayDeathAnimation();
