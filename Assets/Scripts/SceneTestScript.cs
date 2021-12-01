@@ -27,6 +27,7 @@ namespace Game.Tests
         public void RestartGame()
         {
             Levels.LevelManager.Instance.ChangeLevel(0);
+            Player.Instance.PlayerCombat.Reset();
         }
 
         public void Continue()
