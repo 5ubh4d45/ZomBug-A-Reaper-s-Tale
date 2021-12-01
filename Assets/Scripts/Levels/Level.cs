@@ -41,6 +41,12 @@ namespace Game.Levels
             Player.Instance.transform.position = _playerStartPos.position;
         }
 
+        private void Update()
+        {
+            if (_isBossLevel)
+                _bossMusicEmitter.SetParameter("player_health", Player.Instance.HealthSystem.HealthPercent);
+        }
+
         private void OnDestroy()
         {
             LevelManager.Instance.OnEnemiesKilled -= EnemiesKilled;
