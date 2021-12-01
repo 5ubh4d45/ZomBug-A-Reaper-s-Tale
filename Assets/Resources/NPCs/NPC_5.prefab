@@ -183,6 +183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _storyAsset: {fileID: 4900000, guid: 8fd1238337c8c213d99f2c037c7973d2, type: 3}
+  _popUP: {fileID: 8350656970818088259}
 --- !u!1 &8350656970818088257
 GameObject:
   m_ObjectHideFlags: 0
