@@ -93623,6 +93623,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC_Boss
       objectReference: {fileID: 0}
+    - target: {fileID: 4100473903094421375, guid: e2564b850b6ba1b4faf7acea8121bec5, type: 3}
+      propertyPath: _storyAsset
+      value: 
+      objectReference: {fileID: 4900000, guid: a96d744b86f49d790a5a49262ada3e63, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2564b850b6ba1b4faf7acea8121bec5, type: 3}
 --- !u!1001 &1262685856
@@ -95007,7 +95011,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2b0f984f7a492702a6f7c0063312616, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _catDialogs: {fileID: 4900000, guid: 8fd1238337c8c213d99f2c037c7973d2, type: 3}
+  _catDialogs: {fileID: 4900000, guid: a96d744b86f49d790a5a49262ada3e63, type: 3}
   _levelIndex: 10
   _isBossLevel: 1
   _playerStartPos: {fileID: 1815612831}
