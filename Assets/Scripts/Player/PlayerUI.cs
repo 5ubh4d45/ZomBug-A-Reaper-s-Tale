@@ -111,11 +111,17 @@ public class PlayerUI : MonoBehaviour
         {
             RangedWeapon rangedWeapon = weapon as RangedWeapon;
             UpdateCombatUI();
+            _ammoCounter.SetActive(true);
         }
         else if (Player.Instance.PlayerCombat.CurrentWeapon as MeleeWeapon != null)
         {
             _loadedAmmoText.text = "\u221E";
             _unloadedAmmoText.text = "\u221E";
+            _ammoCounter.SetActive(true);
+        }
+        else if (Player.Instance.PlayerCombat.CurrentWeapon == null)
+        {
+            _ammoCounter.SetActive(false);
         }
     }
     #endregion

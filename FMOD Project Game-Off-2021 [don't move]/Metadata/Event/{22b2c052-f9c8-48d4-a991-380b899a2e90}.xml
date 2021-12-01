@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="Event" id="{22b2c052-f9c8-48d4-a991-380b899a2e90}">
 		<property name="name">
-			<value>SFX_cat_laugh</value>
+			<value>SFX_cat_skull</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
@@ -59,7 +59,7 @@
 			<destination>{a848b02a-85e1-4421-8e56-8b6adf27d1bb}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{4338a8d8-34cc-46c0-bf82-3911ee2da647}</destination>
+			<destination>{58e2aa4e-70a2-459f-8dd2-fd3d82d3f1c0}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{cc7b13e4-6492-48c8-83d9-100416babb81}" />
@@ -211,10 +211,13 @@
 			<value>326.923157</value>
 		</property>
 		<property name="decayTime">
-			<value>391.025696</value>
+			<value>794.871948</value>
+		</property>
+		<property name="decayShape">
+			<value>-0.175745785</value>
 		</property>
 		<property name="sustainValue">
-			<value>-39.9999962</value>
+			<value>-35.5555573</value>
 		</property>
 		<property name="releaseTime">
 			<value>775.641113</value>

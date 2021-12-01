@@ -5,6 +5,7 @@ using Game.Combat;
 using Unity.Mathematics;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using FMODUnity;
 
 public class BossCombat : MonoBehaviour
 {
@@ -145,6 +146,8 @@ public class BossCombat : MonoBehaviour
         int rnd = Random.Range(0, 3);
         if (rnd < 1)
         {
+            //play sound for SlashAttack
+            RuntimeManager.PlayOneShot("event:/SFX_cat_slash");
 
             // no delay as the attack played by animator
             StartCoroutine(SlashAttack(0.0f));
@@ -154,6 +157,8 @@ public class BossCombat : MonoBehaviour
         }
         else
         {
+            //play  sound for SkullAttack
+            RuntimeManager.PlayOneShot("event:/SFX_cat_skull");
 
             // no delay as the attack played by animator
             StartCoroutine(SkullAttack(0.0f));

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{9b0f84da-31f0-4401-bb19-7af72d16954f}">
+		<property name="name">
+			<value>sfx_volume</value>
+		</property>
+		<relationship name="folder">
+			<destination>{d7b9132d-694f-4278-afe5-1072374d034a}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{8e493ede-3d35-4627-99ee-ed3d29766fff}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{8e493ede-3d35-4627-99ee-ed3d29766fff}">
+		<property name="maximum">
+			<value>100</value>
+		</property>
+		<property name="initialValue">
+			<value>100</value>
+		</property>
+	</object>
+</objects>

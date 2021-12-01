@@ -1,7 +1,8 @@
-using System;
-using Game.Core;
 using Game.Scenes;
 using UnityEngine;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 namespace Game.Tests
 {
@@ -31,6 +32,14 @@ namespace Game.Tests
         public void ShowOptions()
         {
             Options.OptionsMenu.Instance.ShowOptions();
+        }
+
+        public void ExitGame()
+        {
+#if UNITY_EDITOR
+            EditorApplication.ExitPlaymode();
+#endif
+            Application.Quit();
         }
         #endregion
     }
