@@ -26,11 +26,12 @@ namespace Game.Levels
             _colliders = GetComponents<Collider2D>().ToList();
             _renderer.enabled = false;
             _colliders.ForEach((Collider2D collider) => { collider.enabled = false; });
-            
+
             // //also for the popup sign
             // _popUp = GetComponentInChildren<SpriteRenderer>();
             // _popUp.enabled = false;
 
+            Debug.Log("EnemiesKilledRegistered");
             LevelManager.Instance.OnEnemiesKilled += EnemiesKilled;
         }
 
@@ -41,9 +42,10 @@ namespace Game.Levels
 
         private void EnemiesKilled(int level)
         {
+            Debug.Log("Enable Renderer");
             _renderer.enabled = true;
             _colliders.ForEach((Collider2D collider) => { collider.enabled = true; });
-            
+
             // // for the popup
             // _popUp.enabled = true;
         }

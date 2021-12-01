@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public class BossAnimator : MonoBehaviour
 {
@@ -53,6 +54,8 @@ public class BossAnimator : MonoBehaviour
 
     public void PlayMeleeAttack()
     {
+        RuntimeManager.PlayOneShot(soundHolder.MeleeAttackSound);
+
         anim.SetTrigger("MeleeAttack");
     }
 
@@ -62,7 +65,9 @@ public class BossAnimator : MonoBehaviour
     }
 
     public void PlayDeathAniamtion()
-    {
+    {   
+        RuntimeManager.PlayOneShot(soundHolder.DeathSound);
+
         anim.SetTrigger("Death");
     }
 }

@@ -385,9 +385,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e784e65a9c2b364c947b64ab4bf2b08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meleeAttackSoundTrigger: 
+  meleeAttackSoundTrigger: event:/SFX_cat_melee
   rangeAttackSoundTrigger: 
-  deathSoundTrigger: 
+  deathSoundTrigger: event:/SFX_cat_die
   hitSoundTrigger: 
 --- !u!58 &7148152073028882067
 CircleCollider2D:
