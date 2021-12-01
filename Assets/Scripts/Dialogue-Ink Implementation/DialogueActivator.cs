@@ -12,7 +12,7 @@ namespace Game.DialogueSystem
         #region Variables
         [SerializeField] private TextAsset _storyAsset;
 
-        [SerializeField] private SpriteRenderer _popUP;
+        // [SerializeField] private SpriteRenderer _popUP;
         #endregion
         
 
@@ -20,15 +20,15 @@ namespace Game.DialogueSystem
         public Story Story => new Story(_storyAsset.text);
         #endregion
 
-        private void Start()
-        {
-            if (_popUP == null)
-            {
-                _popUP = GetComponentInChildren<SpriteRenderer>();
-            }
-
-            _popUP.enabled = false;
-        }
+        // private void Start()
+        // {
+        //     if (_popUP == null)
+        //     {
+        //         _popUP = GetComponentInChildren<SpriteRenderer>();
+        //     }
+        //
+        //     _popUP.enabled = false;
+        // }
 
 
         #region Unity Calls
