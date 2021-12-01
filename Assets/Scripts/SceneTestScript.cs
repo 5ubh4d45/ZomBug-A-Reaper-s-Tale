@@ -24,7 +24,12 @@ namespace Game.Tests
 
 
         #region Component Functions
-        public void LoadGame()
+        public void RestartGame()
+        {
+            Levels.LevelManager.Instance.ChangeLevel(0);
+        }
+
+        public void Continue()
         {
             Levels.LevelSceneManager.Instance.RestartLevel();
         }

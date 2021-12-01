@@ -46,7 +46,6 @@ public class Player : HealthObject<HeartHealthSystem>
     public void Reset()
     {
         _healthSystem.Reset();
-        PlayerCombat.Reset();
     }
 
     protected override void Awake()
