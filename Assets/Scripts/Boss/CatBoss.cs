@@ -16,11 +16,8 @@ public class CatBoss : Enemy
 
     [Space] [SerializeField] private Transform target;
     [SerializeField] private SpriteRenderer _sprtRnd;
-    
 
-    private float _delay;
-    
-    
+
     #region Getters
 
     public BossAnimator BossAnimator => bossAnimator;
@@ -93,7 +90,7 @@ public class CatBoss : Enemy
         
         DeadSetUp();
         
-        Destroy(this.gameObject, _delay);
+        Destroy(this.gameObject, bossAnimator.DeathAnimationTime);
     }
 
     public override void OnDamaged(float damageAmount)
@@ -104,17 +101,16 @@ public class CatBoss : Enemy
         
     }
 
-    private void DeadSetUp()
+    private IEnumerator DeadSetUp()
     {
         //plays the death animation and stops all movements of the boss
+        Debug.Log("Playing Boss death");
         bossAnimator.PlayDeathAniamtion();
         bossBehavior._state = BossBehavior.BossState.Dead;
         
         //disables the healthbar
         _healthBar.gameObject.SetActive(false);
-        
-        _delay = bossAnimator.DeathAnimationTime;
-        
+
         GetComponent<Collider2D>().enabled = false;
         GetComponent<Rigidbody2D>().mass = 1000f;
         
@@ -123,6 +119,8 @@ public class CatBoss : Enemy
         {
             collider2D.enabled = false;
         }
+
+        yield return new WaitForSeconds(bossAnimator.DeathAnimationTime);
         
         LevelManager.Instance.UnregisterEnemy();
         
@@ -130,6 +128,8 @@ public class CatBoss : Enemy
     
     private IEnumerator DamageEffect()
     {
+        Debug.Log("lPlaying boss damage effect");
+
         //adds cam shake when damage taken
         CameraShake.Instance.ShakeCamera(3f, 3f, 0.2f);
         

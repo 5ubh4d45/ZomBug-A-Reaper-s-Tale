@@ -62,14 +62,14 @@ public class BossProjectile : MonoBehaviour
 
             transform.position =
                 Vector2.MoveTowards(transform.position, 
-                    _targetPos.position, homingSpeed * Time.fixedDeltaTime);
+                    _targetPos.position, homingSpeed * Time.fixedDeltaTime * _speedModifier);
             
             yield break;
         }
         
         transform.right = (Vector3)_direction;
         
-        transform.position += (Vector3)_direction * (speed * Time.deltaTime);
+        transform.position += (Vector3)_direction * (speed * Time.deltaTime) * _speedModifier;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

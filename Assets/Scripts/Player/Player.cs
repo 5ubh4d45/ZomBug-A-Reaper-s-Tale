@@ -97,7 +97,20 @@ public class Player : HealthObject<HeartHealthSystem>
         {
             if (collision2D.gameObject.CompareTag("Enemy"))
             {
-                _healthSystem.Damage(collision2D.gameObject.GetComponent<EnemyCombat>().MeleeDamage);
+                var dmg = collision2D.gameObject.GetComponent<EnemyCombat>();
+                
+                // workaround for the boss attacks not detecting
+                if (dmg != null)
+                {
+                    _healthSystem.Damage(dmg.MeleeDamage);
+                }
+                
+                if (dmg == null)
+                {
+                    var dmg2 = collision2D.gameObject.GetComponent<BossCombat>();
+                    
+                    _healthSystem.Damage(dmg2.MeleeDamage);
+                }
 
                 _nextMeleeDamageTime = 0f;
 
