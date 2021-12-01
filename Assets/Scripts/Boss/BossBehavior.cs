@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using FMOD;
-using UnityEditor.VersionControl;
 using UnityEngine;
 
 public class BossBehavior : MonoBehaviour

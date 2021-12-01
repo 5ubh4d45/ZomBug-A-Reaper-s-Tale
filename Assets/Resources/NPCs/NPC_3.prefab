@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 2365125049169068141}
   - component: {fileID: 2365125049169068140}
   - component: {fileID: 2365125049169068143}
-  - component: {fileID: 2365125049169068142}
   - component: {fileID: 2365125049169068137}
   m_Layer: 0
   m_Name: NPC_3
@@ -171,29 +170,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.6}
   serializedVersion: 2
   m_Radius: 1.5
---- !u!114 &2365125049169068142
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2365125049169068136}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/SFX_zombie_voice
-  PlayEvent: 9
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
 --- !u!114 &2365125049169068137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,7 +183,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _storyAsset: {fileID: 4900000, guid: 8fd1238337c8c213d99f2c037c7973d2, type: 3}
-  _popUP: {fileID: 2365125050578412908}
 --- !u!1 &2365125050578412910
 GameObject:
   m_ObjectHideFlags: 0
