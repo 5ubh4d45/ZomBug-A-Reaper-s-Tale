@@ -91884,7 +91884,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1143832686743865777, guid: 21f73ba7f81ddfa0f9fa3ef3bdd84b73, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1143832686743865777, guid: 21f73ba7f81ddfa0f9fa3ef3bdd84b73, type: 3}
       propertyPath: m_LocalPosition.x
@@ -92224,7 +92224,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7614293597630542816, guid: 9882cac5f921fc7619f06b1842d09b2c, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7614293597630542816, guid: 9882cac5f921fc7619f06b1842d09b2c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -92479,6 +92479,7 @@ GameObject:
   - component: {fileID: 1957488254}
   - component: {fileID: 1957488253}
   - component: {fileID: 1957488255}
+  - component: {fileID: 1957488256}
   m_Layer: 0
   m_Name: Level
   m_TagString: Untagged
@@ -92502,6 +92503,7 @@ MonoBehaviour:
   _levelIndex: 10
   _isBossLevel: 1
   _playerStartPos: {fileID: 1815612831}
+  _bossMusicEmitter: {fileID: 1957488256}
 --- !u!4 &1957488254
 Transform:
   m_ObjectHideFlags: 0
@@ -92542,6 +92544,29 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 97.09154, y: 55.37213}
   m_EdgeRadius: 0
+--- !u!114 &1957488256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957488252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/MUSIC_catboss
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &1047828752363945058
 GameObject:
   m_ObjectHideFlags: 0
@@ -118572,6 +118597,10 @@ PrefabInstance:
       propertyPath: _sprtRnd
       value: 
       objectReference: {fileID: 7148152074010857720}
+    - target: {fileID: 7148152073028882076, guid: c3c23985f5594ba4bb42591f763999b5, type: 3}
+      propertyPath: _bossMusicEmitter
+      value: 
+      objectReference: {fileID: 1957488256}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3c23985f5594ba4bb42591f763999b5, type: 3}
 --- !u!114 &7148152074010857719 stripped

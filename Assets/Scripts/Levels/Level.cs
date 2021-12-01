@@ -1,7 +1,9 @@
 using System;
+using Game.Core;
 using Game.DialogueSystem;
 using Ink.Runtime;
 using UnityEngine;
+using FMODUnity;
 
 namespace Game.Levels
 {
@@ -12,10 +14,13 @@ namespace Game.Levels
         [SerializeField] private int _levelIndex;
         [SerializeField] private bool _isBossLevel;
         [SerializeField] private Transform _playerStartPos;
+        [SerializeField] private StudioEventEmitter _bossMusicEmitter;
 
         private bool _hasFinished => _hasMetCat && _hasKilledEnemies;
         private bool _hasMetCat;
         private bool _hasKilledEnemies;
+
+        public StudioEventEmitter BossEventEmitter => _bossMusicEmitter;
         #endregion
 
 
@@ -27,6 +32,11 @@ namespace Game.Levels
         #region Unity Calls
         private void Start()
         {
+            if (_isBossLevel)
+            {
+                MusicController.Instance.Emitter.Stop();
+                _bossMusicEmitter.Play();
+            }
             LevelManager.Instance.OnEnemiesKilled += EnemiesKilled;
             Player.Instance.transform.position = _playerStartPos.position;
         }

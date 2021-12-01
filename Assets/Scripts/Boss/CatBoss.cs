@@ -6,6 +6,7 @@ using Game.Score;
 using Game.Pointer;
 using Game.Levels;
 using Game.Core;
+using FMODUnity;
 
 public class CatBoss : Enemy
 {
@@ -17,6 +18,8 @@ public class CatBoss : Enemy
 
     [Space] [SerializeField] private Transform target;
     [SerializeField] private SpriteRenderer _sprtRnd;
+
+    [SerializeField] private StudioEventEmitter _bossMusicEmitter;
 
 
     //just use soundholder to get the sound holder
@@ -92,8 +95,8 @@ public class CatBoss : Enemy
         PointerManager.Instance.SetDefaultCursor();
 
         StartCoroutine(DeadSetUp());
+        _bossMusicEmitter.Stop();
 
-        MusicController.Instance.Emitter.Stop();
         Destroy(this.gameObject, bossAnimator.DeathAnimationTime);
     }
 
