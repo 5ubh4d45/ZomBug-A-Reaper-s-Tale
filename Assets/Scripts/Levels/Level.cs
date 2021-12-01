@@ -39,12 +39,12 @@ namespace Game.Levels
         private void EnemiesKilled(int _)
         {
             _hasKilledEnemies = true;
-            if (_isBossLevel)
-            {
-                _hasMetCat = true;
-                LevelManager.Instance.ChangeLevel(_levelIndex + 1);
-                return;
-            }
+            // if (_isBossLevel)
+            // {
+            //     _hasMetCat = true;
+            //     LevelManager.Instance.ChangeLevel(_levelIndex + 1);
+            //     return;
+            // }
             DialogueManager.Instance.OnDialogueEnd += DialogueEnded;
         }
 
@@ -53,6 +53,11 @@ namespace Game.Levels
             if (!(story == _catDialogs)) return;
             _hasMetCat = true;
             DialogueManager.Instance.OnDialogueEnd -= DialogueEnded;
+
+            if (_isBossLevel)
+            {
+                LevelManager.Instance.ChangeLevel(_levelIndex + 1);
+            }
         }
 
         private void OnTriggerEnter2D(Collider2D collider2D)

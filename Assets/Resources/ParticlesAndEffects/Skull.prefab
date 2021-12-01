@@ -118,8 +118,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  aliveTime: 5
+  _aliveTime: 3
+  blastDuration: 0.3
   impactForce: 5
+  anim: {fileID: 7446186605727022687}
   introAnimationWaitTime: 0.1
   isHoming: 1
   homingSpeed: 4

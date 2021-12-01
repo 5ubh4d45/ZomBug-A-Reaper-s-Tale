@@ -9,8 +9,10 @@ public class BossProjectile : MonoBehaviour
 
     #region Variables
     [SerializeField] private float speed;
-    [SerializeField] private float aliveTime;
+    [SerializeField] private float _aliveTime;
+    [SerializeField] private float blastDuration = 0.3f;
     [SerializeField] private float impactForce;
+    [SerializeField] private Animator anim;
     [SerializeField] private float introAnimationWaitTime;
     [SerializeField] private bool isHoming;
     [SerializeField] private float homingSpeed;
@@ -20,6 +22,7 @@ public class BossProjectile : MonoBehaviour
     private Vector2 _direction;
     private string _attackTag;
     private Transform _targetPos;
+    private float _speedModifier = 1f;
     #endregion
 
 
@@ -31,6 +34,11 @@ public class BossProjectile : MonoBehaviour
     {
         col = GetComponent<Collider2D>();
         col.enabled = false;
+        
+        if (anim == null)
+        {
+            anim = GetComponent<Animator>();
+        }
     }
 
     #region Unity Calls
@@ -43,7 +51,7 @@ public class BossProjectile : MonoBehaviour
 
     private IEnumerator MoveProjectile()
     {
-        yield return new WaitForSeconds(introAnimationWaitTime);
+        yield return new WaitForSeconds(introAnimationWaitTime + 0.2f);
 
         col.enabled = true;
         
@@ -54,34 +62,40 @@ public class BossProjectile : MonoBehaviour
 
             transform.position =
                 Vector2.MoveTowards(transform.position, 
-                    _targetPos.position, homingSpeed * Time.fixedDeltaTime);
+                    _targetPos.position, homingSpeed * Time.fixedDeltaTime * _speedModifier);
             
             yield break;
         }
         
         transform.right = (Vector3)_direction;
         
-        transform.position += (Vector3)_direction * (speed * Time.deltaTime);
+        transform.position += (Vector3)_direction * (speed * Time.deltaTime) * _speedModifier;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         HealthObject healthObject = collision.gameObject.GetComponent<HealthObject>();
-        
-        // if (healthObject != null && (_attackLayer.value & (1 << collision.gameObject.layer)) > 0)
-        
+
         //replaced layermask with compareTags 
         if (healthObject != null && collision.gameObject.CompareTag(_attackTag))
         {
             healthObject.HealthSystem.Damage(_damage);
-            // healthObject.HealthSystem().Damage(_damage);
             
-            //adding a force to impact
+                //adds cam shake when damage taken
+                CameraShake.Instance.ShakeCamera(3f, 3f, 0.2f);
+                    
+                var player = collision.gameObject.GetComponent<Player>();
+                    
+                //plays the dmg effect
+                StartCoroutine(player.DamageEffect());
+
+                //adding a force to impact
             collision.gameObject.GetComponentInParent<Rigidbody2D>().AddForce(_direction * impactForce, ForceMode2D.Impulse);
             
             
         }
-        Destroy(gameObject);
+        //destrying and playing the blast
+        StartCoroutine(DestroyBullet(0f));
     }
     #endregion
 
@@ -93,7 +107,8 @@ public class BossProjectile : MonoBehaviour
         _attackTag = attacktag;
         _targetPos = targetPos;
         _direction = DirectionToVector(_targetPos.position);
-        Destroy(gameObject, aliveTime);
+        
+        StartCoroutine(DestroyBullet(_aliveTime));
     }
 
     private Vector2 DirectionToVector(Vector2 target)
@@ -112,6 +127,16 @@ public class BossProjectile : MonoBehaviour
         {
             transform.localScale = new Vector3(1f, -1f, 1f);
         }
+    }
+    
+    private IEnumerator DestroyBullet(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+            
+        //destrying and playing the blast
+        anim.SetTrigger("Blast");
+        _speedModifier = 0f;
+        Destroy(gameObject, blastDuration);
     }
     #endregion
 }

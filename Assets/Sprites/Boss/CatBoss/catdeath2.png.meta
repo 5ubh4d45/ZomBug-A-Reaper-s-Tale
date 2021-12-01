@@ -1,0 +1,960 @@
+fileFormatVersion: 2
+guid: 81a6d96666f825540a4f9916502b6731
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7511928595250898965
+    second: catdeath2_0
+  - first:
+      213: 146205361029266451
+    second: catdeath2_1
+  - first:
+      213: 8329163849347949216
+    second: catdeath2_2
+  - first:
+      213: 8182529481524269954
+    second: catdeath2_3
+  - first:
+      213: 8093910793003771612
+    second: catdeath2_4
+  - first:
+      213: 7844598847102220363
+    second: catdeath2_5
+  - first:
+      213: -8195923404422116331
+    second: catdeath2_6
+  - first:
+      213: -4686927084315159476
+    second: catdeath2_7
+  - first:
+      213: -8400581934450545186
+    second: catdeath2_8
+  - first:
+      213: -1384602713835148473
+    second: catdeath2_9
+  - first:
+      213: -1274771952738453451
+    second: catdeath2_10
+  - first:
+      213: -6920562022078635879
+    second: catdeath2_11
+  - first:
+      213: -5722455505653627600
+    second: catdeath2_12
+  - first:
+      213: 4712357591907452408
+    second: catdeath2_13
+  - first:
+      213: 5472365983369800935
+    second: catdeath2_14
+  - first:
+      213: -5939053574387010982
+    second: catdeath2_15
+  - first:
+      213: 4599004874006147294
+    second: catdeath2_16
+  - first:
+      213: 1447672900497082160
+    second: catdeath2_17
+  - first:
+      213: -6726720727437529248
+    second: catdeath2_18
+  - first:
+      213: -8169525302336106348
+    second: catdeath2_19
+  - first:
+      213: -8245495647902212679
+    second: catdeath2_20
+  - first:
+      213: 4195408035382520383
+    second: catdeath2_21
+  - first:
+      213: -532878714104087099
+    second: catdeath2_22
+  - first:
+      213: 3659434826705531786
+    second: catdeath2_23
+  - first:
+      213: 6288975823470873327
+    second: catdeath2_24
+  - first:
+      213: 88172818719062161
+    second: catdeath2_25
+  - first:
+      213: 4683605134484085226
+    second: catdeath2_26
+  - first:
+      213: 1319634084982175849
+    second: catdeath2_27
+  - first:
+      213: 9081493603835890472
+    second: catdeath2_28
+  - first:
+      213: 1428463814619739001
+    second: catdeath2_29
+  - first:
+      213: -6154198867017289338
+    second: catdeath2_30
+  - first:
+      213: -4404846922893769932
+    second: catdeath2_31
+  - first:
+      213: -6108645307683211184
+    second: catdeath2_32
+  - first:
+      213: -8631058588817162855
+    second: catdeath2_33
+  - first:
+      213: 942258324081551585
+    second: catdeath2_34
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: catdeath2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2560
+        width: 91
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5365, y: 0.01}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 518670ae14bbf3860800000000000000
+      internalID: 7511928595250898965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catdeath2_1
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 2560
+        width: 91
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5365, y: 0.01}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31c3860500d670200800000000000000
+      internalID: 146205361029266451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catdeath2_2
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 2560
+        width: 91
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5365, y: 0.01}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a2e8642462279370800000000000000
+      internalID: 8329163849347949216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catdeath2_3
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 2560
+        width: 91
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5365, y: 0.01}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2835a66e53f2e8170800000000000000
+      internalID: 8182529481524269954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catdeath2_4
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 2560
+        width: 91
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5365, y: 0.01}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd6a0bc9bf8535070800000000000000
+      internalID: 8093910793003771612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catdeath2_5
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 2560
+        width: 91
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5365, y: 0.01}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4877f6c61d9ddc60800000000000000
+      internalID: 7844598847102220363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catdeath2_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2048
+        width: 91
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5365, y: 0.01}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51c0c19661b324e80800000000000000
+      internalID: -8195923404422116331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catdeath2_7
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 2048
+        width: 91
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5365, y: 0.01}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c44dc3336a0b4feb0800000000000000
+      internalID: -4686927084315159476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catdeath2_8
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 2048
+        width: 91
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5365, y: 0.01}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edde2822d332b6b80800000000000000
+      internalID: -8400581934450545186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catdeath2_9
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 2048
+        width: 91
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5365, y: 0.01}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74b60deea27e8cce0800000000000000
+      internalID: -1384602713835148473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catdeath2_10
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 2048
+        width: 91
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5365, y: 0.01}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 538b46bb9a91f4ee0800000000000000
+      internalID: -1274771952738453451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catdeath2_11
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 2048
+        width: 91
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5365, y: 0.01}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 990a1f3f18935ff90800000000000000
+      internalID: -6920562022078635879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catdeath2_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1536
+        width: 91
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5365, y: 0.01}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03589865901c590b0800000000000000
+      internalID: -5722455505653627600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catdeath2_13
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 1536
+        width: 91
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5365, y: 0.01}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f542404348a56140800000000000000
+      internalID: 4712357591907452408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catdeath2_14
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 1536
+        width: 91
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5365, y: 0.01}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ec20b73edfb1fb40800000000000000
+      internalID: 5472365983369800935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catdeath2_15
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 1536
+        width: 91
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5365, y: 0.01}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a52f5a49d3e349da0800000000000000
+      internalID: -5939053574387010982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catdeath2_16
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 1536
+        width: 91
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5365, y: 0.01}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed03d6bf092f2df30800000000000000
+      internalID: 4599004874006147294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catdeath2_17
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 1536
+        width: 91
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5365, y: 0.01}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 037861935da271410800000000000000
+      internalID: 1447672900497082160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catdeath2_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1024
+        width: 91
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5365, y: 0.01}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06f24d95323e5a2a0800000000000000
+      internalID: -6726720727437529248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catdeath2_19
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 1024
+        width: 91
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5365, y: 0.01}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 490d0b2850400ae80800000000000000
+      internalID: -8169525302336106348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catdeath2_20
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 1024
+        width: 91
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5365, y: 0.01}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bd52cd056d129d80800000000000000
+      internalID: -8245495647902212679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catdeath2_21
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 1024
+        width: 91
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5365, y: 0.01}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3a6bc44165193a30800000000000000
+      internalID: 4195408035382520383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catdeath2_22
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 1024
+        width: 91
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5365, y: 0.01}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cd757102a5da98f0800000000000000
+      internalID: -532878714104087099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catdeath2_23
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 1024
+        width: 91
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5365, y: 0.01}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a83f97c169ce8c230800000000000000
+      internalID: 3659434826705531786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catdeath2_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 91
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5365, y: 0.01}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fea4007e03ee64750800000000000000
+      internalID: 6288975823470873327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catdeath2_25
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 512
+        width: 91
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5365, y: 0.01}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 198389226b0493100800000000000000
+      internalID: 88172818719062161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catdeath2_26
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 512
+        width: 91
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5365, y: 0.01}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae99e151e028ff040800000000000000
+      internalID: 4683605134484085226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catdeath2_27
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 512
+        width: 91
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5365, y: 0.01}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9683cd46538405210800000000000000
+      internalID: 1319634084982175849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catdeath2_28
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 512
+        width: 91
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5365, y: 0.01}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82bce9e1152f70e70800000000000000
+      internalID: 9081493603835890472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catdeath2_29
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 512
+        width: 91
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5365, y: 0.01}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 973b8e4654ce2d310800000000000000
+      internalID: 1428463814619739001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catdeath2_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 91
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5365, y: 0.01}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 681b25e9cb4e79aa0800000000000000
+      internalID: -6154198867017289338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catdeath2_31
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 0
+        width: 91
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5365, y: 0.01}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 433c1febf07ded2c0800000000000000
+      internalID: -4404846922893769932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catdeath2_32
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 0
+        width: 91
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5365, y: 0.01}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0587fa8257bb93ba0800000000000000
+      internalID: -6108645307683211184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catdeath2_33
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 0
+        width: 91
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5365, y: 0.01}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99df7f951f1583880800000000000000
+      internalID: -8631058588817162855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catdeath2_34
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 0
+        width: 91
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5365, y: 0.01}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e8298514f2931d00800000000000000
+      internalID: 942258324081551585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

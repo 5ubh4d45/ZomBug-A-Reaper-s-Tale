@@ -41,7 +41,7 @@ namespace Game.DialogueSystem
                 
                 
                 // enables the pop UP
-                _popUP.enabled = true;
+                // _popUP.enabled = true;
             }
         }
 
@@ -58,7 +58,7 @@ namespace Game.DialogueSystem
                     player.Interactable = null;
                     
                     // disables the pop UP
-                    _popUP.enabled = false;
+                    // _popUP.enabled = false;
                 }
             }
         }
