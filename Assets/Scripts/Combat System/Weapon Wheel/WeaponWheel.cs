@@ -113,12 +113,14 @@ namespace Game.Combat
             _playerCombat.OnWeaponPicked -= UpdateWheel;
             _playerCombat.OnWeaponSwitched -= UpdateWheel;
         }
-
-        private void OnDrawGizmos()
-        {
-            Handles.DrawWireDisc(_weaponWheelParent.transform.position, new Vector3(0, 0, 1), _maximumHieght * Screen.height);
-            Handles.DrawWireDisc(_weaponWheelParent.transform.position, new Vector3(0, 0, 1), _minimumHieght * Screen.height);
-        }
+        
+        #if UNITY_EDITOR
+            private void OnDrawGizmos()
+            {
+                Handles.DrawWireDisc(_weaponWheelParent.transform.position, new Vector3(0, 0, 1), _maximumHieght * Screen.height);
+                Handles.DrawWireDisc(_weaponWheelParent.transform.position, new Vector3(0, 0, 1), _minimumHieght * Screen.height);
+            }
+        #endif
         #endregion
 
 
