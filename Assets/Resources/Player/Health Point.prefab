@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5671452787492451277}
   - component: {fileID: 5671452787492451278}
   - component: {fileID: 5671452787492451267}
+  - component: {fileID: 4912025896083000962}
   m_Layer: 0
   m_Name: Health Point
   m_TagString: Health Point
@@ -122,4 +123,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f9f524bf15ebfd579afffc56c44e84e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healAmount: 4
+  _healAmount: 1
+--- !u!114 &4912025896083000962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5671452787492451279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/SFX_heal
+  PlayEvent: 5
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
