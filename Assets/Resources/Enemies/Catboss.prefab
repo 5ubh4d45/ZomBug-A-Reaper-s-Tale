@@ -297,6 +297,7 @@ MonoBehaviour:
   bossCombat: {fileID: 7148152073028882065}
   bossBehavior: {fileID: 7148152073028882078}
   target: {fileID: 0}
+  _sprtRnd: {fileID: 0}
 --- !u!114 &7148152073028882079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -355,6 +356,7 @@ MonoBehaviour:
   slashDamage: 1
   skullFireRate: 3
   skullDamage: 1
+  soundHolder: {fileID: 0}
 --- !u!114 &7148152073028882064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -369,7 +371,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boss: {fileID: 7148152073028882076}
   anim: {fileID: 7148152073028882068}
-  deathAnimationTime: 3.7
+  deathAnimationTime: 4.7
   soundHolder: {fileID: 0}
 --- !u!114 &-3735454542493192871
 MonoBehaviour:

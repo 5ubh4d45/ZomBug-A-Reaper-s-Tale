@@ -90,7 +90,7 @@ public class CatBoss : Enemy
     {
         PointerManager.Instance.SetDefaultCursor();
         
-        DeadSetUp();
+        StartCoroutine(DeadSetUp());
         
         Destroy(this.gameObject, bossAnimator.DeathAnimationTime);
     }

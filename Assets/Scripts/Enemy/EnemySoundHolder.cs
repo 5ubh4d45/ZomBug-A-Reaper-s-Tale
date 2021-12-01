@@ -10,6 +10,10 @@ public class EnemySoundHolder : MonoBehaviour
     [SerializeField] private string deathSoundTrigger;
     [SerializeField] private string hitSoundTrigger;
 
+    // like
+    // [SerializeField] private string yourTriggerName;
+    // public string YourTriggerName => yourTriggerName;
+    
     public string MeleeAttackSound => meleeAttackSoundTrigger;
     public string RangedAttackSound => rangeAttackSoundTrigger;
     public string DeathSound => deathSoundTrigger;
