@@ -9,8 +9,27 @@ namespace Game.Core
 {
     public class MusicController : MonoBehaviour
     {
+        #region Singleton
+        private static MusicController _instance;
+        public static MusicController Instance
+        {
+            get
+            {
+                if (_instance == null) _instance = FindObjectOfType<MusicController>();
+                if (_instance == null)
+                {
+                    GameObject go = new GameObject("MusicController Instance", typeof(MusicController));
+                    _instance = go.GetComponent<MusicController>();
+                }
+                return _instance;
+            }
+        }
+        #endregion
 
         private StudioEventEmitter _emitter;
+
+        public StudioEventEmitter Emitter => _emitter;
+
         // Start is called before the first frame update
         void Awake()
         {

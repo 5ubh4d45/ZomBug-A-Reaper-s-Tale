@@ -69511,7 +69511,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &949813780
 GameObject:
@@ -92498,7 +92498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2b0f984f7a492702a6f7c0063312616, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _catDialogs: {fileID: 0}
+  _catDialogs: {fileID: 4900000, guid: 8fd1238337c8c213d99f2c037c7973d2, type: 3}
   _levelIndex: 10
   _isBossLevel: 1
   _playerStartPos: {fileID: 1815612831}
