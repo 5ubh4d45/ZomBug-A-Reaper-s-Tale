@@ -69,6 +69,7 @@ namespace Game.HealthSystem
             if (_health <= 0)
             {
                 _health = 0;
+                Debug.Log(_isDead);
                 if (!_isDead)
                 {
                     OnDead?.Invoke();
@@ -81,18 +82,20 @@ namespace Game.HealthSystem
         public override void Heal(float healAmount)
         {
             int heal = Mathf.RoundToInt(healAmount);
+            int healLeft = heal;
 
             for (int i = 0; i < _hearts.Count; i++)
             {
                 Heart heart = _hearts[i];
                 int missingFrags = heart.MaxFragments - heart.Fragments;
-                if (heal > missingFrags)
+                if (healLeft > missingFrags)
                 {
-                    heal -= missingFrags;
+                    healLeft -= missingFrags;
                     heart.Heal(missingFrags);
                 }
                 else
                 {
+                    healLeft = 0;
                     heart.Heal(heal);
                     break;
                 }
@@ -106,7 +109,9 @@ namespace Game.HealthSystem
         public override void Reset()
         {
             base.Reset();
+            _isDead = false;
             Heal(MaxHealth);
+            Debug.Log("Healing Player After Death" + _health);
         }
         #endregion
 

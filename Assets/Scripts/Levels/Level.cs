@@ -10,6 +10,7 @@ namespace Game.Levels
         #region Variables
         [SerializeField] private TextAsset _catDialogs;
         [SerializeField] private int _levelIndex;
+        [SerializeField] private bool _isBossLevel;
         [SerializeField] private Transform _playerStartPos;
 
         private bool _hasFinished => _hasMetCat && _hasKilledEnemies;
@@ -33,6 +34,12 @@ namespace Game.Levels
         private void EnemiesKilled(int _)
         {
             _hasKilledEnemies = true;
+            if (_isBossLevel)
+            {
+                _hasMetCat = true;
+                LevelManager.Instance.ChangeLevel(_levelIndex + 1);
+                return;
+            }
             DialogueManager.Instance.OnDialogueEnd += DialogueEnded;
         }
 

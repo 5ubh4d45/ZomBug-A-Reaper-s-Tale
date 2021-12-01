@@ -45,7 +45,7 @@ public class Player : HealthObject<HeartHealthSystem>
 
     public void Reset()
     {
-        _healthSystem.Heal(_healthSystem.MaxHealth);
+        _healthSystem.Reset();
         PlayerCombat.Reset();
     }
 
@@ -125,10 +125,10 @@ public class Player : HealthObject<HeartHealthSystem>
     {
         //playing the death effects
         StartCoroutine(DeathEffects());
-        
-        
+
+
         GameManager.Instance.DidWon = false;
-        
+
     }
 
     private IEnumerator DeathEffects()
@@ -144,7 +144,7 @@ public class Player : HealthObject<HeartHealthSystem>
         {
             collider.enabled = false;
         }
-        
+
         yield return new WaitForSeconds(deathAnimationTime - 0.01f);
 
         // enabling colliders after death animation
@@ -155,31 +155,31 @@ public class Player : HealthObject<HeartHealthSystem>
         {
             collider.enabled = true;
         }
-        
+
         _renderer.enabled = false;
         LevelSceneManager.Instance.LoadEndScreen(false);
-        
+
     }
-    
+
     public IEnumerator DamageEffect()
     {
         //plays sound of player being hurt
         RuntimeManager.PlayOneShot("event:/SFX_player_hurt");
-        
+
         var sprtRnd = GetComponent<SpriteRenderer>();
         float flashDelay = 0.06f;
-        
+
         sprtRnd.color = Color.red;
         yield return new WaitForSeconds(flashDelay);
-        
+
         sprtRnd.color = new Color(255f, 255, 255f, 255f);
         yield return new WaitForSeconds(flashDelay);
-        
+
         sprtRnd.color = Color.red;
         yield return new WaitForSeconds(flashDelay);
 
         sprtRnd.color = new Color(255f, 255, 255f, 255f);
 
     }
-    
+
 }

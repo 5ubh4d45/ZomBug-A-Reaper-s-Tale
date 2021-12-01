@@ -168,6 +168,7 @@ public class PlayerCombat : MonoBehaviour
             _currentWeapon?.gameObject.SetActive(false);
             _currentWeapon = null;
             _weaponHolder = null;
+            OnWeaponSwitched?.Invoke(null);
 
             return;
         }

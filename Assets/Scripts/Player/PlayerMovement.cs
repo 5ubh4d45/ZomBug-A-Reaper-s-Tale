@@ -76,11 +76,11 @@ public class PlayerMovement : MonoBehaviour
         //play animations related to movements
         PlayMovementAnims();
 
-        if (DialogueManager.Instance.IsOpen)
+        if (DialogueManager.Instance.IsOpen || _player.IsDead)
         {
             StartCoroutine(StopMovement(Time.fixedDeltaTime));
         }
-        
+
 
         MovePlayer();
 
