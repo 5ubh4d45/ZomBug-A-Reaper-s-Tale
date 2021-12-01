@@ -5,6 +5,7 @@ using Game.HealthSystem;
 using Game.Score;
 using Game.Pointer;
 using Game.Levels;
+using Game.Core;
 
 public class CatBoss : Enemy
 {
@@ -92,6 +93,7 @@ public class CatBoss : Enemy
 
         StartCoroutine(DeadSetUp());
 
+        MusicController.Instance.Emitter.Stop();
         Destroy(this.gameObject, bossAnimator.DeathAnimationTime);
     }
 
