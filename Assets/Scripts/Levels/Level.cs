@@ -31,6 +31,11 @@ namespace Game.Levels
             Player.Instance.transform.position = _playerStartPos.position;
         }
 
+        private void OnDestroy()
+        {
+            LevelManager.Instance.OnEnemiesKilled -= EnemiesKilled;
+        }
+
         private void EnemiesKilled(int _)
         {
             _hasKilledEnemies = true;
