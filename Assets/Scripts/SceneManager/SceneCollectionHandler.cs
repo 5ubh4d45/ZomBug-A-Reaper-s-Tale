@@ -114,6 +114,7 @@ namespace Game.Scenes
 
         public void LoadSceneCollection(SceneCollection collection, bool forceUnload = false, bool updateSceneLoadProgress = true)
         {
+            _operations = new List<AsyncOperation>();
             if (collection == null) return;
 
             _loadingScreen.SetActive(updateSceneLoadProgress);

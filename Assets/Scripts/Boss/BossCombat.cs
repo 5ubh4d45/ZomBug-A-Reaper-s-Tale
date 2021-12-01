@@ -14,35 +14,37 @@ public class BossCombat : MonoBehaviour
     [SerializeField] private Transform firePoint;
     [SerializeField] private GameObject slashProjectile;
     [SerializeField] private GameObject skullProjectile;
-    
-    [Space][Header("Ranges")]
+
+    [Space]
+    [Header("Ranges")]
     [SerializeField] private float minMeleeDistance;
     [SerializeField] private float maxMeleeDistance;
     [SerializeField] private float minRangedDistance;
     [SerializeField] private float maxRangedDistance;
 
-    [Space] [Header("Combat Variables")]
+    [Space]
+    [Header("Combat Variables")]
     [SerializeField] private float jumpAttackRate;
-    
+
     [SerializeField] private float meleeFireRate;
     [SerializeField] private int meleeDamage;
-    
+
     [SerializeField] private float slashFireRate;
     [SerializeField] private int slashDamage;
     [SerializeField] private float skullFireRate;
     [SerializeField] private int skullDamage;
 
     private string _attackTag = "Player";
-    
+
     //private floats & vectors
     private float _nextJumpAttackTime = 0f;
     private float _nextMeleeFireTime = 0f;
     private float _nextSlashFireTime = 0f;
     private float _nextSkullFireTime = 0f;
-    
+
     private Vector3 _aimDirection;
     private Vector3 targetPos;
-    
+
     //private bools
     private bool _inRange;
     private bool _inAttackRange;
@@ -52,7 +54,7 @@ public class BossCombat : MonoBehaviour
 
     // getters
     public Vector3 AimDirection => _aimDirection;
-    
+
     public bool InRange => _inRange;
     public bool InAttackRange => _inAttackRange;
     public bool InBackOffRange => _inBackOffRange;
@@ -61,13 +63,13 @@ public class BossCombat : MonoBehaviour
     public int MeleeDamage => meleeDamage;
     public int SlashDamage => slashDamage;
     public int SkullDamage => skullDamage;
-    
+
     public float MinMeleeDistance => minMeleeDistance;
     public float MaxMeleeDistance => maxMeleeDistance;
     public float MinRangedDistance => minRangedDistance;
     public float MaxRangedDistance => maxRangedDistance;
-    
-    
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -88,7 +90,7 @@ public class BossCombat : MonoBehaviour
     private void CheckRange()
     {
         float distance = boss.BossMovement.CurrentDistance;
-        
+
         _inRange = distance < maxRangedDistance;
         _inAttackRange = distance <= maxRangedDistance && distance >= minRangedDistance;
         _inBackOffRange = distance <= minRangedDistance && distance >= maxMeleeDistance;
@@ -101,7 +103,7 @@ public class BossCombat : MonoBehaviour
 
         //checks for aim direction
         _aimDirection = (targetPos - firePoint.position).normalized;
-        
+
         //all cooldowns
         _nextJumpAttackTime += Time.deltaTime;
         _nextMeleeFireTime += Time.deltaTime;
@@ -114,16 +116,16 @@ public class BossCombat : MonoBehaviour
         if (_nextMeleeFireTime >= meleeFireRate)
         {
             boss.BossAnimator.PlayMeleeAttack();
-        
+
             Debug.Log("played melee");
-            
+
 
             _nextMeleeFireTime = 0f;
         }
-        
+
         var backoffImpulse = boss.BossMovement.BackoffImpulse();
         StartCoroutine(backoffImpulse);
-       
+
     }
 
     public void JumpAttack()
@@ -132,13 +134,13 @@ public class BossCombat : MonoBehaviour
 
         var stpMv = boss.BossMovement.StopMovement(1f);
         StartCoroutine(stpMv);
-        
+
         boss.BossAnimator.PlayJumpAttack();
 
         _nextJumpAttackTime = 0f;
     }
-    
-    
+
+
     //this attack in played on the animation itself
     public void JumpedRangedAttack()
     {
@@ -153,7 +155,7 @@ public class BossCombat : MonoBehaviour
             StartCoroutine(SlashAttack(0.0f));
             StartCoroutine(SlashAttack(0.1f));
             StartCoroutine(SlashAttack(0.2f));
-            
+
         }
         else
         {
@@ -176,41 +178,47 @@ public class BossCombat : MonoBehaviour
         if (rnd > 0)
         {
             if (_nextSlashFireTime <= slashFireRate) return;
-            
+
+            //play sound for SlashAttack
+            RuntimeManager.PlayOneShot("event:/SFX_cat_slash");
+
             boss.BossAnimator.PlayMeleeAttack();
-            
+
             //adds the delay to sync
             StartCoroutine(SlashAttack(0.5f));
-            
+
             _nextSlashFireTime = 0f;
-            
+
         }
         else
         {
-            
+
             if (_nextSlashFireTime <= slashFireRate) return;
-            
+
+            //play  sound for SkullAttack
+            RuntimeManager.PlayOneShot("event:/SFX_cat_skull");
+
             boss.BossAnimator.PlayMeleeAttack();
-            
+
             //adds the delay to sync
             StartCoroutine(SkullAttack(0.5f));
-            
+
             _nextSlashFireTime = 0f;
         }
     }
-    
+
 
     private IEnumerator SlashAttack(float delay)
     {
         //wait for a delay
         yield return new WaitForSeconds(delay);
-        
+
         GameObject slash = Instantiate(slashProjectile, firePoint.position, Quaternion.identity);
 
         slash.GetComponent<BossProjectile>().Initialise(slashDamage, boss.Target, _attackTag);
 
     }
-    
+
     private IEnumerator SkullAttack(float delay)
     {
         //wait for a delay
@@ -225,10 +233,10 @@ public class BossCombat : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.blue;
-        
+
         Gizmos.DrawWireSphere(transform.position, minRangedDistance);
         Gizmos.DrawWireSphere(transform.position, maxRangedDistance);
-        
+
         Gizmos.DrawWireSphere(transform.position, minMeleeDistance);
         Gizmos.DrawWireSphere(transform.position, maxMeleeDistance);
     }

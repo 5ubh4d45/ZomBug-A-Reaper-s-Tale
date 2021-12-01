@@ -29,7 +29,6 @@ namespace Game.Levels
         [SerializeField] private SceneCollection _endScreen;
         [SerializeField] private CanvasGroup _transitionGroup;
         [SerializeField] private float _transitionTime;
-        private int _currentLevelIndex;
         #endregion
 
 
