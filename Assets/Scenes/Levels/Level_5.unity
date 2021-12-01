@@ -36390,6 +36390,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4100473903094421375, guid: e2564b850b6ba1b4faf7acea8121bec5, type: 3}
+      propertyPath: _storyAsset
+      value: 
+      objectReference: {fileID: 4900000, guid: af7a7f5baad342f25acc08355fce4b9e, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2564b850b6ba1b4faf7acea8121bec5, type: 3}
 --- !u!1001 &468762245
@@ -97776,7 +97780,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2b0f984f7a492702a6f7c0063312616, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _catDialogs: {fileID: 0}
+  _catDialogs: {fileID: 4900000, guid: af7a7f5baad342f25acc08355fce4b9e, type: 3}
   _levelIndex: 4
   _isBossLevel: 0
   _playerStartPos: {fileID: 1039217956}
