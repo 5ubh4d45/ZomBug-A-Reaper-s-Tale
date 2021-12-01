@@ -17,7 +17,7 @@ public class Enemy : HealthObject<IntHealthSystem>
     // reference to the sound holder use _soundHolder.(your sound string variable)
     // at the Fmod sound string like
     // RuntimeManager.PlayOneShot(soundHolder.DeathSound);
-    [SerializeField] private EnemySoundHolder soundHolder;
+    [SerializeField] protected EnemySoundHolder soundHolder;
 
     private float _delay;
     #endregion
