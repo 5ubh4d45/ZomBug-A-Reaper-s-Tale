@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 4100473903094421371}
   - component: {fileID: 4100473903094421368}
   - component: {fileID: 4100473903094421369}
-  - component: {fileID: 4100473903094421374}
   - component: {fileID: 4100473903094421375}
   - component: {fileID: 407398564884131298}
   m_Layer: 0
@@ -172,29 +171,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.54}
   serializedVersion: 2
   m_Radius: 1.5
---- !u!114 &4100473903094421374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4100473903094421372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/SFX_zombie_voice
-  PlayEvent: 9
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
 --- !u!114 &4100473903094421375
 MonoBehaviour:
   m_ObjectHideFlags: 0

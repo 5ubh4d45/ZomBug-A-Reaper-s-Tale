@@ -117,6 +117,8 @@
 	</object>
 	<object class="MixerBusEffectChain" id="{ee52ffd0-5dd1-4df1-8b8b-88907ac8d81c}">
 		<relationship name="effects">
+			<destination>{22d0e254-b85b-4758-8c98-49d605ce1f6e}</destination>
+			<destination>{c7240c10-9ed1-419c-9fa4-ac133c792366}</destination>
 			<destination>{d40017b9-27bb-42b9-8172-bb367c55b660}</destination>
 		</relationship>
 	</object>
@@ -136,6 +138,15 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{3acb9ee6-047f-46f1-8d32-fba805584227}" />
+	<object class="CompressorEffect" id="{22d0e254-b85b-4758-8c98-49d605ce1f6e}">
+		<property name="threshold">
+			<value>-8.5</value>
+		</property>
+		<property name="gain">
+			<value>5</value>
+		</property>
+	</object>
+	<object class="LoudnessMeter" id="{c7240c10-9ed1-419c-9fa4-ac133c792366}" />
 	<object class="MixerBusFader" id="{d40017b9-27bb-42b9-8172-bb367c55b660}" />
 	<object class="RandomizerModulator" id="{c4703df5-98a4-4105-a0cd-46013c3a8eae}">
 		<property name="nameOfPropertyBeingModulated">

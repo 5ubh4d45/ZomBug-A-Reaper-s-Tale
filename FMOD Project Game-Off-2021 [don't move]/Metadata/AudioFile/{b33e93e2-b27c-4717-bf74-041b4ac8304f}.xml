@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{b33e93e2-b27c-4717-bf74-041b4ac8304f}">
+		<property name="assetPath">
+			<value>SFX_zombie_sounds/SFX_zombie_voices4.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.501156462585034</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{9023cc3d-8043-4bbd-a0ca-36d4465c6ba3}</destination>
+		</relationship>
+	</object>
+</objects>

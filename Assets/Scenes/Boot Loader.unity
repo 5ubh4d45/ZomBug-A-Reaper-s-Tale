@@ -2469,6 +2469,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7784336586530970109, guid: ff19242ead55f456ab71abaf3e3362ea, type: 3}
+      propertyPath: _typingSpeed
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff19242ead55f456ab71abaf3e3362ea, type: 3}
 --- !u!1001 &7883761412500455591

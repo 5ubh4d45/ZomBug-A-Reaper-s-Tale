@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{afc171f7-5f2e-447e-8318-35412a9db8b1}">
+		<property name="assetPath">
+			<value>SFX_cat/SFX_cat_laugh5.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.8656235827664398</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{9023cc3d-8043-4bbd-a0ca-36d4465c6ba3}</destination>
+		</relationship>
+	</object>
+</objects>
