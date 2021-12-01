@@ -5,6 +5,7 @@ using Game.Combat;
 using Unity.Mathematics;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using FMODUnity;
 
 public class BossCombat : MonoBehaviour
 {
@@ -154,6 +155,8 @@ public class BossCombat : MonoBehaviour
         }
         else
         {
+            //play  sound for SkullAttack
+            RuntimeManager.PlayOneShot("event:/SFX_cat_laugh");
 
             // no delay as the attack played by animator
             StartCoroutine(SkullAttack(0.0f));
