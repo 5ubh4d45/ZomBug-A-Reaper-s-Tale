@@ -98,17 +98,17 @@ public class Player : HealthObject<HeartHealthSystem>
             if (collision2D.gameObject.CompareTag("Enemy"))
             {
                 var dmg = collision2D.gameObject.GetComponent<EnemyCombat>();
-                
+
                 // workaround for the boss attacks not detecting
                 if (dmg != null)
                 {
                     _healthSystem.Damage(dmg.MeleeDamage);
                 }
-                
+
                 if (dmg == null)
                 {
                     var dmg2 = collision2D.gameObject.GetComponent<BossCombat>();
-                    
+
                     _healthSystem.Damage(dmg2.MeleeDamage);
                 }
 
@@ -123,15 +123,6 @@ public class Player : HealthObject<HeartHealthSystem>
 
         }
 
-    }
-
-    private void OnTriggerEnter2D(Collider2D collider2D)
-    {
-        if (collider2D.gameObject.CompareTag("Health Point"))
-        {
-            _healthSystem.Heal(1);
-
-        }
     }
 
     public override void OnDead()
@@ -189,10 +180,10 @@ public class Player : HealthObject<HeartHealthSystem>
         yield return new WaitForSeconds(flashDelay);
 
         sprtRnd.color = Color.red;
-        
+
         yield return new WaitForSeconds(flashDelay);
         sprtRnd.color = Color.white;
-        
+
         yield return new WaitForSeconds(flashDelay);
         sprtRnd.color = Color.white;
 
