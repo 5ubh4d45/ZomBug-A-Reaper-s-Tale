@@ -127,8 +127,8 @@ public class CatBoss : Enemy
             collider2D.enabled = false;
         }
 
-        yield return new WaitForSeconds(3f);
-
+        yield return new WaitForSeconds(4.5f);
+        
         LevelManager.Instance.UnregisterEnemy();
 
     }
