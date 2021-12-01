@@ -15,6 +15,10 @@ namespace Game.HealthSystem
         [SerializeField] private float _heartSize;
         [SerializeField] private Vector2 _referenceCanvasSize;
         private List<Image> _hearts;
+        private RectTransform _rectTransform;
+
+        public float HeartSizeX => _heartSize * (Screen.width / _referenceCanvasSize.x);
+        public float HeartSizeY => _heartSize * (Screen.height / _referenceCanvasSize.y);
         #endregion
 
 
@@ -44,9 +48,8 @@ namespace Game.HealthSystem
             Vector2 anchoredPosition = Vector2.zero;
             for (int i = 0; i < _healthSystem.HeartCount; i++)
             {
-                float heartSize = _heartSize / _referenceCanvasSize.x * Screen.width;
                 CreateHeartImage(anchoredPosition, i);
-                anchoredPosition += new Vector2(heartSize, 0);
+                anchoredPosition += new Vector2(HeartSizeX, 0);
             }
 
             // subscribe to new health system
@@ -65,6 +68,13 @@ namespace Game.HealthSystem
         public override void Setup(HeartHealthSystem healthSystem)
         {
             SetHealthSystem(healthSystem);
+            _rectTransform = GetComponent<RectTransform>();
+
+            float positionX = -HeartSizeX * ((healthSystem.HeartCount / 2) + 1);
+            Debug.Log(positionX);
+            _rectTransform.anchoredPosition = new Vector2(positionX, _rectTransform.anchoredPosition.y);
+            // transform.localPosition = new Vector3(positionX, transform.localPosition.y, transform.localPosition.z);
+
             HealthChanged(_healthSystem.Health);
         }
 
@@ -86,14 +96,12 @@ namespace Game.HealthSystem
         private Image CreateHeartImage(Vector2 anchoredPosition, int index)
         {
             GameObject heartGameObject = new GameObject($"Heart {index}", typeof(Image));
-            float heartSizeX = _heartSize / _referenceCanvasSize.x * Screen.width;
-            float heartSizeY = _heartSize / _referenceCanvasSize.y * Screen.height;
 
             heartGameObject.transform.SetParent(transform);
             heartGameObject.transform.localPosition = Vector3.zero;
 
             heartGameObject.GetComponent<RectTransform>().anchoredPosition = anchoredPosition;
-            heartGameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(heartSizeX, heartSizeY);
+            heartGameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(HeartSizeX, HeartSizeY);
 
             Image heartImage = heartGameObject.GetComponent<Image>();
             heartImage.sprite = _heartSprites[_heartSprites.Length - 1];
