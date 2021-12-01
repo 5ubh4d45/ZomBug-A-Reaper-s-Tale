@@ -17,11 +17,8 @@ public class CatBoss : Enemy
     [Space] [SerializeField] private Transform target;
     [SerializeField] private SpriteRenderer _sprtRnd;
     
-    // reference to the sound holder use _soundHolder.(your sound string variable)
-    // at the Fmod sound string like
-    // RuntimeManager.PlayOneShot(soundHolder.DeathSound);
-    [SerializeField] private EnemySoundHolder soundHolder;
-
+    
+    //just use soundholder to get the sound holder
 
     #region Getters
 
@@ -66,11 +63,6 @@ public class CatBoss : Enemy
         if (_sprtRnd == null)
         {
             _sprtRnd = GetComponent<SpriteRenderer>();
-        }
-        
-        if (soundHolder == null)
-        {
-            soundHolder = GetComponent<EnemySoundHolder>();
         }
         
     }
