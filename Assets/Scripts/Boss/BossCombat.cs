@@ -33,6 +33,12 @@ public class BossCombat : MonoBehaviour
     [SerializeField] private int slashDamage;
     [SerializeField] private float skullFireRate;
     [SerializeField] private int skullDamage;
+    
+    [Space]
+    // reference to the sound holder use _soundHolder.(your sound string variable)
+    // at the Fmod sound string like
+    // RuntimeManager.PlayOneShot(soundHolder.DeathSound);
+    [SerializeField] private EnemySoundHolder soundHolder;
 
     private string _attackTag = "Player";
 
@@ -77,6 +83,10 @@ public class BossCombat : MonoBehaviour
         if (boss == null)
         {
             boss = GetComponent<CatBoss>();
+        }
+        if (soundHolder == null)
+        {
+            soundHolder = GetComponent<EnemySoundHolder>();
         }
     }
 
