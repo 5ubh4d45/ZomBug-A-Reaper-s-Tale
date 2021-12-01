@@ -46,17 +46,21 @@ namespace Game.HealthSystem
         public override void Damage(float damageAmount)
         {
             int damage = Mathf.RoundToInt(damageAmount);
+            int damageLeft = damage;
 
             for (int i = _hearts.Count - 1; i >= 0; i--)
             {
                 Heart heart = _hearts[i];
-                bool didResist = heart.Damage(damage);
-                if (!didResist)
+                int heartFrags = heart.Fragments;
+                if (damageLeft > heart.Fragments)
                 {
-                    damage -= heart.Fragments;
+                    heart.Damage(damageLeft);
+                    damageLeft -= heartFrags;
                 }
-                else if (didResist)
+                else if (damageLeft <= heart.Fragments)
                 {
+                    heart.Damage(damageLeft);
+                    damageLeft = 0;
                     break;
                 }
             }
@@ -161,17 +165,15 @@ namespace Game.HealthSystem
             _fragments = fragments;
         }
 
-        public bool Damage(int damageAmount)
+        public void Damage(int damageAmount)
         {
             if (damageAmount > _fragments)
             {
                 _fragments = 0;
-                return false;
             }
-            else
+            else if (damageAmount <= _fragments)
             {
                 _fragments -= damageAmount;
-                return true;
             }
         }
 

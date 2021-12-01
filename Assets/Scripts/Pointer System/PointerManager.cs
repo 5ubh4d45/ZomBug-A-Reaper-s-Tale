@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Game.Pointer
 {
@@ -29,7 +30,8 @@ namespace Game.Pointer
 
         private float _frameTimer;
         private int _currentFrame;
-        private SpriteRenderer _renderer;
+        private Image _renderer;
+        private RectTransform _rectTranform;
         private Sprite[] _cursorTextures;
         private int _fps;
         #endregion
@@ -46,7 +48,8 @@ namespace Game.Pointer
         {
             _cursorTextures = _defaultCursors;
             _fps = _defaultFps;
-            _renderer = GetComponent<SpriteRenderer>();
+            _renderer = GetComponent<Image>();
+            _rectTranform = GetComponent<RectTransform>();
         }
 
         private void Update()
@@ -59,9 +62,13 @@ namespace Game.Pointer
                 _currentFrame = (_currentFrame + 1) % _frameCount;
                 _renderer.sprite = _cursorTextures[_currentFrame];
             }
-            Vector3 cursorPos = Camera.main != null ? Camera.main.ScreenToWorldPoint(Input.mousePosition) : Vector3.zero;
-            cursorPos = new Vector3(cursorPos.x, cursorPos.y, -5);
-            transform.position = Vector3.Lerp(transform.position, cursorPos, _cursorSpeed);
+            Vector3 cursorPos = Input.mousePosition;
+            cursorPos = new Vector3(cursorPos.x, cursorPos.y, 0);
+
+            float pointX = cursorPos.x / Screen.width;
+            float pointY = cursorPos.y / Screen.height;
+
+            _rectTranform.position = Vector3.Lerp(transform.position, cursorPos, _cursorSpeed);
         }
         #endregion
 

@@ -15,5 +15,6 @@ MonoBehaviour:
   SceneReferences:
   - sceneAsset: {fileID: 102900000, guid: 5110cc0c850389146bf9b23ac16d8f31, type: 3}
     scenePath: Assets/Scenes/Levels/Level_1.unity
+    isPersistant: 0
   ActiveSceneIndex: 0
-  CursorSize: 6
+  CursorSize: 1

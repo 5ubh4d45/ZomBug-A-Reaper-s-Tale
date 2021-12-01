@@ -23142,6 +23142,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 779840269}
     m_Modifications:
+    - target: {fileID: 151354537389265110, guid: 56dda62d4621cfe45a43d073703981b0, type: 3}
+      propertyPath: meleeDamage
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 151354537389265111, guid: 56dda62d4621cfe45a43d073703981b0, type: 3}
       propertyPath: m_Name
       value: RadioActiveZombie (1)
@@ -35459,6 +35463,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlyingZombie (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4299325147034976397, guid: 65630ad1b92cebd49b6d38752a13b69d, type: 3}
+      propertyPath: meleeDamage
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4299325147034976408, guid: 65630ad1b92cebd49b6d38752a13b69d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -35648,7 +35656,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7614293596668846776, guid: 9882cac5f921fc7619f06b1842d09b2c, type: 3}
       propertyPath: orthographic size
-      value: 10.8
+      value: 8.4
       objectReference: {fileID: 0}
     - target: {fileID: 7614293597630542816, guid: 9882cac5f921fc7619f06b1842d09b2c, type: 3}
       propertyPath: m_RootOrder

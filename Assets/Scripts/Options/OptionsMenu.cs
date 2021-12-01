@@ -42,7 +42,6 @@ namespace Game.Options
         private void Awake()
         {
             _optionsCanvas = GetComponent<Canvas>();
-            SceneCollectionHandler.Instance.OnLoadCompelete += UpdateCamera;
             if (_root == null) _root = gameObject;
         }
         #endregion
@@ -70,12 +69,6 @@ namespace Game.Options
             SceneCollectionHandler.Instance.LoadSceneCollection(_homeScreen);
             GameManager.Instance.ChangeGameState(GameState.HOME_SCREEN);
             HideOptions();
-        }
-
-        private void UpdateCamera()
-        {
-            _optionsCanvas.renderMode = RenderMode.ScreenSpaceCamera;
-            _optionsCanvas.worldCamera = Camera.main;
         }
         #endregion
     }

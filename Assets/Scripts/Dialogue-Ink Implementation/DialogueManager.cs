@@ -78,9 +78,8 @@ namespace Game.DialogueSystem
         {
             _typeWriterEffect = GetComponent<TypeWriterEffect>();
 
-            SceneCollectionHandler.Instance.OnLoadCompelete += UpdateCamera;
             _canvas = GetComponent<Canvas>();
-            
+
             gameObject.SetActive(false);
         }
         #endregion
@@ -180,14 +179,6 @@ namespace Game.DialogueSystem
             _isOpen = false;
             _currentStory = null;
             _currentStoryAsset = null;
-        }
-        
-        // updates the camera
-        private void UpdateCamera()
-        {
-            _canvas.renderMode = RenderMode.ScreenSpaceCamera;
-            _canvas.worldCamera = Camera.main;
-            _canvas.planeDistance = 10;
         }
         #endregion
     }

@@ -17,4 +17,4 @@ MonoBehaviour:
     scenePath: Assets/Scenes/Menus/End Screen.unity
     isPersistant: 0
   ActiveSceneIndex: 0
-  CursorSize: 6
+  CursorSize: 1

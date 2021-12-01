@@ -26,7 +26,6 @@ public class PlayerUI : MonoBehaviour
     #region Unity Calls
     private void Awake()
     {
-        SceneCollectionHandler.Instance.OnLoadCompelete += UpdateCamera;
         _playerCanvas = GetComponent<Canvas>();
     }
 
@@ -64,13 +63,6 @@ public class PlayerUI : MonoBehaviour
 
 
     #region Component Functions
-    private void UpdateCamera()
-    {
-        _playerCanvas.renderMode = RenderMode.ScreenSpaceCamera;
-        _playerCanvas.worldCamera = Camera.main;
-        _playerCanvas.planeDistance = 10;
-    }
-
     private void UpdateCombatUI(int changeAmount)
     {
         _loadedAmmoText.text = (Player.Instance.PlayerCombat.CurrentWeapon as RangedWeapon).AmmoSystem.LoadedAmmo.ToString();
