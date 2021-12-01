@@ -116,8 +116,10 @@ namespace Game.Combat
 
         private void OnDrawGizmos()
         {
+#if UNITY_EDITOR
             Handles.DrawWireDisc(_weaponWheelParent.transform.position, new Vector3(0, 0, 1), _maximumHieght * Screen.height);
             Handles.DrawWireDisc(_weaponWheelParent.transform.position, new Vector3(0, 0, 1), _minimumHieght * Screen.height);
+#endif
         }
         #endregion
 
