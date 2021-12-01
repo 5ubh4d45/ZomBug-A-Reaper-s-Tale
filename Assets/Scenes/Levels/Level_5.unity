@@ -97681,6 +97681,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC_3
       objectReference: {fileID: 0}
+    - target: {fileID: 2365125049169068137, guid: 1c36f9a73f5f30d49a1e031643e2ed8b, type: 3}
+      propertyPath: _storyAsset
+      value: 
+      objectReference: {fileID: 4900000, guid: ff089e5f163816621ba6adeba5189aff, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c36f9a73f5f30d49a1e031643e2ed8b, type: 3}
 --- !u!1001 &1217462134

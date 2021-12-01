@@ -30442,6 +30442,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC_5
       objectReference: {fileID: 0}
+    - target: {fileID: 8350656969727555304, guid: ce37622bc7bf282488c840f2504a6c3c, type: 3}
+      propertyPath: _storyAsset
+      value: 
+      objectReference: {fileID: 4900000, guid: 364ec4d0208e7389db8ae3ceb0cd901e, type: 3}
     - target: {fileID: 8350656969727555311, guid: ce37622bc7bf282488c840f2504a6c3c, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -30486,6 +30490,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8350656970818088258, guid: ce37622bc7bf282488c840f2504a6c3c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.227
+      objectReference: {fileID: 0}
+    - target: {fileID: 8350656970818088259, guid: ce37622bc7bf282488c840f2504a6c3c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1113166408476123525, guid: 38ab089b742c6794fa24d339e118e9a0, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce37622bc7bf282488c840f2504a6c3c, type: 3}
 --- !u!1 &960439995

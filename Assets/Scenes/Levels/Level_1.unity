@@ -25890,11 +25890,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4100473903094421316, guid: 49fe5e32af5e2ef40938fe377def1c14, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -22.078663
+      value: -22.464
       objectReference: {fileID: 0}
     - target: {fileID: 4100473903094421316, guid: 49fe5e32af5e2ef40938fe377def1c14, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.6514288
+      value: 1.642
       objectReference: {fileID: 0}
     - target: {fileID: 4100473903094421316, guid: 49fe5e32af5e2ef40938fe377def1c14, type: 3}
       propertyPath: m_LocalPosition.z
@@ -25932,6 +25932,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC_6
       objectReference: {fileID: 0}
+    - target: {fileID: 4100473903094421375, guid: 49fe5e32af5e2ef40938fe377def1c14, type: 3}
+      propertyPath: _storyAsset
+      value: 
+      objectReference: {fileID: 4900000, guid: 9f569ebd97aac232a808c1b5dce3816e, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49fe5e32af5e2ef40938fe377def1c14, type: 3}
 --- !u!1 &960439995
