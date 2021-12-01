@@ -16,8 +16,8 @@ public class CatBoss : Enemy
 
     [Space] [SerializeField] private Transform target;
     [SerializeField] private SpriteRenderer _sprtRnd;
-    
-    
+
+
     //just use soundholder to get the sound holder
 
     #region Getters
@@ -31,7 +31,7 @@ public class CatBoss : Enemy
     public Transform Target => target;
 
     #endregion
-    
+
 
     // Start is called before the first frame update
     void Start()
@@ -64,7 +64,7 @@ public class CatBoss : Enemy
         {
             _sprtRnd = GetComponent<SpriteRenderer>();
         }
-        
+
     }
 
     // Update is called once per frame
@@ -89,18 +89,18 @@ public class CatBoss : Enemy
     public override void OnDead()
     {
         PointerManager.Instance.SetDefaultCursor();
-        
+
         StartCoroutine(DeadSetUp());
-        
+
         Destroy(this.gameObject, bossAnimator.DeathAnimationTime);
     }
 
     public override void OnDamaged(float damageAmount)
     {
         ScoreManager.Instance.AddScore(this.ScorePerHit);
-        
+
         StartCoroutine(DamageEffect());
-        
+
     }
 
     private IEnumerator DeadSetUp()
@@ -109,40 +109,40 @@ public class CatBoss : Enemy
         Debug.Log("Playing Boss death");
         bossAnimator.PlayDeathAniamtion();
         bossBehavior._state = BossBehavior.BossState.Dead;
-        
+
         //disables the healthbar
         _healthBar.gameObject.SetActive(false);
 
         GetComponent<Collider2D>().enabled = false;
         GetComponent<Rigidbody2D>().mass = 1000f;
-        
+
         var collider2Ds = GetComponentsInChildren<Collider2D>();
         foreach (var collider2D in collider2Ds)
         {
             collider2D.enabled = false;
         }
 
-        yield return new WaitForSeconds(bossAnimator.DeathAnimationTime);
-        
+        yield return new WaitForSeconds(3f);
+
         LevelManager.Instance.UnregisterEnemy();
-        
+
     }
-    
+
     private IEnumerator DamageEffect()
     {
         Debug.Log("lPlaying boss damage effect");
 
         //adds cam shake when damage taken
         CameraShake.Instance.ShakeCamera(3f, 3f, 0.2f);
-        
+
         float flashDelay = 0.05f;
-        
+
         _sprtRnd.color = Color.red;
         yield return new WaitForSeconds(flashDelay);
-        
+
         _sprtRnd.color = new Color(255f, 255, 255f, 255f);
         yield return new WaitForSeconds(flashDelay);
-        
+
         _sprtRnd.color = Color.red;
         yield return new WaitForSeconds(flashDelay);
 
