@@ -5957,7 +5957,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7784336586530970109, guid: ff19242ead55f456ab71abaf3e3362ea, type: 3}
       propertyPath: _typingSpeed
-      value: 25
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 7784336586550246760, guid: ff19242ead55f456ab71abaf3e3362ea, type: 3}
       propertyPath: m_fontSize
