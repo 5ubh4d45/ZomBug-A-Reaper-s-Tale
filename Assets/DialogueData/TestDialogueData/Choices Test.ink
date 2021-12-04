@@ -1,4 +1,4 @@
-﻿What's Your Name?
+What's Your Name?
 * ABC
     Hello ABC!
 * BCD
