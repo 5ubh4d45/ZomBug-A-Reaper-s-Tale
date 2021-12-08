@@ -1,7 +1,7 @@
 ???: You cannot understand.
 
- * Help me to understand.
+GRIM: Help me to understand.
 - ???: You cannot understand.
-*I'm trying!
+GRIM: I'm trying!
 ???: You cannot...
     -> END
