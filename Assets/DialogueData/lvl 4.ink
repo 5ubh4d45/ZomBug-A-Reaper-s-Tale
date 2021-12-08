@@ -1,15 +1,14 @@
 CAT: Ay dios mio. Trying to save civilization is exhausting.
 If I never see another fruit fly, it will still be too soon.
- * What do you think caused all this anyways?
- Do you really think it was a clerical error, like they said?
--CAT: I don't know what else it could be.Who would benefit from this chaos?
-All the death and detruction only causes more trouble for us downstairs.
-* Maybe...
+GRIM: Some clerical error, huh? I wonder if all of this was really a mistake.
+CAT: I don't know what else it could be. Who would benefit from this chaos?
+All the death and destruction only causes more trouble for us downstairs.
+* [A demon] GRIM: Maybe there's a spirit or entity that feeds on death and destruction... 
+and it's created an all-you-can-eat buffet for itself.
+* [One of the higher-ups] GRIM: Maybe one of our bosses got sick of waiting for the time of judgement. 
 -CAT: What are you saying, exactly? That this bug-pocalypse is a bug-spiracy?
-*I don't know.
--CAT: Don't get distracted with daydreams and what-if's,
-we don't have time for them right now. Just focus on reaping and slaying.
-You're not too bad at that.
-*Was there a compliment in there somewhere or was it all insult?
-CAT: No comment.
+*[Anything is possible, right?]
+*[Nah, I'm just messing around.]
+-CAT: Don't get distracted with daydreams, we don't have time for them right now.
+GRIM: Fine. No daydreams, no distraction. Just reaping souls and kicking ass.
     -> END
