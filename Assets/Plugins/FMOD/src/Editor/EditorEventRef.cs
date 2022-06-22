@@ -12,12 +12,7 @@ namespace FMODUnity
         public string Path;
 
         [SerializeField]
-        byte[] guid = new byte[16];
-        public Guid Guid
-        {
-            get { return new Guid(guid); }
-            set { Array.Copy(value.ToByteArray(), guid, 16); }
-        }
+        public FMOD.GUID Guid;
 
         [SerializeField]
         public List<EditorBankRef> Banks;

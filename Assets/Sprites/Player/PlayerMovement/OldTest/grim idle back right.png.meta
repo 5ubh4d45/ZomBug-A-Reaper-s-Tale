@@ -48,6 +48,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -304,6 +305,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      grim idle back right_3: 880586301872269412
+      grim idle back right_2: -5161306663289191028
+      grim idle back right_6: -4783252319536830807
+      grim idle back right_0: 3329257150101979230
+      grim idle back right_7: -7306565866941657563
+      grim idle back right_5: -842030721310258635
+      grim idle back right_1: 8790183082703041220
+      grim idle back right_4: -4371695335402553479
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

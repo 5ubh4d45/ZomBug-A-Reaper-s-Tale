@@ -132,6 +132,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -976,6 +977,43 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      small assets_21: -8494039864469260264
+      small assets_16: 6632213730712009181
+      small assets_19: -8965381624693627040
+      small assets_31: -1574205031166901623
+      small assets_11: 9170193488699896276
+      small assets_2: 1901817932050179605
+      small assets_22: -308241044721369323
+      small assets_24: -7450233926611384163
+      small assets_4: 562024283876657443
+      small assets_1: -7361138659556675881
+      small assets_13: -5853353796097964599
+      small assets_6: 44281568300524163
+      small assets_28: 4262518130784650304
+      small assets_3: 93959751802435112
+      small assets_26: -2974345307335434118
+      small assets_33: 9066782982660217452
+      small assets_34: -7449687003057780234
+      small assets_12: -4876899666532587218
+      small assets_0: -6923938964394884269
+      small assets_7: -3857363489025731082
+      small assets_35: -2061756240194023106
+      small assets_30: -5119819556000863973
+      small assets_8: 4817271104297546477
+      small assets_15: -4715311415704990387
+      small assets_23: -1148950422920093440
+      small assets_27: 2415922444121459379
+      small assets_14: 7996386966783620486
+      small assets_20: -2189859025736562826
+      small assets_10: 559370289718205589
+      small assets_25: 7123898484764690471
+      small assets_18: 853338375733737492
+      small assets_29: 6572915440178478809
+      small assets_32: -9134152617154479187
+      small assets_5: -2526389725036234205
+      small assets_17: -637210651511896798
+      small assets_9: 4237423602312295677
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -39,6 +39,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -232,6 +233,12 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      SpiderDeath_1: -192801846991626871
+      SpiderDeath_4: 4894587713622372253
+      SpiderDeath_2: -6105552400522549161
+      SpiderDeath_3: 8748030355297343304
+      SpiderDeath_0: -5066234058169660434
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -48,6 +48,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -304,6 +305,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      MeleeWalk_1: 9190187986163565511
+      MeleeWalk_0: 1175366421028951983
+      MeleeWalk_5: 4603349779737872223
+      MeleeWalk_6: -833242523728112339
+      MeleeWalk_7: 8471027787978050897
+      MeleeWalk_2: -6687846687258121987
+      MeleeWalk_4: 7035419819853073880
+      MeleeWalk_3: 5156053983460577985
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

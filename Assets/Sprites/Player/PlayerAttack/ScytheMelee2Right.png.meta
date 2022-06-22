@@ -75,6 +75,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -520,6 +521,24 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      ScytheMelee2Right_12: 6108793889403071363
+      ScytheMelee2Right_11: 4500017876614320715
+      ScytheMelee2Right_5: 3274137395653016835
+      ScytheMelee2Right_9: -705711372858592576
+      ScytheMelee2Right_8: 8220545669669488426
+      ScytheMelee2Right_14: 5415670211686797051
+      ScytheMelee2Right_16: 2776371949643200094
+      ScytheMelee2Right_0: 4816317225976508749
+      ScytheMelee2Right_7: 489181015878479970
+      ScytheMelee2Right_2: -3003961776215043443
+      ScytheMelee2Right_10: 5426078599416588430
+      ScytheMelee2Right_15: -9125672143523710661
+      ScytheMelee2Right_4: -7733956716906423505
+      ScytheMelee2Right_6: -1440134054422754092
+      ScytheMelee2Right_1: 6445977204436084453
+      ScytheMelee2Right_3: -6288842791874674659
+      ScytheMelee2Right_13: -7631904339147761958
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

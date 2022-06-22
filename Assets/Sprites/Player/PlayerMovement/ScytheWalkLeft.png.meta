@@ -48,6 +48,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -304,6 +305,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      ScytheWalkLeft_3: 766487305137042922
+      ScytheWalkLeft_1: 8422663063992933675
+      ScytheWalkLeft_5: 3939873911195905905
+      ScytheWalkLeft_0: -3980173663353339356
+      ScytheWalkLeft_6: -8963631470095448499
+      ScytheWalkLeft_7: 3632143802321765283
+      ScytheWalkLeft_2: 5629448657531613477
+      ScytheWalkLeft_4: -197379368271264298
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

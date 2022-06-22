@@ -39,6 +39,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -232,6 +233,12 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      MeleeIdle_1: -5143135030431730940
+      MeleeIdle_3: 1546424560240558912
+      MeleeIdle_0: -8728609979152440700
+      MeleeIdle_2: -7762411700705965315
+      MeleeIdle_4: -7873100869148626745
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

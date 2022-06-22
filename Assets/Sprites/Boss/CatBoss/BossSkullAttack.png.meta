@@ -87,6 +87,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -616,6 +617,28 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      BossSkullAttack_10: 3506046180657750621
+      BossSkullAttack_4: 7563838126361311115
+      BossSkullAttack_9: -1355254872261816041
+      BossSkullAttack_15: 6657996691038215846
+      BossSkullAttack_13: 2258587239060643566
+      BossSkullAttack_11: 7718329856734101030
+      BossSkullAttack_19: -4388212400417210431
+      BossSkullAttack_1: 3634173139760111957
+      BossSkullAttack_0: 1496484929168006862
+      BossSkullAttack_17: 6145494716433088567
+      BossSkullAttack_3: -5138823212322476519
+      BossSkullAttack_14: -2094229969196484768
+      BossSkullAttack_6: -5206493424029771915
+      BossSkullAttack_2: -5561515945692974764
+      BossSkullAttack_16: -236329197003786103
+      BossSkullAttack_12: -2135850310909971765
+      BossSkullAttack_7: 8772273948466660132
+      BossSkullAttack_5: -2072690905396503776
+      BossSkullAttack_18: 6981438291097332155
+      BossSkullAttack_20: -3200634662498046441
+      BossSkullAttack_8: 8872286130624610654
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

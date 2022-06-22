@@ -129,6 +129,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -952,6 +953,42 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      catdeath2_13: 4712357591907452408
+      catdeath2_24: 6288975823470873327
+      catdeath2_2: 8329163849347949216
+      catdeath2_0: 7511928595250898965
+      catdeath2_11: -6920562022078635879
+      catdeath2_9: -1384602713835148473
+      catdeath2_27: 1319634084982175849
+      catdeath2_29: 1428463814619739001
+      catdeath2_30: -6154198867017289338
+      catdeath2_16: 4599004874006147294
+      catdeath2_3: 8182529481524269954
+      catdeath2_31: -4404846922893769932
+      catdeath2_12: -5722455505653627600
+      catdeath2_20: -8245495647902212679
+      catdeath2_28: 9081493603835890472
+      catdeath2_32: -6108645307683211184
+      catdeath2_1: 146205361029266451
+      catdeath2_15: -5939053574387010982
+      catdeath2_18: -6726720727437529248
+      catdeath2_14: 5472365983369800935
+      catdeath2_10: -1274771952738453451
+      catdeath2_19: -8169525302336106348
+      catdeath2_8: -8400581934450545186
+      catdeath2_17: 1447672900497082160
+      catdeath2_21: 4195408035382520383
+      catdeath2_23: 3659434826705531786
+      catdeath2_5: 7844598847102220363
+      catdeath2_7: -4686927084315159476
+      catdeath2_22: -532878714104087099
+      catdeath2_4: 8093910793003771612
+      catdeath2_26: 4683605134484085226
+      catdeath2_34: 942258324081551585
+      catdeath2_6: -8195923404422116331
+      catdeath2_33: -8631058588817162855
+      catdeath2_25: 88172818719062161
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

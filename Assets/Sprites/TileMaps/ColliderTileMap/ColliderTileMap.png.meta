@@ -51,6 +51,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -328,6 +329,16 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      ColliderTileMap_5: 5427765514934679260
+      ColliderTileMap_4: -1791126744233710775
+      ColliderTileMap_6: 4656678132068861502
+      ColliderTileMap_0: -3208655825841176998
+      ColliderTileMap_1: 8242249198800860880
+      ColliderTileMap_7: 5435239560843172142
+      ColliderTileMap_2: 4473414530144073836
+      ColliderTileMap_8: -8116022178100728859
+      ColliderTileMap_3: 4679287203942937934
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -48,6 +48,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -304,6 +305,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      CopWalk_0: 6333563029474022679
+      CopWalk_2: -565813405319908220
+      CopWalk_7: 1082584666963037526
+      CopWalk_3: -4247766982146448780
+      CopWalk_1: 4817294972253163197
+      CopWalk_4: 7818807929766994065
+      CopWalk_6: 2300633732816504689
+      CopWalk_5: -5967965220527183282
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

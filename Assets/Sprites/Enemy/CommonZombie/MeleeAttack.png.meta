@@ -51,6 +51,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -328,6 +329,16 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      MeleeAttack_6: -2965601815077720815
+      MeleeAttack_5: 4428854563092530283
+      MeleeAttack_7: -3697579306725997803
+      MeleeAttack_0: -8581759396206521096
+      MeleeAttack_1: -7178623259649137448
+      MeleeAttack_4: 537798051485838422
+      MeleeAttack_2: -4205368095397869056
+      MeleeAttack_3: 4094403805000562864
+      MeleeAttack_8: 5685518229701880453
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -51,6 +51,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -328,6 +329,16 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      CommonZombieDeath_2: -3972787918058343695
+      CommonZombieDeath_8: -361210977143402092
+      CommonZombieDeath_5: 5116756434092886724
+      CommonZombieDeath_3: -1352711992773770410
+      CommonZombieDeath_6: 8467636410419814087
+      CommonZombieDeath_7: -6183097290798128986
+      CommonZombieDeath_1: -8234334824107399183
+      CommonZombieDeath_4: 8254199416656706939
+      CommonZombieDeath_0: -2668928630599606099
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

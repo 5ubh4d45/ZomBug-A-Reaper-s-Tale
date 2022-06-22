@@ -39,6 +39,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -232,6 +233,12 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      SpiderWalk_1: -5028499988708411735
+      SpiderWalk_0: -2544105567317597189
+      SpiderWalk_2: -6545219573610371892
+      SpiderWalk_3: -8783276914086060250
+      SpiderWalk_4: 4195216983599404673
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

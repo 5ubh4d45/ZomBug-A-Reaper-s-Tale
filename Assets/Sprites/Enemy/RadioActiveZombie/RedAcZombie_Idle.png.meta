@@ -42,6 +42,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -256,6 +257,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      RedAcZombie_Idle_1: 620776574984281411
+      RedAcZombie_Idle_5: -6917032175544948858
+      RedAcZombie_Idle_4: -3815647905413686407
+      RedAcZombie_Idle_3: 7897384308688715423
+      RedAcZombie_Idle_2: -4168918837768603353
+      RedAcZombie_Idle_0: -886429175633215652
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

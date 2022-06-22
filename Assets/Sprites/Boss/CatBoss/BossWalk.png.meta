@@ -48,6 +48,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -304,6 +305,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      BossWalk_4: -3359058401844516423
+      BossWalk_3: 6936732108251524000
+      BossWalk_1: 2249010996370531119
+      BossWalk_0: 2821199803406048772
+      BossWalk_5: 8228861154188778427
+      BossWalk_7: 4013311909780606073
+      BossWalk_6: 3952190514124253803
+      BossWalk_2: 717524288187874473
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
